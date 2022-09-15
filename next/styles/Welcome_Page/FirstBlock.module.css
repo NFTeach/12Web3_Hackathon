@@ -1,0 +1,149 @@
+/* First Block */
+@keyframes slide-in-top {
+    0% {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+      transform-origin: center center;
+      animation-timing-function: ease-out;
+    }
+    10% {
+      transform: scale(0.91);
+      animation-timing-function: ease-in;
+    }
+    17% {
+      transform: scale(0.98);
+      animation-timing-function: ease-out;
+    }
+    33% {
+      transform: scale(0.87);
+      animation-timing-function: ease-in;
+    }
+    45% {
+      transform: scale(1);
+      animation-timing-function: ease-out;
+    }
+  }
+.gamifyThe {
+margin-block-start: 0;
+margin-block-end: 0;
+}
+.learningProcess {
+margin: 0;
+}
+.textH3,
+.titleH1 {
+margin: 0;
+align-self: stretch;
+position: relative;
+font-size: inherit;
+font-weight: 700;
+font-family: inherit;
+display: inline-block;
+opacity: 0;
+}
+.textH3.animate,
+.titleH1.animate {
+animation: 1s ease 0s 1 normal forwards slide-in-top;
+}
+.textH3 {
+font-size: 29px;
+font-weight: 300;
+}
+.buttonOutlineDiv {
+position: absolute;
+height: 100%;
+width: 100%;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+border-radius: 50px;
+background-color: #5da395;
+}
+.getStartedH2 {
+margin: 0;
+position: absolute;
+height: 48.75%;
+width: 70.21%;
+top: 25%;
+right: 10.43%;
+bottom: 26.25%;
+left: 25%;
+font-size: 35px;
+font-weight: 500;
+font-family: Inter;
+color: #e4e4e4;
+text-align: left;
+display: inline-block;
+}
+.button {
+cursor: pointer;
+border: 0;
+padding: 0;
+background-color: transparent;
+position: relative;
+width: 306.43px;
+height: 80px;
+flex-shrink: 0;
+}
+.button:hover {
+animation: 1s ease 0s infinite normal none pulsate;
+opacity: 1;
+}
+.frameDiv1 {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 30px;
+}
+.firstBlockImage {
+position: relative;
+width: 741.09px;
+height: 446px;
+flex-shrink: 0;
+object-fit: cover;
+}
+.frameDiv2 {
+flex: 1;
+flex-direction: column;
+padding: 10px;
+box-sizing: border-box;
+align-items: flex-start;
+margin-left: -76px;
+}
+.frameDiv,
+.frameDiv2,
+.gamifyLearningDiv {
+display: flex;
+justify-content: flex-start;
+}
+.frameDiv {
+align-self: stretch;
+flex-direction: row;
+align-items: center;
+}
+.gamifyLearningDiv {
+position: relative;
+background-color: #18191a;
+width: 100%;
+height: 773px;
+flex-direction: column;
+padding: 62px 66px;
+box-sizing: border-box;
+align-items: flex-start;
+text-align: left;
+font-size: 85px;
+color: #e4e4e4;
+font-family: Inter;
+}

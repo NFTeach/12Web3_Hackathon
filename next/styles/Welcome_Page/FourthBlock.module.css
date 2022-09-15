@@ -1,0 +1,255 @@
+.titleH2 {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    display: inline-block;
+    width: 515px;
+}
+.areaIcon {
+position: absolute;
+top: calc(50% - 203.5px);
+left: calc(50% - 201.53px);
+border-radius: 50px;
+width: 595.93px;
+height: 407px;
+mix-blend-mode: normal;
+}
+.textH3,
+.titleH21 {
+margin: 0;
+position: absolute;
+font-family: inherit;
+}
+.titleH21 {
+top: calc(50% - 179.5px);
+left: calc(50% - 13px);
+font-size: inherit;
+line-height: 130%;
+font-weight: 600;
+display: flex;
+align-items: center;
+width: 326.86px;
+height: 62px;
+}
+.textH3 {
+top: calc(50% - 85.5px);
+left: calc(50% - 23.23px);
+font-size: 25px;
+line-height: 160%;
+font-weight: 400;
+display: inline-block;
+width: 380.53px;
+height: 110px;
+}
+.imageIcon {
+position: absolute;
+top: calc(50% - 152.5px);
+left: calc(50% - 383.5px);
+width: 359.79px;
+height: 267px;
+object-fit: cover;
+}
+.blockADiv {
+align-self: stretch;
+position: relative;
+height: 407px;
+flex-shrink: 0;
+}
+.frameDiv2 {
+align-self: stretch;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.textH31,
+.titleH22 {
+margin: 0;
+position: absolute;
+left: calc(50% - 41.32px);
+font-family: inherit;
+}
+.textH31 {
+top: calc(50% - 55.5px);
+font-size: inherit;
+line-height: 160%;
+font-weight: 400;
+display: inline-block;
+width: 410.15px;
+height: 243px;
+}
+.titleH22 {
+top: calc(50% - 142.5px);
+font-size: 35px;
+line-height: 130%;
+font-weight: 600;
+display: flex;
+align-items: center;
+width: 361.58px;
+height: 62px;
+}
+.areaIcon1 {
+position: absolute;
+top: calc(50% - 203.5px);
+left: calc(50% - 263.55px);
+border-radius: 50px;
+width: 659.22px;
+height: 407px;
+mix-blend-mode: normal;
+}
+.imageIcon1 {
+position: absolute;
+top: calc(50% - 98.5px);
+left: calc(50% - 383.5px);
+width: 342.14px;
+height: 205px;
+object-fit: cover;
+}
+.frameDiv1,
+.frameDiv3 {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.frameDiv3 {
+align-self: stretch;
+justify-content: flex-start;
+font-size: 25px;
+}
+.frameDiv1 {
+flex: 1;
+justify-content: center;
+gap: 62px;
+}
+.areaIcon2 {
+position: absolute;
+top: calc(50% - 203.5px);
+left: calc(50% - 227.66px);
+border-radius: 50px;
+width: 622.6px;
+height: 407px;
+mix-blend-mode: normal;
+}
+.textH32,
+.titleH23 {
+margin: 0;
+position: absolute;
+font-family: inherit;
+}
+.titleH23 {
+top: calc(50% - 148.5px);
+left: calc(50% - 91.08px);
+font-size: inherit;
+line-height: 130%;
+font-weight: 600;
+display: flex;
+align-items: center;
+width: 328.75px;
+height: 62px;
+}
+.textH32 {
+top: calc(50% - 48.5px);
+left: calc(50% - 89.8px);
+font-size: 25px;
+line-height: 160%;
+font-weight: 400;
+display: inline-block;
+width: 392.46px;
+height: 199px;
+}
+.imageIcon2 {
+position: absolute;
+top: calc(50% - 148.5px);
+left: calc(50% - 383.5px);
+width: 288.81px;
+height: 294px;
+object-fit: cover;
+}
+.areaIcon3 {
+position: absolute;
+top: calc(50% - 203.5px);
+left: calc(50% - 237.98px);
+border-radius: 50px;
+width: 633.12px;
+height: 407px;
+mix-blend-mode: normal;
+}
+.imageIcon3 {
+position: absolute;
+top: calc(50% - 151.5px);
+left: calc(50% - 383.5px);
+width: 358.93px;
+height: 260px;
+object-fit: cover;
+}
+.textH33,
+.titleH24 {
+margin: 0;
+position: absolute;
+left: calc(50% - 16.8px);
+font-family: inherit;
+}
+.textH33 {
+top: calc(50% - 64.5px);
+font-size: inherit;
+line-height: 160%;
+font-weight: 400;
+display: inline-block;
+width: 399.1px;
+height: 199px;
+}
+.titleH24 {
+top: calc(50% - 151.5px);
+font-size: 35px;
+line-height: 130%;
+font-weight: 600;
+display: flex;
+align-items: center;
+width: 312.11px;
+height: 62.09px;
+}
+.frameDiv4 {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+gap: 81px;
+}
+.frameDiv {
+align-self: stretch;
+height: 895px;
+flex-shrink: 0;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap: 60px;
+font-size: 35px;
+}
+.featuresDiv,
+.fourthBlockDiv {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.fourthBlockDiv {
+align-self: stretch;
+gap: 35px;
+}
+.featuresDiv {
+position: relative;
+background-color: #18191a;
+width: 100%;
+height: 1028px;
+padding: 44px 0 0;
+box-sizing: border-box;
+text-align: left;
+font-size: 45px;
+color: #e4e4e4;
+font-family: Inter;
+}
+  

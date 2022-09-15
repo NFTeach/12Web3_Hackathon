@@ -1,0 +1,90 @@
+.dude1Icon {
+    position: relative;
+    width: 572px;
+    height: 1665px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .titleDiv1 {
+    align-self: stretch;
+    position: relative;
+    display: inline-block;
+  }
+  .titleDiv {
+    align-self: stretch;
+    height: 226px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .createAnAccountToEarnCryp {
+    flex: 1;
+    position: relative;
+    font-size: 35px;
+    display: inline-block;
+    font-family: Inter;
+    color: #e4e4e4;
+    text-align: left;
+  }
+  .frameDiv {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+  }
+  .inputOutline {
+    background-color: transparent;
+  }
+  .buttonSolidTextAndIcon,
+  .inputOutline,
+  .inputsForm {
+    align-self: stretch;
+  }
+  .inputsForm {
+    display: flex;
+    flex-direction: column;
+    padding: 0 215px;
+    box-sizing: border-box;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 51px;
+  }
+  .logoH3 {
+    margin: 0;
+    align-self: stretch;
+    position: relative;
+    font-size: 35px;
+    font-weight: 500;
+    font-family: inherit;
+    display: inline-block;
+  }
+  .rightColumnElements {
+    flex: 1;
+    height: 1054px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .studentRegistrationDiv {
+    position: relative;
+    background-color: #181919;
+    width: 100%;
+    height: 1665px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 65px;
+    color: #e4e4e4;
+    font-family: Inter;
+  }
+  

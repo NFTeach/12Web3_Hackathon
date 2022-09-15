@@ -1,0 +1,639 @@
+.cardsDefault,
+.sheetDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+}
+.sheetDiv {
+  height: 100%;
+  width: calc(100% - -0.33px);
+  right: -0.33px;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #121212;
+}
+.cardsDefault {
+  width: 100%;
+  right: 0;
+  border-radius: 25px;
+  height: 134px;
+}
+.b,
+.yourCompletedCourses {
+  position: absolute;
+  width: calc(100% - 88.48px);
+  top: 24px;
+  right: 44.24px;
+  left: 44.24px;
+  letter-spacing: 0.4px;
+  display: inline-block;
+}
+.b {
+  top: 60px;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: #e4e4e4;
+}
+.completedDiv {
+  flex: 1;
+  position: relative;
+  height: 134px;
+}
+.cardsHover,
+.sheetDiv2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cardsHover {
+  width: 100%;
+  right: 0;
+  border-radius: 25px;
+  height: 134px;
+}
+.sheetDiv2 {
+  height: 100%;
+  width: calc(100% - -0.33px);
+  right: -0.33px;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #3eb489;
+}
+.yourSBTsDiv {
+  flex: 1;
+  position: relative;
+  height: 134px;
+  color: #121212;
+}
+.frameDiv2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 57px;
+  text-align: center;
+  color: #9fa2b4;
+}
+.dateB,
+.goodMorningB,
+.youveCompleted65OfYourL {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.4px;
+  display: inline-block;
+}
+.dateB,
+.youveCompleted65OfYourL {
+  font-size: 19px;
+}
+.youveCompleted65OfYourL {
+  font-size: 27px;
+  color: #3eb489;
+}
+.frameDiv5 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 31px;
+}
+.completedDiv1,
+.math101Div {
+  position: absolute;
+  right: 0;
+  letter-spacing: 0.3px;
+  line-height: 22px;
+  display: inline-block;
+}
+.math101Div {
+  top: 17px;
+  font-weight: 600;
+  width: 144px;
+  height: 44px;
+}
+.completedDiv1 {
+  top: 73px;
+  font-size: 19px;
+  width: 210px;
+  height: 31px;
+}
+.courseImageIcon,
+.frameDiv7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52.36px;
+  height: 50px;
+}
+.frameDiv7 {
+  top: 30px;
+  left: 37.42px;
+  width: 210.58px;
+  height: 104px;
+  font-size: 23px;
+}
+.blockchainBasicsDiv,
+.completedDiv2 {
+  position: absolute;
+  letter-spacing: 0.3px;
+  line-height: 22px;
+  display: inline-block;
+}
+.completedDiv2 {
+  top: 76px;
+  right: 0;
+  width: 366px;
+  height: 34px;
+}
+.blockchainBasicsDiv {
+  top: calc(50% - 38px);
+  right: 60px;
+  font-size: 23px;
+  font-weight: 600;
+  width: 240px;
+  height: 39px;
+}
+.rectangleDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+  background-color: #d9d9d9;
+  width: 52.36px;
+  height: 50px;
+}
+.vectorIcon {
+  position: absolute;
+  height: 37.63%;
+  width: 31.91%;
+  top: 31.37%;
+  right: 33.04%;
+  bottom: 31%;
+  left: 35.05%;
+  border-radius: 1px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.frameDiv8 {
+  position: absolute;
+  top: 185px;
+  left: 37.42px;
+  width: 366.58px;
+  height: 110px;
+  font-size: 19px;
+}
+.dividerLineHorizontal {
+  position: absolute;
+  top: 156px;
+  right: 0;
+  width: 594px;
+  height: 14.5px;
+}
+.dividerLineVertical {
+  position: absolute;
+  top: 0;
+  left: -0.5px;
+  width: 1px;
+  height: 340px;
+}
+.dividerLineHorizontal1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 594px;
+  height: 0;
+}
+.bestStudentDiv,
+.nFT2Icon {
+  position: relative;
+  flex-shrink: 0;
+}
+.nFT2Icon {
+  width: 116px;
+  height: 111px;
+  object-fit: cover;
+}
+.bestStudentDiv {
+  letter-spacing: 0.3px;
+  line-height: 22px;
+  display: inline-block;
+  width: 211px;
+  height: 31px;
+}
+.frameDiv10,
+.frameDiv9 {
+  position: absolute;
+  top: 183px;
+  left: 379px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 11px;
+  text-align: center;
+}
+.frameDiv10 {
+  top: 11px;
+}
+.frameDiv6 {
+  position: relative;
+  width: 543px;
+  height: 340px;
+  flex-shrink: 0;
+  font-size: 18px;
+  color: #9fa2b4;
+}
+.frameDiv4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 127px;
+}
+.frameDiv3,
+.sheetDiv3 {
+  border-radius: 8px;
+  background-color: #121212;
+  box-sizing: border-box;
+}
+.frameDiv3 {
+  align-self: stretch;
+  border: 1px solid #e4e4e4;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 23px;
+}
+.sheetDiv3 {
+  border: 1px solid #dfe0eb;
+}
+.areaDiv,
+.sheetDiv3 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.titleB {
+  position: absolute;
+  width: calc(100% - 387px);
+  top: 29px;
+  right: 355px;
+  left: 32px;
+  font-size: 19px;
+  letter-spacing: 0.4px;
+  display: inline-block;
+}
+.basedOnYourPrevious3,
+.eTHDiv {
+  position: absolute;
+  color: #9fa2b4;
+  display: inline-block;
+}
+.basedOnYourPrevious3 {
+  width: calc(100% - 210px);
+  top: 80px;
+  right: 178px;
+  left: 32px;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+  line-height: 16px;
+  height: 16px;
+}
+.eTHDiv {
+  top: calc(50% - 9px);
+  right: 32px;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  font-weight: 600;
+  text-align: right;
+  width: 104px;
+}
+.dividerLineHorizontal2,
+.math102Div {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  left: 0;
+}
+.dividerLineHorizontal2 {
+  bottom: -0.5px;
+  max-width: 100%;
+  height: 1px;
+}
+.math102Div {
+  top: 96px;
+  height: 58px;
+}
+.eTHDiv1,
+.understandingBitcoinDiv {
+  position: absolute;
+  top: calc(50% - 9px);
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  font-weight: 600;
+  display: inline-block;
+}
+.understandingBitcoinDiv {
+  width: calc(100% - 168px);
+  right: 136px;
+  left: 32px;
+}
+.eTHDiv1 {
+  right: 32px;
+  color: #9fa2b4;
+  text-align: right;
+  width: 80px;
+}
+.aIDiv,
+.bitcoinDiv,
+.tokenomicsDiv {
+  position: absolute;
+  width: 100%;
+  top: 154px;
+  right: 0;
+  left: 0;
+  height: 58px;
+}
+.aIDiv,
+.tokenomicsDiv {
+  top: 212px;
+}
+.aIDiv {
+  top: 270px;
+}
+.suggestedDiv {
+  flex: 1;
+  position: relative;
+  height: 336px;
+  overflow: hidden;
+}
+.areaIcon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+.titleB1 {
+  top: 32px;
+  font-size: 19px;
+  letter-spacing: 0.4px;
+  color: #e4e4e4;
+}
+.thisWeekDiv,
+.titleB1,
+.topStudentsDiv {
+  position: absolute;
+  width: calc(100% - 210px);
+  right: 178px;
+  left: 32px;
+  display: inline-block;
+}
+.thisWeekDiv {
+  top: 64px;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+  line-height: 16px;
+  color: #9fa2b4;
+  height: 16px;
+}
+.topStudentsDiv {
+  top: calc(50% - 9px);
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.topDiv {
+  position: absolute;
+  width: 100%;
+  top: 96px;
+  right: 0;
+  left: 0;
+  height: 58px;
+  color: #c5c7cd;
+}
+.charlesHDiv {
+  position: absolute;
+  width: calc(100% - 210px);
+  top: calc(50% - 9px);
+  right: 142px;
+  left: 68px;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #e4e4e4;
+  text-align: left;
+  display: inline-block;
+}
+.sheetDiv4 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: #29cc97;
+}
+.titleDiv {
+  position: absolute;
+  width: calc(100% - 24px);
+  top: calc(50% - 7px);
+  right: 12px;
+  left: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 14px;
+}
+.chipDefaultSuccess {
+  position: absolute;
+  top: calc(50% - 12px);
+  right: 32px;
+  width: 54px;
+  height: 24px;
+  overflow: hidden;
+  font-size: 6px;
+}
+.circleIcon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+.titleDiv1 {
+  position: absolute;
+  height: 55%;
+  width: 50%;
+  top: 20%;
+  right: 25%;
+  bottom: 25%;
+  left: 25%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.controlsCheckboxActive1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+.controlsCheckboxActive {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 32px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  font-size: 13px;
+}
+.name2Div {
+  position: absolute;
+  width: 100%;
+  top: 212px;
+  right: 0;
+  left: 0;
+  height: 58px;
+  text-align: center;
+}
+.satoshiNDiv {
+  position: absolute;
+  width: calc(100% - 210px);
+  top: calc(50% - 9px);
+  right: 142px;
+  left: 68px;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #c5c7cd;
+  text-align: left;
+  display: inline-block;
+}
+.titleDiv3 {
+  position: absolute;
+  height: 55%;
+  width: 60%;
+  top: 20%;
+  right: 20%;
+  bottom: 25%;
+  left: 20%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.name1Div {
+  position: absolute;
+  width: 100%;
+  top: 154px;
+  right: 0;
+  left: 0;
+  height: 58px;
+  text-align: center;
+}
+.controlsCheckboxActive3 {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 32px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+.titleDiv5 {
+  position: absolute;
+  height: 65%;
+  width: 55%;
+  top: 15%;
+  right: 20%;
+  bottom: 20%;
+  left: 25%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.name3Div {
+  position: absolute;
+  width: 100%;
+  top: 270px;
+  right: 0;
+  left: 0;
+  height: 58px;
+  text-align: center;
+}
+.leaderboardsDiv {
+  flex: 1;
+  position: relative;
+  height: 336px;
+  overflow: hidden;
+  color: #fff;
+}
+.frameDiv,
+.frameDiv1,
+.frameDiv11 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv11 {
+  align-self: stretch;
+  flex-direction: row;
+  gap: 36px;
+  font-size: 14px;
+}
+.frameDiv,
+.frameDiv1 {
+  flex-direction: column;
+}
+.frameDiv1 {
+  align-self: stretch;
+  gap: 60px;
+}
+.frameDiv {
+  position: relative;
+  background-color: #181919;
+  width: 100%;
+  padding: 72px 162px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 19px;
+  color: #e4e4e4;
+  font-family: Mulish;
+}

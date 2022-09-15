@@ -1,0 +1,118 @@
+.titleDiv {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+  height: 80px;
+  flex-shrink: 0;
+}
+.frameDiv1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.titleDiv1 {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+  height: 130px;
+  flex-shrink: 0;
+}
+.frameDiv,
+.frameDiv2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.frameDiv2 {
+  height: 140px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.frameDiv {
+  padding: 0 0 0 54px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 55px;
+}
+.titleDiv2,
+.titleDiv3 {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+}
+.titleDiv3 {
+  font-size: 15px;
+  font-weight: 300;
+}
+.frameDiv5 {
+  width: 867px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.titleDiv4 {
+  position: relative;
+  display: inline-block;
+  width: 620px;
+  height: 51px;
+  flex-shrink: 0;
+}
+.frameDiv4,
+.uploadFormDiv {
+  flex-shrink: 0;
+  align-items: center;
+}
+.uploadFormDiv {
+  border-radius: 15px;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  position: relative;
+  width: 878px;
+  height: 176px;
+  display: flex;
+  flex-direction: column;
+  padding: 19px 140px;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 45px;
+  color: #f2f2f2;
+  font-family: Inter;
+}
+.frameDiv4 {
+  align-self: stretch;
+  height: 382px;
+  gap: 38px;
+}
+.courseCreationPage4,
+.frameDiv3,
+.frameDiv4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.frameDiv3 {
+  align-self: stretch;
+  align-items: flex-start;
+  font-size: 25px;
+}
+.courseCreationPage4 {
+  position: relative;
+  background-color: #121212;
+  width: 100%;
+  height: 789px;
+  padding: 41px 0;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 55px;
+  text-align: left;
+  font-size: 55px;
+  color: #e4e4e4;
+  font-family: Mulish;
+}

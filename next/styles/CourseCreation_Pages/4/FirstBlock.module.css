@@ -1,0 +1,62 @@
+.titleDiv {
+align-self: stretch;
+position: relative;
+display: inline-block;
+}
+.inputOutline {
+background-color: transparent;
+align-self: stretch;
+}
+.qUESTION1Div {
+align-self: stretch;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 21px;
+}
+.courseNameDiv {
+position: relative;
+line-height: 24px;
+display: inline-block;
+width: 1256px;
+height: 43px;
+flex-shrink: 0;
+}
+.passingGradeDiv {
+align-self: stretch;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 10px;
+}
+.frameDiv,
+.frameDiv1 {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.frameDiv1 {
+align-self: stretch;
+justify-content: center;
+gap: 101px;
+text-align: left;
+font-size: 16px;
+color: #fff;
+font-family: Roboto;
+}
+.frameDiv {
+position: relative;
+border-radius: 35px;
+background-color: #121212;
+width: 100%;
+padding: 51px 64px;
+box-sizing: border-box;
+justify-content: flex-start;
+gap: 94px;
+text-align: center;
+font-size: 55px;
+color: #e4e4e4;
+font-family: Mulish;
+}

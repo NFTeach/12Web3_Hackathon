@@ -1,0 +1,114 @@
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+.thusEndsThe {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.pleaseClickThe {
+  margin: 0;
+}
+.titleH2 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+  height: 323px;
+  flex-shrink: 0;
+  opacity: 0;
+}
+.titleH2.animate {
+  animation: 1s ease 0s 1 normal forwards slide-in-top;
+}
+.areaDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+  background-color: #ee7b3c;
+  width: 300px;
+  height: 85px;
+}
+.claimSBTDiv {
+  position: absolute;
+  top: 26px;
+  left: 63px;
+  font-size: 25px;
+  font-family: Inter;
+  color: #121212;
+  text-align: center;
+  display: inline-block;
+  width: 174.61px;
+  height: 34px;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 300px;
+  height: 85px;
+  flex-shrink: 0;
+  margin-top: -80px;
+}
+.button:hover {
+  animation: 1s ease 0s infinite normal none pulsate;
+  opacity: 1;
+}
+.frameDiv,
+.frameDiv1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv1 {
+  align-self: stretch;
+}
+.frameDiv {
+  position: relative;
+  background-color: #181919;
+  width: 100%;
+  height: 472px;
+  padding: 57px 64px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 25px;
+  color: #e4e4e4;
+  font-family: Inter;
+}
+

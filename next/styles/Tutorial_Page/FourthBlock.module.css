@@ -1,0 +1,72 @@
+@keyframes slide-in-top {
+    0% {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+.titleH2 {
+margin: 0;
+align-self: stretch;
+position: relative;
+font-size: inherit;
+font-weight: 700;
+font-family: inherit;
+display: inline-block;
+height: 54px;
+flex-shrink: 0;
+opacity: 0;
+}
+.textH4.animate,
+.titleH2.animate {
+animation: 1s ease 0s 1 normal forwards slide-in-top;
+}
+.ourResponseWhy {
+margin-block-start: 0;
+margin-block-end: 0;
+}
+.nowAnyoneIs,
+.textH4 {
+margin: 0;
+}
+.textH4 {
+align-self: stretch;
+position: relative;
+font-size: 25px;
+font-weight: 400;
+font-family: inherit;
+white-space: pre-wrap;
+display: inline-block;
+height: 270px;
+flex-shrink: 0;
+opacity: 0;
+}
+.frameDiv,
+.textDiv {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.textDiv {
+align-self: stretch;
+height: 354px;
+flex-shrink: 0;
+gap: 62px;
+}
+.frameDiv {
+position: relative;
+background-color: #2b3233;
+width: 100%;
+height: 566px;
+padding: 66px 262px 0 126px;
+box-sizing: border-box;
+text-align: left;
+font-size: 45px;
+color: #e4e4e4;
+font-family: Inter;
+}
+  

@@ -1,0 +1,81 @@
+.polygonMaticLogo1Icon {
+    flex: 1;
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.frameDiv {
+flex: 1;
+height: 663px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+}
+.poweredBy {
+margin-block-start: 0;
+margin-block-end: 0;
+}
+.polygon {
+margin: 0;
+color: #8247e5;
+}
+.titleTxtSpan {
+line-break: anywhere;
+}
+.textH4,
+.titleH2 {
+margin: 0;
+flex: 1;
+align-self: stretch;
+position: relative;
+font-family: inherit;
+}
+.titleH2 {
+font-size: inherit;
+line-height: 130%;
+font-weight: 600;
+display: flex;
+align-items: center;
+}
+.textH4 {
+font-size: 33px;
+font-weight: 400;
+display: inline-block;
+}
+.frameDiv1 {
+flex: 1;
+height: 415.59px;
+flex-direction: column;
+align-items: flex-start;
+gap: 15px;
+}
+.frameDiv1,
+.polygonDiv,
+.thirdBlockDiv {
+display: flex;
+justify-content: flex-start;
+}
+.thirdBlockDiv {
+align-self: stretch;
+flex-direction: row;
+padding: 0 0 0 72px;
+box-sizing: border-box;
+align-items: center;
+gap: 82px;
+}
+.polygonDiv {
+position: relative;
+background-color: #18191a;
+width: 100%;
+height: 663px;
+flex-direction: column;
+align-items: flex-start;
+text-align: left;
+font-size: 55px;
+color: #e4e4e4;
+font-family: Inter;
+}
+  
