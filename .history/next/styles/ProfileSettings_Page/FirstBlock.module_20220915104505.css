@@ -1,0 +1,180 @@
+.nFTeachProfileSettings {
+  position: relative;
+  display: inline-block;
+}
+.frameDiv1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+}
+.nFTIcon {
+  align-self: stretch;
+  position: relative;
+  border-radius: 25px;
+  max-width: 100%;
+  height: 634px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.nFTBlockDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.titleB {
+  font-size: 37px;
+  color: rgba(152, 152, 152, 0.69);
+  text-align: center;
+  height: 51px;
+}
+.addressDiv,
+.dateJoinedDiv,
+.nameDiv,
+.studentEducatorDiv,
+.titleB {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.nameDiv {
+  font-size: 45px;
+  font-weight: 500;
+  height: 52px;
+}
+.addressDiv,
+.dateJoinedDiv,
+.studentEducatorDiv {
+  height: 38px;
+}
+.addressDiv,
+.dateJoinedDiv {
+  height: 39px;
+}
+.dateJoinedDiv {
+  height: 36px;
+}
+.userProfileBlock {
+  flex: 1;
+  border-radius: 25px;
+  background: linear-gradient(14.38deg, rgba(0, 0, 0, 0.73), transparent);
+  height: 620px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 13px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 59px;
+}
+.frameDiv2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 153px;
+  font-size: 30px;
+  color: #c8c8c8;
+}
+.textDiv,
+.titleB1 {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+  height: 49.21px;
+  flex-shrink: 0;
+}
+.textDiv {
+  font-size: 34px;
+  font-weight: 300;
+  color: #c8c8c8;
+  text-align: left;
+  height: 401.38px;
+}
+.aboutBlockDiv,
+.frameDiv4 {
+  display: flex;
+  box-sizing: border-box;
+}
+.aboutBlockDiv {
+  flex: 1;
+  border-radius: 25px;
+  background: linear-gradient(14.38deg, rgba(0, 0, 0, 0.73), transparent);
+  flex-direction: column;
+  padding: 19px 22px;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+}
+.frameDiv4 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.numberOfDays {
+  flex: 1;
+  position: relative;
+  display: inline-block;
+}
+.frameDiv5 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 16px 0;
+  box-sizing: border-box;
+  align-items: flex-start;
+  font-size: 250px;
+  color: #de9c3a;
+}
+.frameDiv3,
+.frameDiv5,
+.streakBlockDiv {
+  display: flex;
+  justify-content: flex-start;
+}
+.streakBlockDiv {
+  flex: 1;
+  border-radius: 25px;
+  background: linear-gradient(14.38deg, rgba(0, 0, 0, 0.73), transparent);
+  flex-direction: column;
+  padding: 17px 25px;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 85px;
+}
+.frameDiv3 {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 190px;
+  text-align: center;
+  color: rgba(152, 152, 152, 0.69);
+}
+.frameDiv,
+.profileAndSettings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frameDiv {
+  align-self: stretch;
+  gap: 88px;
+}
+.profileAndSettings {
+  position: relative;
+  background-color: #121212;
+  width: 100%;
+  text-align: left;
+  font-size: 37px;
+  color: #e4e4e4;
+  font-family: Inter;
+}
