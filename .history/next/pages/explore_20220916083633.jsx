@@ -56,18 +56,19 @@ const explore = () => {
             const query = new Moralis.Query(Courses);
             const course = await query.find();
             setCourses(course);
-            setCourseObjectId(course.map((course) => course.id));
+            setCourseObjectId(course.map((course) => course.get("objectId")));
             setImages(course.map((course) => course.get("imageFile")));
             setCourseName(course.map((course) => course.get("courseName")));
-            // setCourseDescription(course.map((course) => course.get("courseDescription")));
-            // setCourseSection1(course.map((course) => course.get("courseSection1")));
-            // setCourseSection2(course.map((course) => course.get("courseSection2")));
-            // setCourseSection3(course.map((course) => course.get("courseSection3")));
-            // setCourseTest(course.map((course) => course.get("test")));
+            setCourseDescription(course.map((course) => course.get("courseDescription")));
+            setCourseSection1(course.map((course) => course.get("courseSection1")));
+            setCourseSection2(course.map((course) => course.get("courseSection2")));
+            setCourseSection3(course.map((course) => course.get("courseSection3")));
+            setCourseTest(course.map((course) => course.get("test")));
         }
     }, []);
 
-    console.log(courseObjectId?.[0]);
+    // console.log(courses);
+    console.log(courseObjectId);
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -138,24 +139,47 @@ const explore = () => {
                 </div>
                 <div className={stylesFirstBlock.frameDiv3}>
                 <HStack spacing='100px'>
-                    {courses?.map((e, index) => (
-                        <Box key={index} w='250px' h='250px'>
-                            <Link href={{pathname: "/course", 
-                                query: {
-                                    courseObjectId: courseObjectId?.[index],
-                                    }}}>
-                                <Image 
-                                    borderRadius='full' 
-                                    boxSize='250px' 
-                                    src={images[index]?.img} 
-                                    alt={courseName?.[index]}
-                                />
-                            </Link>
-                            <br/>
-                            <Text>{courseName?.[index]}</Text>
-                        </Box>
-                    ))}
-                </HStack>
+                    <Box w='250px' h='250px'>
+                        <Link href={{pathname: "/course", 
+                            query: {
+                                courseName: courseName[0], 
+                                courseDescription: courseDescription[0], 
+                                courseSection1Name: courseSection1[0]?.sectionName,
+                                courseSection1Description: courseSection1[0]?.sectionDescription,
+                                courseSection1Video: courseSection1[0]?.vid,
+                                courseSection2Name: courseSection2[0]?.sectionName,
+                                courseSection2Description: courseSection2[0]?.sectionDescription,
+                                courseSection2Video: courseSection2[0]?.vid,
+                                courseSection3Name: courseSection3[0]?.sectionName,
+                                courseSection3Description: courseSection3[0]?.sectionDescription,
+                                courseSection3Video: courseSection3[0]?.vid,
+                                image: images[0]?.img}}}>
+                            <Image 
+                                borderRadius='full' 
+                                boxSize='250px' 
+                                src={images[0]?.img} 
+                                alt={courseName[0]}
+                            />
+                        </Link>
+                        <br/>
+                        <Text>{courseName[0]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px' >
+                        <Image borderRadius='full' boxSize='250px' src={images[1]?.img} alt={courseName[1]} />
+                        <br/>
+                        <Text>{courseName[1]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[2]?.img} alt={courseName[2]} />
+                        <br/>
+                        <Text>{courseName[2]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[3]?.img} alt={courseName[3]} />
+                        <br/>
+                        <Text>{courseName[3]}</Text>
+                    </Box>
+                </HStack>  
                 </div>
                 </div>
             </div>           

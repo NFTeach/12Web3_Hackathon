@@ -1,12 +1,8 @@
-// NEED TO MAKE THE COURSES DYNAMIC MAPPING
-
 import { useCallback, useEffect, useState } from "react";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { defaultImgs } from "../public/defaultImgs";
-import { HStack, Box, Image, Text } from "@chakra-ui/react";
 import stylesHeader from "../styles/Explore_Page/Header.module.css";
 import stylesFirstBlock from "../styles/Explore_Page/FirstBlock.module.css";
 import stylesFooter from "../styles/Explore_Page/Footer.module.css";
@@ -19,15 +15,6 @@ const explore = () => {
     const [pfp, setPfp] = useState();
     const { Moralis } = useMoralis();
     const [educator, setEducator] = useState();
-    const [courses, setCourses] = useState([]);
-    const [courseObjectId, setCourseObjectId] = useState();
-    const [images, setImages] = useState([]);
-    const [courseName, setCourseName] = useState([]);
-    const [courseDescription, setCourseDescription] = useState([]);
-    const [courseSection1, setCourseSection1] = useState([]);
-    const [courseSection2, setCourseSection2] = useState([]);
-    const [courseSection3, setCourseSection3] = useState([]);
-    const [courseTest, setCourseTest] = useState([]);
     const user = moralis.User.current();
 
     useEffect(() => {
@@ -47,27 +34,6 @@ const explore = () => {
             setEducator(educator[0]);
         }
     }, []);
-
-    useEffect(async() => {
-        if(!user) {
-            window.alert("Please connect wallet")
-        } else {
-            const Courses = Moralis.Object.extend("Courses");
-            const query = new Moralis.Query(Courses);
-            const course = await query.find();
-            setCourses(course);
-            setCourseObjectId(course.map((course) => course.id));
-            setImages(course.map((course) => course.get("imageFile")));
-            setCourseName(course.map((course) => course.get("courseName")));
-            // setCourseDescription(course.map((course) => course.get("courseDescription")));
-            // setCourseSection1(course.map((course) => course.get("courseSection1")));
-            // setCourseSection2(course.map((course) => course.get("courseSection2")));
-            // setCourseSection3(course.map((course) => course.get("courseSection3")));
-            // setCourseTest(course.map((course) => course.get("test")));
-        }
-    }, []);
-
-    console.log(courseObjectId?.[0]);
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -137,25 +103,61 @@ const explore = () => {
                     </div>
                 </div>
                 <div className={stylesFirstBlock.frameDiv3}>
-                <HStack spacing='100px'>
-                    {courses?.map((e, index) => (
-                        <Box key={index} w='250px' h='250px'>
-                            <Link href={{pathname: "/course", 
-                                query: {
-                                    courseObjectId: courseObjectId?.[index],
-                                    }}}>
-                                <Image 
-                                    borderRadius='full' 
-                                    boxSize='250px' 
-                                    src={images[index]?.img} 
-                                    alt={courseName?.[index]}
-                                />
-                            </Link>
-                            <br/>
-                            <Text>{courseName?.[index]}</Text>
-                        </Box>
-                    ))}
-                </HStack>
+                <Stack direction={['column', 'row']} spacing='24px'>
+                    <Box w='40px' h='40px' bg='yellow.200'>
+                        1
+                    </Box>
+                    <Box w='40px' h='40px' bg='tomato'>
+                        2
+                    </Box>
+                    <Box w='40px' h='40px' bg='pink.100'>
+                        3
+                    </Box>
+                </Stack>
+                    {/* <div className={stylesFirstBlock.chem101Div}>
+                    <div className={stylesFirstBlock.frameDiv4}>
+                        <img
+                        className={stylesFirstBlock.chem101Icon}
+                        alt=''
+                        src='/explore_imgs/chem101.png'
+                        />
+                        <h2 className={stylesFirstBlock.chemistry101H2}>
+                        Chemistry 101
+                        </h2>
+                    </div>
+                    </div>
+                    <div className={stylesFirstBlock.chem101Div}>
+                    <div className={stylesFirstBlock.frameDiv4}>
+                        <img
+                        className={stylesFirstBlock.chem101Icon}
+                        alt=''
+                        src='/explore_imgs/chem102.png'
+                        />
+                        <h2 className={stylesFirstBlock.chemistry101H2}>
+                        Chemistry 102
+                        </h2>
+                    </div>
+                    </div>
+                    <div className={stylesFirstBlock.chem101Div}>
+                    <div className={stylesFirstBlock.frameDiv4}>
+                        <img
+                        className={stylesFirstBlock.chem101Icon}
+                        alt=''
+                        src='/explore_imgs/blockchain.png'
+                        />
+                        <h2 className={stylesFirstBlock.blockchainBasicsH2}>
+                        Blockchain Basics
+                        </h2>
+                    </div>
+                    </div>
+                    <div className={stylesFirstBlock.frameDiv7}>
+                    <img
+                        className={stylesFirstBlock.chem101Icon}
+                        alt=''
+                        src='/explore_imgs/math101.png'
+                    />
+                    <h2 className={stylesFirstBlock.math101H2}>Math 101</h2>
+                    </div> */}
                 </div>
                 </div>
             </div>           

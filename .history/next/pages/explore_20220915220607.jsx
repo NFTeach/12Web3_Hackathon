@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useState } from "react";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { defaultImgs } from "../public/defaultImgs";
 import { HStack, Box, Image, Text } from "@chakra-ui/react";
@@ -20,14 +19,8 @@ const explore = () => {
     const { Moralis } = useMoralis();
     const [educator, setEducator] = useState();
     const [courses, setCourses] = useState([]);
-    const [courseObjectId, setCourseObjectId] = useState();
     const [images, setImages] = useState([]);
     const [courseName, setCourseName] = useState([]);
-    const [courseDescription, setCourseDescription] = useState([]);
-    const [courseSection1, setCourseSection1] = useState([]);
-    const [courseSection2, setCourseSection2] = useState([]);
-    const [courseSection3, setCourseSection3] = useState([]);
-    const [courseTest, setCourseTest] = useState([]);
     const user = moralis.User.current();
 
     useEffect(() => {
@@ -56,18 +49,14 @@ const explore = () => {
             const query = new Moralis.Query(Courses);
             const course = await query.find();
             setCourses(course);
-            setCourseObjectId(course.map((course) => course.id));
             setImages(course.map((course) => course.get("imageFile")));
             setCourseName(course.map((course) => course.get("courseName")));
-            // setCourseDescription(course.map((course) => course.get("courseDescription")));
-            // setCourseSection1(course.map((course) => course.get("courseSection1")));
-            // setCourseSection2(course.map((course) => course.get("courseSection2")));
-            // setCourseSection3(course.map((course) => course.get("courseSection3")));
-            // setCourseTest(course.map((course) => course.get("test")));
         }
     }, []);
 
-    console.log(courseObjectId?.[0]);
+    // console.log(courses);
+    console.log(images[0]?.img);
+    // console.log(courseName);
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -138,24 +127,20 @@ const explore = () => {
                 </div>
                 <div className={stylesFirstBlock.frameDiv3}>
                 <HStack spacing='100px'>
-                    {courses?.map((e, index) => (
-                        <Box key={index} w='250px' h='250px'>
-                            <Link href={{pathname: "/course", 
-                                query: {
-                                    courseObjectId: courseObjectId?.[index],
-                                    }}}>
-                                <Image 
-                                    borderRadius='full' 
-                                    boxSize='250px' 
-                                    src={images[index]?.img} 
-                                    alt={courseName?.[index]}
-                                />
-                            </Link>
-                            <br/>
-                            <Text>{courseName?.[index]}</Text>
-                        </Box>
-                    ))}
-                </HStack>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[0]?.img} alt={courseName[0]} />
+                        <Text>{courseName[0]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px' >
+                        <Image borderRadius='full' boxSize='250px' src={images[1]?.img} alt={courseName[1]} />
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[2]?.img} alt={courseName[2]} />
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[3]?.img} alt={courseName[3]} />
+                    </Box>
+                </HStack>  
                 </div>
                 </div>
             </div>           

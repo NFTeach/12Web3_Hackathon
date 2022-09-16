@@ -138,24 +138,48 @@ const explore = () => {
                 </div>
                 <div className={stylesFirstBlock.frameDiv3}>
                 <HStack spacing='100px'>
-                    {courses?.map((e, index) => (
-                        <Box key={index} w='250px' h='250px'>
-                            <Link href={{pathname: "/course", 
-                                query: {
-                                    courseObjectId: courseObjectId?.[index],
-                                    }}}>
-                                <Image 
-                                    borderRadius='full' 
-                                    boxSize='250px' 
-                                    src={images[index]?.img} 
-                                    alt={courseName?.[index]}
-                                />
-                            </Link>
-                            <br/>
-                            <Text>{courseName?.[index]}</Text>
-                        </Box>
-                    ))}
-                </HStack>
+                    <Box w='250px' h='250px'>
+                        <Link href={{pathname: "/course", 
+                            query: {
+                                // courseObjectId: courseObjectId[0],
+                                courseName: courseName[0], 
+                                courseDescription: courseDescription[0], 
+                                courseSection1Name: courseSection1[0]?.sectionName,
+                                courseSection1Description: courseSection1[0]?.sectionDescription,
+                                courseSection1Video: courseSection1[0]?.vid,
+                                courseSection2Name: courseSection2[0]?.sectionName,
+                                courseSection2Description: courseSection2[0]?.sectionDescription,
+                                courseSection2Video: courseSection2[0]?.vid,
+                                courseSection3Name: courseSection3[0]?.sectionName,
+                                courseSection3Description: courseSection3[0]?.sectionDescription,
+                                courseSection3Video: courseSection3[0]?.vid,
+                                image: images[0]?.img}}}>
+                            <Image 
+                                borderRadius='full' 
+                                boxSize='250px' 
+                                src={images[0]?.img} 
+                                alt={courseName[0]}
+                            />
+                        </Link>
+                        <br/>
+                        <Text>{courseName[0]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px' >
+                        <Image borderRadius='full' boxSize='250px' src={images[1]?.img} alt={courseName[1]} />
+                        <br/>
+                        <Text>{courseName[1]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[2]?.img} alt={courseName[2]} />
+                        <br/>
+                        <Text>{courseName[2]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[3]?.img} alt={courseName[3]} />
+                        <br/>
+                        <Text>{courseName[3]}</Text>
+                    </Box>
+                </HStack>  
                 </div>
                 </div>
             </div>           

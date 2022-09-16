@@ -67,8 +67,6 @@ const explore = () => {
         }
     }, []);
 
-    console.log(courseObjectId?.[0]);
-
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
     }, [router]);
@@ -138,24 +136,36 @@ const explore = () => {
                 </div>
                 <div className={stylesFirstBlock.frameDiv3}>
                 <HStack spacing='100px'>
-                    {courses?.map((e, index) => (
-                        <Box key={index} w='250px' h='250px'>
-                            <Link href={{pathname: "/course", 
-                                query: {
-                                    courseObjectId: courseObjectId?.[index],
-                                    }}}>
-                                <Image 
-                                    borderRadius='full' 
-                                    boxSize='250px' 
-                                    src={images[index]?.img} 
-                                    alt={courseName?.[index]}
-                                />
-                            </Link>
-                            <br/>
-                            <Text>{courseName?.[index]}</Text>
-                        </Box>
-                    ))}
-                </HStack>
+                    <Box w='250px' h='250px'>
+                        <Link href={{pathname: "/course", 
+                            query: {
+                                courseObjectId: courseObjectId[0]}}}>
+                            <Image 
+                                borderRadius='full' 
+                                boxSize='250px' 
+                                src={images[0]?.img} 
+                                alt={courseName[0]}
+                            />
+                        </Link>
+                        <br/>
+                        <Text>{courseName[0]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px' >
+                        <Image borderRadius='full' boxSize='250px' src={images[1]?.img} alt={courseName[1]} />
+                        <br/>
+                        <Text>{courseName[1]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[2]?.img} alt={courseName[2]} />
+                        <br/>
+                        <Text>{courseName[2]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[3]?.img} alt={courseName[3]} />
+                        <br/>
+                        <Text>{courseName[3]}</Text>
+                    </Box>
+                </HStack>  
                 </div>
                 </div>
             </div>           

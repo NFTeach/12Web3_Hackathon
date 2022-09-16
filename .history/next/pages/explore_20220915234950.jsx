@@ -20,14 +20,12 @@ const explore = () => {
     const { Moralis } = useMoralis();
     const [educator, setEducator] = useState();
     const [courses, setCourses] = useState([]);
-    const [courseObjectId, setCourseObjectId] = useState();
     const [images, setImages] = useState([]);
     const [courseName, setCourseName] = useState([]);
     const [courseDescription, setCourseDescription] = useState([]);
     const [courseSection1, setCourseSection1] = useState([]);
     const [courseSection2, setCourseSection2] = useState([]);
     const [courseSection3, setCourseSection3] = useState([]);
-    const [courseTest, setCourseTest] = useState([]);
     const user = moralis.User.current();
 
     useEffect(() => {
@@ -56,18 +54,19 @@ const explore = () => {
             const query = new Moralis.Query(Courses);
             const course = await query.find();
             setCourses(course);
-            setCourseObjectId(course.map((course) => course.id));
             setImages(course.map((course) => course.get("imageFile")));
             setCourseName(course.map((course) => course.get("courseName")));
-            // setCourseDescription(course.map((course) => course.get("courseDescription")));
-            // setCourseSection1(course.map((course) => course.get("courseSection1")));
-            // setCourseSection2(course.map((course) => course.get("courseSection2")));
-            // setCourseSection3(course.map((course) => course.get("courseSection3")));
-            // setCourseTest(course.map((course) => course.get("test")));
+            setCourseDescription(course.map((course) => course.get("courseDescription")));
+            setCourseSection1(course.map((course) => course.get("courseSection1")));
+            setCourseSection2(course.map((course) => course.get("courseSection2")));
+            setCourseSection3(course.map((course) => course.get("courseSection3")));
         }
     }, []);
 
-    console.log(courseObjectId?.[0]);
+    // console.log(courses);
+    // console.log(images[0]?.img);
+    // console.log(courseName);
+    console.log(courseSection1[0]);
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -138,24 +137,39 @@ const explore = () => {
                 </div>
                 <div className={stylesFirstBlock.frameDiv3}>
                 <HStack spacing='100px'>
-                    {courses?.map((e, index) => (
-                        <Box key={index} w='250px' h='250px'>
-                            <Link href={{pathname: "/course", 
-                                query: {
-                                    courseObjectId: courseObjectId?.[index],
-                                    }}}>
-                                <Image 
-                                    borderRadius='full' 
-                                    boxSize='250px' 
-                                    src={images[index]?.img} 
-                                    alt={courseName?.[index]}
-                                />
-                            </Link>
-                            <br/>
-                            <Text>{courseName?.[index]}</Text>
-                        </Box>
-                    ))}
-                </HStack>
+                    <Box w='250px' h='250px'>
+                        <Link href={{pathname: "/course", 
+                            query: {
+                                courseName: courseName[0], 
+                                courseDescription: courseDescription[0], 
+                                courseSection1: courseSection1[0],
+                                courseSection2: courseSection2[0], courseSection3: courseSection3[0], image: images[0]?.img}}}>
+                            <Image 
+                                borderRadius='full' 
+                                boxSize='250px' 
+                                src={images[0]?.img} 
+                                alt={courseName[0]}
+                            />
+                        </Link>
+                        <br/>
+                        <Text>{courseName[0]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px' >
+                        <Image borderRadius='full' boxSize='250px' src={images[1]?.img} alt={courseName[1]} />
+                        <br/>
+                        <Text>{courseName[1]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[2]?.img} alt={courseName[2]} />
+                        <br/>
+                        <Text>{courseName[2]}</Text>
+                    </Box>
+                    <Box w='250px' h='250px'>
+                        <Image borderRadius='full' boxSize='250px' src={images[3]?.img} alt={courseName[3]} />
+                        <br/>
+                        <Text>{courseName[3]}</Text>
+                    </Box>
+                </HStack>  
                 </div>
                 </div>
             </div>           

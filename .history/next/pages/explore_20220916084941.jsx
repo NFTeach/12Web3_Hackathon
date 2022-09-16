@@ -138,7 +138,7 @@ const explore = () => {
                 </div>
                 <div className={stylesFirstBlock.frameDiv3}>
                 <HStack spacing='100px'>
-                    {courses?.map((e, index) => (
+                    {courses?.map((courses, index) => (
                         <Box key={index} w='250px' h='250px'>
                             <Link href={{pathname: "/course", 
                                 query: {
