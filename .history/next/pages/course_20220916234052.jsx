@@ -24,9 +24,10 @@ const course = (props) => {
     const [courseSection2, setCourseSection2] = useState();
     const [courseSection3, setCourseSection3] = useState();
     const [selectedSectionName, setSelectedSectionName] = useState();
-    const [selectedSectionDescription, setSelectedSectionDescription] = useState();
-    const [selectedSectionVideo, setSelectedSectionVideo] = useState();
+    const [selectedSectionDescription, setSelectedSectionDescription] = useState(courseSection1?.sectionDescription);
+    const [selectedSectionVideo, setSelectedSectionVideo] = useState(courseSection1?.vid);
     
+    console.log(courseSection1?.sectionDescription);
     useEffect (async () => {
         const Courses = Moralis.Object.extend("Courses");
         const query = new Moralis.Query(Courses);
@@ -38,8 +39,6 @@ const course = (props) => {
         setCourseSection1(course[0].get("courseSection1"));
         setCourseSection2(course[0].get("courseSection2"));
         setCourseSection3(course[0].get("courseSection3"));
-        setSelectedSectionDescription(course[0].get("courseSection1").sectionDescription);
-        setSelectedSectionVideo(course[0].get("courseSection1").vid);
     }, []);
 
     // console.log(course);
@@ -55,7 +54,7 @@ const course = (props) => {
         const courseSection3Video = courseSection3?.vid;
 
         const handleSectionChange = () => {
-            // console.log(selectedSection);
+            console.log(selectedSection);
             if(selectedSection === "1") {
                 // console.log("Strings match")
                 setSelectedSectionName(courseSection1Name);

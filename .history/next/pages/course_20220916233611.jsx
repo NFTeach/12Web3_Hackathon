@@ -38,8 +38,6 @@ const course = (props) => {
         setCourseSection1(course[0].get("courseSection1"));
         setCourseSection2(course[0].get("courseSection2"));
         setCourseSection3(course[0].get("courseSection3"));
-        setSelectedSectionDescription(course[0].get("courseSection1").sectionDescription);
-        setSelectedSectionVideo(course[0].get("courseSection1").vid);
     }, []);
 
     // console.log(course);
@@ -55,7 +53,7 @@ const course = (props) => {
         const courseSection3Video = courseSection3?.vid;
 
         const handleSectionChange = () => {
-            // console.log(selectedSection);
+            console.log(selectedSection);
             if(selectedSection === "1") {
                 // console.log("Strings match")
                 setSelectedSectionName(courseSection1Name);

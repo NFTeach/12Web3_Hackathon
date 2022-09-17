@@ -38,7 +38,7 @@ const course = (props) => {
         setCourseSection1(course[0].get("courseSection1"));
         setCourseSection2(course[0].get("courseSection2"));
         setCourseSection3(course[0].get("courseSection3"));
-        setSelectedSectionDescription(course[0].get("courseSection1").sectionDescription);
+        setSelectedSectionDescription(course[0].get("courseSection1").description);
         setSelectedSectionVideo(course[0].get("courseSection1").vid);
     }, []);
 

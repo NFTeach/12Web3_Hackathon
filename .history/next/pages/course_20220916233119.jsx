@@ -1,5 +1,3 @@
-// NEED TO ADD BOX TO DISPLAY COURSE DESCRIPTION?
-
 import { useState, useEffect } from "react";
 import {
     Button,
@@ -38,43 +36,43 @@ const course = (props) => {
         setCourseSection1(course[0].get("courseSection1"));
         setCourseSection2(course[0].get("courseSection2"));
         setCourseSection3(course[0].get("courseSection3"));
-        setSelectedSectionDescription(course[0].get("courseSection1").sectionDescription);
-        setSelectedSectionVideo(course[0].get("courseSection1").vid);
     }, []);
+
+    const courseSection1Name = courseSection1?.sectionName;
+    const courseSection1Description = courseSection1?.sectionDescription;
+    const courseSection1Video = courseSection1?.vid;
+    const courseSection2Name = courseSection2?.sectionName;
+    const courseSection2Description = courseSection2?.sectionDescription;
+    const courseSection2Video = courseSection2?.vid;
+    const courseSection3Name = courseSection3?.sectionName;
+    const courseSection3Description = courseSection3?.sectionDescription;
+    const courseSection3Video = courseSection3?.vid;
 
     // console.log(course);
     useEffect (async () => {
-        const courseSection1Name = courseSection1?.sectionName;
-        const courseSection1Description = courseSection1?.sectionDescription;
-        const courseSection1Video = courseSection1?.vid;
-        const courseSection2Name = courseSection2?.sectionName;
-        const courseSection2Description = courseSection2?.sectionDescription;
-        const courseSection2Video = courseSection2?.vid;
-        const courseSection3Name = courseSection3?.sectionName;
-        const courseSection3Description = courseSection3?.sectionDescription;
-        const courseSection3Video = courseSection3?.vid;
-
         const handleSectionChange = () => {
-            // console.log(selectedSection);
+            console.log(selectedSection);
             if(selectedSection === "1") {
-                // console.log("Strings match")
-                setSelectedSectionName(courseSection1Name);
-                setSelectedSectionDescription(courseSection1Description);
-                setSelectedSectionVideo(courseSection1Video);
+                console.log("Strings match")
+                // setSelectedSectionName(courseSection1Name);
+                // setSelectedSectionDescription(courseSection1Description);
+                // setSelectedSectionVideo(courseSection1Video);
             } else if(selectedSection === "2") {
-                // console.log("Strings match 2")
-                setSelectedSectionName(courseSection2Name);
-                setSelectedSectionDescription(courseSection2Description);
-                setSelectedSectionVideo(courseSection2Video);
+                console.log("Strings match 2")
+                // setSelectedSectionName(courseSection2Name);
+                // setSelectedSectionDescription(courseSection2Description);
+                // setSelectedSectionVideo(courseSection2Video);
             } else if(selectedSection === "3") {
-                // console.log("Strings match 3")
-                setSelectedSectionName(courseSection3Name);
-                setSelectedSectionDescription(courseSection3Description);
-                setSelectedSectionVideo(courseSection3Video);
+                console.log("Strings match 3")
+                // setSelectedSectionName(courseSection3Name);
+                // setSelectedSectionDescription(courseSection3Description);
+                // setSelectedSectionVideo(courseSection3Video);
             }
         };
         handleSectionChange();
     }, [selectedSection]);
+
+    // console.log(selectedSectionVideo);
 
     return (
         <>
@@ -89,9 +87,9 @@ const course = (props) => {
                 </video>
                 <div className={stylesFirstBlock.frameDiv1}>
                 <Select color="white" onChange={(e) => setSelectedSection(e.target.value)}>
-                    <option value="1">{courseSection1?.sectionName}</option>
-                    <option value="2">{courseSection2?.sectionName}</option>
-                    <option value="3">{courseSection3?.sectionName}</option>
+                    <option value="1">{courseSection1Name}</option>
+                    <option value="2">{courseSection2Name}</option>
+                    <option value="3">{courseSection3Name}</option>
                 </Select>
                 <div className={stylesFirstBlock.frameDiv2}>
                     <Input
