@@ -1,266 +1,266 @@
 .overviewDiv {
-position: relative;
-display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .frameDiv3 {
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: flex-start;
-gap: 391px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 391px;
 }
 .rectangleDiv {
-position: relative;
-border-radius: 19px;
-background-color: #121212;
-width: 358.65px;
-height: 139px;
-flex-shrink: 0;
+  position: relative;
+  border-radius: 19px;
+  background-color: #121212;
+  width: 358.65px;
+  height: 139px;
+  flex-shrink: 0;
 }
 .frameDiv5 {
-position: absolute;
-top: 0;
-left: 0;
-border-radius: 19px;
-background-color: #1e1e1e;
-display: flex;
-flex-direction: column;
-padding: 16px 15px;
-box-sizing: border-box;
-align-items: flex-start;
-justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 19px;
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 15px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .div {
-position: relative;
-font-size: 45px;
-color: #dbdbdb;
-display: inline-block;
+  position: relative;
+  font-size: 45px;
+  color: #dbdbdb;
+  display: inline-block;
 }
 .frameDiv6,
 .frameDiv7 {
-position: absolute;
-top: 31px;
-left: 36px;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: flex-start;
-gap: 24px;
+  position: absolute;
+  top: 31px;
+  left: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
 }
 .frameDiv7 {
-top: 29.74px;
-left: 488.25px;
-align-items: center;
+  top: 29.74px;
+  left: 488.25px;
+  align-items: center;
 }
 .polygonIcon {
-position: relative;
-width: 37px;
-height: 20px;
-flex-shrink: 0;
+  position: relative;
+  width: 37px;
+  height: 20px;
+  flex-shrink: 0;
 }
 .frameDiv8 {
-position: absolute;
-top: 63px;
-left: 213px;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: flex-start;
-font-size: 45px;
-color: #3eb489;
+  position: absolute;
+  top: 63px;
+  left: 213px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 45px;
+  color: #3eb489;
 }
 .incomeInfoDiv {
-position: relative;
-width: 679.25px;
-height: 171px;
-flex-shrink: 0;
+  position: relative;
+  width: 679.25px;
+  height: 171px;
+  flex-shrink: 0;
 }
 .frameDiv2,
 .frameDiv4 {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .frameDiv4 {
-font-size: 25px;
+  font-size: 25px;
 }
 .frameDiv2 {
-padding: 27px 31px;
-box-sizing: border-box;
-gap: 42px;
+  padding: 27px 31px;
+  box-sizing: border-box;
+  gap: 42px;
 }
 .yourCoursesDiv {
-position: relative;
-display: inline-block;
-width: 221px;
-height: 47px;
-flex-shrink: 0;
+  position: relative;
+  display: inline-block;
+  width: 221px;
+  height: 47px;
+  flex-shrink: 0;
 }
 .frameDiv10 {
-width: 657px;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
+  width: 657px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .frameDiv1,
 .frameDiv9 {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 .frameDiv9 {
-background-color: #121212;
-padding: 35px 0;
-box-sizing: border-box;
-gap: 17px;
+  background-color: #121212;
+  padding: 35px 0;
+  box-sizing: border-box;
+  gap: 17px;
 }
 .frameDiv1 {
-flex: 1;
-gap: 31px;
+  flex: 1;
+  gap: 31px;
 }
 .cardsDefault,
 .sheetDiv {
-position: absolute;
-top: 0;
-left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .sheetDiv {
-height: 100%;
-width: calc(100% - -0.5px);
-right: -0.5px;
-bottom: 0;
-border-radius: 8px;
-background-color: #3eb489;
+  height: 100%;
+  width: calc(100% - -0.5px);
+  right: -0.5px;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: #3eb489;
 }
 .cardsDefault {
-width: 100%;
-right: 0;
-border-radius: 25px;
-height: 200px;
+  width: 100%;
+  right: 0;
+  border-radius: 25px;
+  height: 200px;
 }
 .b,
 .sBTsIssued {
-position: absolute;
-width: calc(100% - 174.2px);
-top: 38.81px;
-right: 76.35px;
-left: 97.85px;
-letter-spacing: 0.4px;
-display: inline-block;
-height: 35.82px;
+  position: absolute;
+  width: calc(100% - 174.2px);
+  top: 38.81px;
+  right: 76.35px;
+  left: 97.85px;
+  letter-spacing: 0.4px;
+  display: inline-block;
+  height: 35.82px;
 }
 .b {
-top: 100px;
-font-size: 40px;
-letter-spacing: 1px;
-color: #e4e4e4;
-height: 74.63px;
+  top: 100px;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: #e4e4e4;
+  height: 74.63px;
 }
 .groupDiv {
-align-self: stretch;
-position: relative;
-height: 200px;
-flex-shrink: 0;
-color: #121212;
+  align-self: stretch;
+  position: relative;
+  height: 200px;
+  flex-shrink: 0;
+  color: #121212;
 }
 .b1,
 .sheetDiv1 {
-position: absolute;
+  position: absolute;
 }
 .sheetDiv1 {
-height: 100%;
-width: calc(100% - -0.5px);
-top: 0;
-right: -0.5px;
-bottom: 0;
-left: 0;
-border-radius: 8px;
-background-color: #121212;
-border: 1px solid #e4e4e4;
-box-sizing: border-box;
+  height: 100%;
+  width: calc(100% - -0.5px);
+  top: 0;
+  right: -0.5px;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: #121212;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
 }
 .b1 {
-width: calc(100% - 174.2px);
-top: 86.57px;
-right: 76.35px;
-left: 97.85px;
-font-size: 40px;
-letter-spacing: 1px;
-display: inline-block;
-color: #e4e4e4;
-height: 74.63px;
+  width: calc(100% - 174.2px);
+  top: 86.57px;
+  right: 76.35px;
+  left: 97.85px;
+  font-size: 40px;
+  letter-spacing: 1px;
+  display: inline-block;
+  color: #e4e4e4;
+  height: 74.63px;
 }
 .groupDiv1 {
-align-self: stretch;
-position: relative;
-height: 200px;
-flex-shrink: 0;
+  align-self: stretch;
+  position: relative;
+  height: 200px;
+  flex-shrink: 0;
 }
 .cardsDefault1 {
-position: absolute;
-width: 100%;
-top: 0;
-right: 0;
-left: 0;
-border-radius: 25px;
-border: 1px solid #e4e4e4;
-box-sizing: border-box;
-height: 200px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-radius: 25px;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  height: 200px;
 }
 .b2,
 .sBTsIssued1 {
-position: absolute;
-width: calc(100% - 174.12px);
-top: 41.79px;
-right: 90.2px;
-left: 83.92px;
-letter-spacing: 0.4px;
-display: inline-block;
-height: 35.82px;
+  position: absolute;
+  width: calc(100% - 174.12px);
+  top: 41.79px;
+  right: 90.2px;
+  left: 83.92px;
+  letter-spacing: 0.4px;
+  display: inline-block;
+  height: 35.82px;
 }
 .b2 {
-top: 92.54px;
-font-size: 40px;
-letter-spacing: 1px;
-color: #e4e4e4;
-height: 74.63px;
+  top: 92.54px;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: #e4e4e4;
+  height: 74.63px;
 }
 .sideInformationDiv {
-flex: 1;
-height: 874px;
-flex-direction: column;
-gap: 86px;
-text-align: center;
-font-size: 19px;
-color: #9fa2b4;
+  flex: 1;
+  height: 874px;
+  flex-direction: column;
+  gap: 86px;
+  text-align: center;
+  font-size: 19px;
+  color: #9fa2b4;
 }
 .educatorDashboardDiv,
 .frameDiv,
 .sideInformationDiv {
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .frameDiv {
-align-self: stretch;
-flex-direction: row;
-gap: 100px;
+  align-self: stretch;
+  flex-direction: row;
+  gap: 100px;
 }
 .educatorDashboardDiv {
-position: relative;
-border-radius: 25px;
-background-color: #18191a;
-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-width: 100%;
-height: 989px;
-flex-direction: column;
-padding: 57px 25px;
-box-sizing: border-box;
-text-align: left;
-font-size: 35px;
-color: #797777;
-font-family: Mulish;
+  position: relative;
+  /* border-radius: 25px; */
+  background-color: #18191a;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 989px;
+  flex-direction: column;
+  padding: 57px 25px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 35px;
+  color: #797777;
+  font-family: Mulish;
 }
