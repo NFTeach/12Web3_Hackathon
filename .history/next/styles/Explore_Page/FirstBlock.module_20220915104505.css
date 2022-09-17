@@ -1,0 +1,119 @@
+.imageIcon {
+    position: relative;
+    width: 527px;
+    height: 568px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.outOfThis {
+color: #e09e3b;
+}
+.chooseACourseBelowToStart,
+.educationThatsOutOfThisW {
+margin: 0;
+align-self: stretch;
+position: relative;
+font-size: inherit;
+font-weight: 600;
+font-family: inherit;
+display: inline-block;
+height: 197px;
+flex-shrink: 0;
+}
+.chooseACourseBelowToStart {
+font-size: 40px;
+font-weight: 400;
+height: 112px;
+}
+.frameDiv1,
+.frameDiv2 {
+display: flex;
+justify-content: flex-start;
+}
+.frameDiv2 {
+flex: 1;
+flex-direction: column;
+padding: 10px 0 10px 10px;
+box-sizing: border-box;
+align-items: flex-start;
+gap: 122px;
+}
+.frameDiv1 {
+align-self: stretch;
+flex-direction: row;
+align-items: center;
+gap: 58px;
+font-size: 85px;
+}
+.mostPopularH2 {
+margin: 0;
+position: relative;
+font-size: inherit;
+font-weight: 700;
+font-family: inherit;
+text-align: left;
+display: inline-block;
+}
+.chem101Icon,
+.chemistry101H2 {
+align-self: stretch;
+position: relative;
+flex-shrink: 0;
+}
+.chem101Icon {
+border-radius: 25px;
+max-width: 100%;
+height: 321px;
+object-fit: cover;
+}
+.chemistry101H2 {
+margin: 0;
+font-size: inherit;
+font-weight: 500;
+font-family: inherit;
+display: inline-block;
+height: 84px;
+}
+.chem101Div {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+gap: 18px;
+}
+.blockchainBasicsH2 {
+margin: 0;
+align-self: stretch;
+position: relative;
+font-size: inherit;
+font-weight: 500;
+font-family: inherit;
+display: inline-block;
+}
+.frameDiv,
+.frameDiv3 {
+display: flex;
+box-sizing: border-box;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.frameDiv3 {
+align-self: stretch;
+flex-direction: row;
+padding: 0 0 0 32px;
+gap: 52px;
+}
+.frameDiv {
+position: relative;
+background-color: #121212;
+width: 100%;
+flex-direction: column;
+padding: 0 54px 0 0;
+gap: 105px;
+text-align: center;
+font-size: 35px;
+color: #e4e4e4;
+font-family: Inter;
+}
+  

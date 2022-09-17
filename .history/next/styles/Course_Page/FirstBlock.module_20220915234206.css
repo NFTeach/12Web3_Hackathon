@@ -1,0 +1,61 @@
+.frameInput {
+  border: 0;
+  background-color: transparent;
+  align-self: stretch;
+  height: 70px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.frameVideo,
+.rectangleInput {
+  align-self: stretch;
+  background-color: #d9d9d9;
+}
+.rectangleInput {
+  background-color: transparent;
+  flex: 1;
+  position: relative;
+}
+.frameDiv2 {
+  width: 400px;
+  height: 70px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 29px;
+}
+.courseDiv,
+.frameDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.frameDiv {
+  align-self: stretch;
+  align-items: center;
+  gap: 29px;
+}
+.courseDiv {
+  position: relative;
+  background-color: #181919;
+  width: 100%;
+  height: 895px;
+  padding: 57px 106px;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
