@@ -7,7 +7,7 @@ import "./interface/IGovernor.sol";
 
 /**
  * @title NFTeach
- * @author olivierdem & sraylr
+ * @author olivierdem
  * @notice Allows Educators to upload course/test content for students to view, and a token for students to mint upon completion.
  */
 contract SBT is ERC1155, Ownable {
