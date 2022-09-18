@@ -104,6 +104,7 @@ contract SBT is ERC1155, Ownable {
     struct Educator {
         uint256 lifetimePayout;
         uint256 classesCreated;
+        uint256 nbStudentsMinted;
         bool active;
     }
 
@@ -268,6 +269,7 @@ contract SBT is ERC1155, Ownable {
         // Prevent students from minting twice
         students[msg.sender].allowedMint[_tokenId] = false;
         students[msg.sender].sbtMinted += 1;
+        educators[tests[_tokenId].educator].nbStudentsMinted += 1;
 
         _mint(msg.sender, _tokenId, 1, "");
 
@@ -356,7 +358,15 @@ contract SBT is ERC1155, Ownable {
     }
 
     /// @return the number of tokens a student has minted
-    function nbMinted(address _student) public view returns (uint8) {
+    function nbMinted(address _student) public view returns (uint256) {
         return (students[_student].sbtMinted);
+    }
+
+    function getEducatorNbMinted(address _educator)
+        public
+        view
+        returns (uint256)
+    {
+        return (educators[_educator].nbStudentsMinted);
     }
 }

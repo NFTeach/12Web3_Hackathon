@@ -55,7 +55,6 @@ const educatorDashboard = () => {
       params: { _address: user.attributes.accounts[0] },
     };
     const isEdu = await Moralis.executeFunction(options);
-    console.log(isEdu);
   }
 
   async function getNumberCourse() {

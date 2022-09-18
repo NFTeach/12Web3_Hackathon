@@ -62,7 +62,6 @@ const studentDashboard = () => {
       params: { _student: user.attributes.accounts[0] },
     };
     nbMinted = await Moralis.executeFunction(options);
-    console.log(nbMinted);
   }
 
   // Header effects
