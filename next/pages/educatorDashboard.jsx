@@ -69,18 +69,6 @@ const educatorDashboard = () => {
     nbClasses = await Moralis.executeFunction(options);
   }
 
-  async function getNumberMinted() {
-    const web3 = await Moralis.enableWeb3();
-    const options = {
-      contractAddress: SBT_CONTRACT_ADDRESS,
-      functionName: "nbClassesCreated",
-      abi: NFTEACH_SBT_CONTRACT_ABI,
-      params: { _educator: user.attributes.accounts[0] },
-    };
-    nbClasses = await Moralis.executeFunction(options);
-    console.log(nbClasses);
-  }
-
   // Header effects
   const onExploreButtonClick = useCallback(() => {
     router.push("/explore");
