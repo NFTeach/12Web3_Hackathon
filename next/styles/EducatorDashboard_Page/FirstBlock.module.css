@@ -114,6 +114,7 @@
 .frameDiv9 {
   background-color: #121212;
   padding: 35px 0;
+  padding-inline: 20px;
   box-sizing: border-box;
   gap: 17px;
 }
