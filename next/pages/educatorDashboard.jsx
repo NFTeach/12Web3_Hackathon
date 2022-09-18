@@ -27,6 +27,7 @@ const educatorDashboard = () => {
   } = useMoralis();
 
   const user = moralis.User.current();
+  const nbClasses = 0;
 
   useEffect(() => {
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3();
@@ -42,6 +43,7 @@ const educatorDashboard = () => {
 
   useEffect(() => {
     getIfUserIsEducator();
+    getNumberCourse();
   }, [user]);
 
   async function getIfUserIsEducator() {
@@ -54,6 +56,29 @@ const educatorDashboard = () => {
     };
     const isEdu = await Moralis.executeFunction(options);
     console.log(isEdu);
+  }
+
+  async function getNumberCourse() {
+    const web3 = await Moralis.enableWeb3();
+    const options = {
+      contractAddress: SBT_CONTRACT_ADDRESS,
+      functionName: "nbClassesCreated",
+      abi: NFTEACH_SBT_CONTRACT_ABI,
+      params: { _educator: user.attributes.accounts[0] },
+    };
+    nbClasses = await Moralis.executeFunction(options);
+  }
+
+  async function getNumberMinted() {
+    const web3 = await Moralis.enableWeb3();
+    const options = {
+      contractAddress: SBT_CONTRACT_ADDRESS,
+      functionName: "nbClassesCreated",
+      abi: NFTEACH_SBT_CONTRACT_ABI,
+      params: { _educator: user.attributes.accounts[0] },
+    };
+    nbClasses = await Moralis.executeFunction(options);
+    console.log(nbClasses);
   }
 
   // Header effects
@@ -223,8 +248,8 @@ const educatorDashboard = () => {
               <div className={stylesFirstBlock.cardsDefault1}>
                 <div className={stylesFirstBlock.sheetDiv1} />
               </div>
-              <b className={stylesFirstBlock.sBTsIssued1}>SBTs Issued</b>
-              <b className={stylesFirstBlock.b2}>22</b>
+              <b className={stylesFirstBlock.sBTsIssued1}>Classes Created</b>
+              <b className={stylesFirstBlock.b2}>{nbClasses}</b>
             </div>
           </div>
         </div>
