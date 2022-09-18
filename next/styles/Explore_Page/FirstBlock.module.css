@@ -113,10 +113,11 @@
 }
 .frameDiv3 {
   width: 1322.5px;
+  height: 350px;
   flex-direction: row;
   align-items: flex-start;
   gap: 50px;
-  /* overflow-x: auto; */
+  overflow-x: auto;
   font-size: 18px;
   font-family: Inter;
 }
