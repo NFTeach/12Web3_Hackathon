@@ -369,4 +369,12 @@ contract SBT is ERC1155, Ownable {
     {
         return (educators[_educator].nbStudentsMinted);
     }
+
+    unction getEducatorLifetimePayout(address _educator)
+        public
+        view
+        returns (uint256)
+    {
+        return (educators[_educator].lifetimePayout);
+    }
 }
