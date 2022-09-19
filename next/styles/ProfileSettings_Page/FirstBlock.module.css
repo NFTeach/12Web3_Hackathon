@@ -36,7 +36,7 @@
   font-size: inherit;
   font-weight: 700;
   display: flex;
-  align-items: center;
+  justify-content: center;
   height: 49.21px;
 }
 .textH4 {
@@ -89,6 +89,7 @@
 .titleH21 {
   font-size: 25px;
   font-weight: 700;
+  justify-content: center;
   color: rgba(152, 152, 152, 0.69);
   height: 51px;
 }

@@ -1,143 +1,145 @@
 .imageIcon {
-position: relative;
-width: 404px;
-height: 429px;
-flex-shrink: 0;
-object-fit: cover;
+  position: relative;
+  width: 404px;
+  height: 429px;
+  flex-shrink: 0;
+  object-fit: cover;
 }
 .educationThats {
-margin-block-start: 0;
-margin-block-end: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 .outOfThisWorld {
-margin: 0;
-color: #e09e3b;
+  margin: 0;
+  color: #e09e3b;
 }
 .chooseACourseBelowToStart,
 .educationThatsOutOfThisW {
-margin: 0;
-align-self: stretch;
-position: relative;
-font-size: inherit;
-font-weight: 600;
-font-family: inherit;
-display: inline-block;
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-block;
 }
 .chooseACourseBelowToStart {
-font-size: 20px;
-font-weight: 400;
+  font-size: 20px;
+  font-weight: 400;
 }
 .frameDiv1 {
-align-self: stretch;
-height: 422px;
-flex-shrink: 0;
-display: flex;
-flex-direction: row;
-padding: 0 0 0 79px;
-box-sizing: border-box;
-align-items: center;
-justify-content: flex-start;
+  align-self: stretch;
+  height: 422px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 0 79px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
 }
 .chem101Icon,
 .chemistry101H2 {
-position: relative;
-width: 292.5px;
-flex-shrink: 0;
+  position: relative;
+  width: 292.5px;
+  flex-shrink: 0;
 }
 .chem101Icon {
-border-radius: 25px;
-height: 321px;
-object-fit: cover;
+  border-radius: 25px;
+  height: 321px;
+  object-fit: cover;
 }
 .chemistry101H2 {
-margin: 0;
-font-size: inherit;
-font-weight: 500;
-font-family: inherit;
-display: flex;
-align-items: center;
-justify-content: center;
-height: 50px;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
 }
 .chem101Div,
 .frameDiv4 {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .frameDiv4 {
-align-items: flex-start;
-justify-content: flex-start;
-gap: 18px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 18px;
 }
 .chem101Div {
-flex: 1;
-align-items: center;
-justify-content: center;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 .blockchainBasicsH2 {
-margin: 0;
-position: relative;
-font-size: inherit;
-font-weight: 500;
-font-family: inherit;
-width: 292px;
-height: 50px;
-flex-shrink: 0;
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  width: 292px;
+  height: 50px;
+  flex-shrink: 0;
 }
 .blockchainBasicsH2,
 .frameDiv7,
 .math101H2 {
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .math101H2 {
-margin: 0;
-position: relative;
-font-size: inherit;
-font-weight: 500;
-font-family: inherit;
-width: 295px;
-height: 50px;
-flex-shrink: 0;
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  width: 295px;
+  height: 50px;
+  flex-shrink: 0;
 }
 .frameDiv7 {
-flex: 1;
-flex-direction: column;
-gap: 18px;
+  flex: 1;
+  flex-direction: column;
+  gap: 18px;
 }
 .frameDiv,
 .frameDiv3 {
-display: flex;
-justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 .frameDiv3 {
-width: 1322.5px;
-flex-direction: row;
-align-items: flex-start;
-gap: 50px;
-font-size: 18px;
-font-family: Inter;
+  width: 1322.5px;
+  height: 350px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 50px;
+  overflow-x: auto;
+  font-size: 18px;
+  font-family: Inter;
 }
 .frameDiv {
-position: absolute;
-width: calc(100% - 117.5px);
-top: 96px;
-right: 58.5px;
-left: 59px;
-flex-direction: column;
-align-items: center;
-gap: 55px;
+  position: absolute;
+  width: calc(100% - 117.5px);
+  top: 96px;
+  right: 58.5px;
+  left: 59px;
+  flex-direction: column;
+  align-items: center;
+  gap: 55px;
 }
 .explorePageDiv {
-position: relative;
-background-color: #18191a;
-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-width: 100%;
-height: 1066px;
-overflow: hidden;
-text-align: center;
-font-size: 55px;
-color: #e4e4e4;
-font-family: Mulish;
+  position: relative;
+  background-color: #18191a;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 1066px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 55px;
+  color: #e4e4e4;
+  font-family: Mulish;
 }
