@@ -141,7 +141,7 @@ contract Governor is Ownable {
         _aaveWithdraw(_amount);
     }
 
-    // function distributeToTopStudents(address[5] _students) external onlyOwner {
+    // function distributeToTopStudents(address[5] _users) external onlyOwner {
     //     while(uint i; i < _students.length; ++i){
 
     //     }
