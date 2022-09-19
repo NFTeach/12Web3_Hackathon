@@ -94,6 +94,8 @@ const courseCreationPage3 = () => {
         }
     };
 
+    // console.log(selectedSection);
+
     // Header effects
     useEffect(() => {
         const scrollAnimElements = document.querySelectorAll(
@@ -247,7 +249,7 @@ const courseCreationPage3 = () => {
                             ref={inputVideoFile}
                             onChange={handleVideoUpload}
                         />
-                        Upload Section Video (10mb or less)
+                        Upload Section Video (5mb or less)
                     </Button>
                     </ModalBody>
                     <ModalFooter>
