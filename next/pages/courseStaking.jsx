@@ -14,6 +14,7 @@ import { NFTEACH_SBT_CONTRACT_ABI } from "../components/consts/contractABIs";
 import { NFTEACH_ERC20_CONTRACT_ABI } from "../components/consts/contractABIs";
 import stylesHeader from "../styles/CourseCreation_Pages/Staking/Header.module.css";
 import stylesFirstBlock from "../styles/CourseCreation_Pages/Staking/FirstBlock.module.css";
+import stylesFooter from "../styles/CourseCreation_Pages/Staking/Footer.module.css";
 
 moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
 moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
@@ -63,6 +64,7 @@ const courseStaking = () => {
     }
   }, [user]);
 
+  // console.log("courseObjectId", courseObjectId);
   const approveERC20 = async () => {
     const contract = new web3.eth.Contract(
       NFTEACH_ERC20_CONTRACT_ABI,
@@ -75,6 +77,7 @@ const courseStaking = () => {
   };
 
   const createSBTandStake = async () => {
+
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,
@@ -82,7 +85,7 @@ const courseStaking = () => {
         functionName: "createSBT",
         params: {
           _price: Moralis.Units.ETH(courseCost),
-          _testHash: courseObjectId,
+          _courseObjectId: courseObjectId, 
         },
       },
       onSuccess: () => {
@@ -90,75 +93,16 @@ const courseStaking = () => {
         onCreateSBTSuccess();
       },
       onError: (error) => {
-        notification.error({
-          message: error,
-        });
+        console.log(error)
       },
     });
   };
 
-  // Header effects
-  useEffect(() => {
-    const scrollAnimElements = document.querySelectorAll(
-      "[data-animate-on-scroll-header]"
-    );
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting || entry.intersectionRatio > 0) {
-            const targetElement = entry.target;
-            targetElement.classList.add(stylesHeader.animate);
-            observer.unobserve(targetElement);
-          }
-        }
-      },
-      {
-        threshold: 0.15,
-      }
-    );
-
-    for (let i = 0; i < scrollAnimElements.length; i++) {
-      observer.observe(scrollAnimElements[i]);
-    }
-
-    return () => {
-      for (let i = 0; i < scrollAnimElements.length; i++) {
-        observer.unobserve(scrollAnimElements[i]);
-      }
-    };
-  }, []);
-
-  const onCreateSBTSuccess = useCallback(() => {
-    router.push("/educatorDashboard");
-  }, []);
-
   return (
     <>
       {/* Header */}
-      <div className={stylesHeader.headerDiv}>
-        <header className={stylesHeader.objectsHeader} id="Header">
-          <div className={stylesHeader.leftDiv}>
-            <h3 className={stylesHeader.logoH3}>NFTeach</h3>
-            <button
-              className={stylesHeader.discordButton}
-              data-animate-on-scroll-header
-            >
-              <img
-                className={stylesHeader.symbolRounded}
-                alt=""
-                src="/courseCreationPages_imgs/staking/discord.svg"
-              />
-            </button>
-          </div>
-          <div className={stylesHeader.rightDiv}>
-            <img
-              className={stylesHeader.icon}
-              alt=""
-              src="/courseCreationPages_imgs/staking/lang.svg"
-            />
-            <h5 className={stylesHeader.englishH5}>English</h5>
-          </div>
-        </header>
+      <div className={stylesHeader.frameDiv}>
+        <h1 className={stylesHeader.titleH1}>Build The Future</h1>
       </div>
       {/* First Block */}
       <div className={stylesFirstBlock.stakingPageDiv}>
@@ -168,32 +112,28 @@ const courseStaking = () => {
               <div className={stylesFirstBlock.titleDiv}>Final Step</div>
             </div>
             <div className={stylesFirstBlock.titleDiv1}>
-              <span>{`To prevent `}</span>
-              <b>Sybil Attacks</b>
-              <a
-                href="https://academy.binance.com/en/articles/sybil-attacks-explained"
-                target="_blank"
-                style={{ color: "blue" }}
-              >
-                {" "}
-                (Link)
-              </a>
-              <span>
-                , we require educators to stake some funds (0.0001 WMatic). This
-                prevents bad actors and content on our platform. <br /> By
-                staking, you assure the community that your course is original
-                and created by yourself. If the community finds otherwise, the
-                staked Matic will be slashed and redistributed to the community.
-                <br />
-                The staked funds will be used to generate interest for the
-                platform and returned to you if you take down your course.
+              <span className={stylesFirstBlock.titleTxtSpan}>
+                <span>{`To prevent `}</span>
+                <b>
+                  Sybil
+                  (https://academy.binance.com/en/articles/sybil-attacks-explained)
+                </b>
+                <span>
+                  {" "}
+                  attacks from bad actors, we require educators to stake some
+                  funds. Once our platform has confirmed the stake, your course
+                  will be uploaded within 24 hours.
+                </span>
               </span>
             </div>
           </div>
+          <Button variant='solid' w='707px' colorScheme='green'>
+            Stake Funds
+          </Button>
           <Button
             className={stylesFirstBlock.registerButton}
-            variant="solid"
-            colorScheme="green"
+            variant='solid'
+            colorScheme='green'
             isLoading={isUploadInProgress}
             onClick={async () => {
               setIsUploadInProgress(true);
@@ -201,9 +141,13 @@ const courseStaking = () => {
               await createSBTandStake();
             }}
           >
-            Stake and Complete Course/Test Creation
+            Complete Course
           </Button>
         </div>
+      </div>
+      {/* Footer */}
+      <div className={stylesFooter.frameDiv}>
+        <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
       </div>
     </>
   );

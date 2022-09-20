@@ -2,17 +2,18 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  font-family: "Mulish", sans-serif;
 }
 
 * {
   box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +22,6 @@ a {
   }
   body {
     color: white;
-    background: #18191A;
+    background: #18191a;
   }
 }
