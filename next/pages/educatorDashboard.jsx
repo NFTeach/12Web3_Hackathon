@@ -94,7 +94,6 @@ const educatorDashboard = () => {
       params: { _educator: user.attributes.accounts[0] },
     };
     lifeTimePayout = await Moralis.executeFunction(options);
-    console.log(lifeTimePayout);
   }
 
   // Header effects
@@ -185,7 +184,7 @@ const educatorDashboard = () => {
               className={stylesHeader.vitalikBButton}
               onClick={onProfileButtonClick}
             >
-              {user?.attributes.username.slice(0, 15)}
+              {user?.attributes.username.slice(0, 10)}
             </button>
           </div>
         </div>
@@ -212,7 +211,9 @@ const educatorDashboard = () => {
                   </div>
                   <div className={stylesFirstBlock.frameDiv7}>
                     <div className={stylesFirstBlock.overviewDiv}>Income</div>
-                    <div className={stylesFirstBlock.div}>8.35 ETH</div>
+                    <div className={stylesFirstBlock.div}>
+                      {lifeTimePayout} ETH
+                    </div>
                   </div>
                   <div className={stylesFirstBlock.frameDiv8}>
                     <img

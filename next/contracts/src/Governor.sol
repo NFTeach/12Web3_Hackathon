@@ -14,7 +14,10 @@ contract Governor is Ownable {
     // Polygon Mumbai
     IERC20 public wmatic = IERC20(0xb685400156cF3CBE8725958DeAA61436727A30c3);
     IERC20 public aWmatic = IERC20(0x89a6AE840b3F8f489418933A220315eeA36d11fF);
-    IPoolAddressesProvider provider = IPoolAddressesProvider(address(0x5343b5bA672Ae99d627A1C87866b8E53F47Db2E6));
+    IPoolAddressesProvider provider =
+        IPoolAddressesProvider(
+            address(0x5343b5bA672Ae99d627A1C87866b8E53F47Db2E6)
+        );
     IPool public aavePool = IPool(provider.getPool());
     SBT public sbt;
 
@@ -142,10 +145,8 @@ contract Governor is Ownable {
         _aaveWithdraw(_amount);
     }
 
+    //TODO: Function to distribute some staking gains to top students/educators
     // function distributeToTopStudents(address[5] _users) external onlyOwner {
-    //     while(uint i; i < _students.length; ++i){
-
-    //     }
     // }
 
     function setNewMinReserve(uint256 _newReserveAmount) external onlyOwner {
