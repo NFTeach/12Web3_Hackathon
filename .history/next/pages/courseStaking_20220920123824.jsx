@@ -76,7 +76,7 @@ const courseStaking = () => {
   };
 
   const createSBTandStake = async () => {
-
+    console.log(courseObjectId);
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,

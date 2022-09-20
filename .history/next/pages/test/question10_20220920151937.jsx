@@ -1,8 +1,10 @@
+// NEED TO WIRE UP SMARRT CONTRACTS WHEN STUDENT OASSES TEST TO CLAIM SBT TOKENS
+
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import moralis from "moralis";
-import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
+import { useMoralis } from "react-moralis";
 import { 
     Textarea, 
     Progress, 
@@ -18,8 +20,6 @@ import {
     ModalBody, 
     ModalCloseButton 
 } from "@chakra-ui/react";
-import { SBT_CONTRACT_ADDRESS } from "../../components/consts/vars";
-import { NFTEACH_SBT_CONTRACT_ABI } from "../../components/consts/contractABIs";
 import stylesFirstBlock from "../../styles/Test_Pages/Question10/FirstBlock.module.css";
 
 moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
@@ -28,23 +28,7 @@ moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 const question10 = (props) => {
     const router = useRouter();
 
-    const { 
-        Moralis,
-        isAuthenticated,
-        web3,
-        isWeb3Enabled,
-        isWeb3EnableLoading,
-        enableWeb3
-    } = useMoralis();
-
-    const {
-        data,
-        error: executeContractError,
-        fetch: executeContractFunction,
-        isFetching,
-        isLoading,
-    } = useWeb3ExecuteFunction();
-
+    const { Moralis } = useMoralis();
     const user = moralis.User.current();
     const [courseName, setCourseName] = useState("");
     const [question10, setQuestion10] = useState("");
@@ -65,11 +49,6 @@ const question10 = (props) => {
     const [tokenId, setTokenId] = useState("");
     const [mintPrice, setMintPrice] = useState("");
     const { isOpen, onOpen, onClose } = useDisclosure();
-
-    useEffect(() => {
-        if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isAuthenticated, isWeb3Enabled]);
 
     useEffect (async () => {
         const Courses = Moralis.Object.extend("Courses");
@@ -126,7 +105,7 @@ const question10 = (props) => {
         }
     }, [selectedAnswer]);
 
-    console.log(correctAnswerCount, correctAnswerSelected);
+    // console.log(correctAnswerCount, correctAnswerSelected);
     // console.log(passingGrade, grade)
 
     const calculateIfPassed = async () => { 
@@ -137,59 +116,14 @@ const question10 = (props) => {
 
     const validateStudent = async () => {
         let studentAccount = user.attributes.accounts[0];
-
-        const studentParams = {
-            to: studentAccount,
-            id: tokenId,
-        };
-
-        async function callValidateStudent() {
-            const _Result = await Moralis.Cloud.run(
-              "validateStudentTest",
-              studentParams
-            );
-            console.log(_Result);
-        }
-        callValidateStudent();
+        let id =JSON.stringify(tokenId);
+        console.log(id)
     }
-    
+    validateStudent();
+
     const claimSBT = async () => {
         // console.log("claiming SBT");
-        const ValidateTests = Moralis.Object.extend("ValidateTest");
-        const query = new Moralis.Query(ValidateTests);
-        query.equalTo("student", user.attributes.accounts[0]);
-        query.equalTo("tokenId_decimal", tokenId);
-        const validateTestComplete = await query.find();
-
-        if (validateTestComplete) {
-
-            executeContractFunction({
-                params: {
-                    abi: NFTEACH_SBT_CONTRACT_ABI,
-                    contractAddress: SBT_CONTRACT_ADDRESS,
-                    functionName: "mintSBT",
-                    params: {
-                        _tokenId: tokenId,
-                    },
-                    msgValue: mintPrice,
-                },
-            onSuccess: () => {
-                onMintSBTSuccess();
-            },
-            onError: (error) => {
-                console.log("error", error);
-            }
-            });
-
-        } else {
-            console.log("student not validated to mint SBT!");
-        }
-
     };
-
-    const onMintSBTSuccess = useCallback(() => {
-        router.push("/studentDashboard");
-      }, []);
 
     const onBackToCourseClick = useCallback(() => {
         router.push(`/course?courseObjectId=${props.courseObjectId}`);
@@ -315,8 +249,7 @@ const question10 = (props) => {
                                 colorScheme="green" 
                                 mr={3} 
                                 onClick={async () => {
-                                    await validateStudent();
-                                    setTimeout(claimSBT, 1000);
+                                    await claimSBT();
                                 }}
                             >
                                 Claim SBT

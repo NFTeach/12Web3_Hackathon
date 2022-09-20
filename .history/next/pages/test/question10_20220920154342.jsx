@@ -28,24 +28,16 @@ moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 const question10 = (props) => {
     const router = useRouter();
 
-    const { 
-        Moralis,
-        isAuthenticated,
-        web3,
-        isWeb3Enabled,
-        isWeb3EnableLoading,
-        enableWeb3
-    } = useMoralis();
-
+    const { Moralis } = useMoralis();
     const {
         data,
         error: executeContractError,
         fetch: executeContractFunction,
         isFetching,
         isLoading,
-    } = useWeb3ExecuteFunction();
-
+      } = useWeb3ExecuteFunction();
     const user = moralis.User.current();
+
     const [courseName, setCourseName] = useState("");
     const [question10, setQuestion10] = useState("");
     const [question10Answer, setQuestion10Answer] = useState("");
@@ -65,11 +57,6 @@ const question10 = (props) => {
     const [tokenId, setTokenId] = useState("");
     const [mintPrice, setMintPrice] = useState("");
     const { isOpen, onOpen, onClose } = useDisclosure();
-
-    useEffect(() => {
-        if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isAuthenticated, isWeb3Enabled]);
 
     useEffect (async () => {
         const Courses = Moralis.Object.extend("Courses");
@@ -166,7 +153,7 @@ const question10 = (props) => {
             executeContractFunction({
                 params: {
                     abi: NFTEACH_SBT_CONTRACT_ABI,
-                    contractAddress: SBT_CONTRACT_ADDRESS,
+                    contractAddress: NFTEACH_SBT_CONTRACT_ADDRESS,
                     functionName: "mintSBT",
                     params: {
                         _tokenId: tokenId,
@@ -174,13 +161,13 @@ const question10 = (props) => {
                     msgValue: mintPrice,
                 },
             onSuccess: () => {
-                onMintSBTSuccess();
+                console.log("success");
+                // onMintSBTSuccess();
             },
             onError: (error) => {
                 console.log("error", error);
             }
             });
-
         } else {
             console.log("student not validated to mint SBT!");
         }

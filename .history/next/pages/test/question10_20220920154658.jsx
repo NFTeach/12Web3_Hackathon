@@ -36,7 +36,7 @@ const question10 = (props) => {
         isWeb3EnableLoading,
         enableWeb3
     } = useMoralis();
-
+    
     const {
         data,
         error: executeContractError,
@@ -174,7 +174,8 @@ const question10 = (props) => {
                     msgValue: mintPrice,
                 },
             onSuccess: () => {
-                onMintSBTSuccess();
+                console.log("success");
+                // onMintSBTSuccess();
             },
             onError: (error) => {
                 console.log("error", error);
