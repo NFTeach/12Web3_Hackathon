@@ -1,22 +1,25 @@
 .nFTeachProfileSettings {
   position: absolute;
+  width: calc(100% - 446px);
   top: 81px;
-  left: 470px;
+  right: 218px;
+  left: 228px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 499px;
   height: 46px;
 }
 .nFTIcon {
+  flex: 1;
   position: relative;
   border-radius: 25px;
-  width: 362.33px;
+  max-width: 100%;
   height: 435px;
-  flex-shrink: 0;
   object-fit: cover;
 }
 .frameDiv2 {
+  flex: 1;
+  align-self: stretch;
   display: flex;
   flex-direction: row;
   padding: 10px;
@@ -30,33 +33,33 @@
   align-self: stretch;
   position: relative;
   font-family: inherit;
-  flex-shrink: 0;
 }
 .titleH2 {
   font-size: inherit;
   font-weight: 700;
   display: flex;
-  justify-content: center;
+  align-items: center;
   height: 49.21px;
+  flex-shrink: 0;
 }
 .textH4 {
+  flex: 1;
   font-size: 20px;
   font-weight: 300;
   color: #c8c8c8;
   display: inline-block;
-  height: 280px;
 }
 .frameDiv3 {
-  flex: 1;
-  width: 310.33px;
+  flex-direction: column;
   align-items: flex-start;
   gap: 44px;
 }
 .aboutDiv,
 .frameDiv1,
 .frameDiv3 {
+  flex: 1;
+  align-self: stretch;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
 }
 .aboutDiv {
@@ -65,12 +68,12 @@
   border: 3px solid #e4e4e4;
   box-sizing: border-box;
   position: relative;
-  height: 435px;
-  flex-shrink: 0;
+  flex-direction: row;
   padding: 31px 26px;
   align-items: flex-start;
 }
 .frameDiv1 {
+  flex-direction: column;
   align-items: center;
   gap: 62px;
 }
@@ -89,7 +92,6 @@
 .titleH21 {
   font-size: 25px;
   font-weight: 700;
-  justify-content: center;
   color: rgba(152, 152, 152, 0.69);
   height: 51px;
 }
@@ -131,13 +133,25 @@
   font-weight: 400;
   display: inline-block;
 }
+.aboutDiv1,
 .frameDiv5 {
-  width: 310px;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+}
+.frameDiv5 {
   gap: 20px;
+}
+.aboutDiv1 {
+  flex: 1;
+  border-radius: 25px;
+  background-color: #121212;
+  border: 3px solid #e4e4e4;
+  box-sizing: border-box;
+  position: relative;
+  padding: 31px 26px;
 }
 .titleB {
   position: absolute;
@@ -165,31 +179,27 @@
   text-align: center;
   display: inline-block;
 }
+.frameDiv4,
+.streakDiv {
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 .streakDiv {
   border-radius: 25px;
   background-color: #121212;
   border: 3px solid #e4e4e4;
   box-sizing: border-box;
   position: relative;
-  width: 362px;
-  height: 435px;
-  flex-shrink: 0;
-  flex-direction: column;
   padding: 31px 26px;
-  align-items: flex-start;
   gap: 44px;
   font-size: 25px;
   color: rgba(152, 152, 152, 0.69);
 }
-.frameDiv,
-.frameDiv4,
-.streakDiv {
-  display: flex;
-  justify-content: flex-start;
-}
 .frameDiv4 {
-  flex-direction: column;
-  align-items: flex-start;
   gap: 72px;
   font-size: 18px;
   color: #c8c8c8;
@@ -200,9 +210,12 @@
   top: 191px;
   right: 228px;
   left: 228px;
+  height: 952px;
+  display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  gap: 250px;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
   text-align: left;
   color: rgba(152, 152, 152, 0.69);
 }

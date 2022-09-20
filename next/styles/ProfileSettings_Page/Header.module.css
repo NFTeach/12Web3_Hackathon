@@ -3,7 +3,7 @@
   position: relative;
   font-size: inherit;
   font-weight: 400;
-  font-family: inherit;
+  font-family: "Mulish", sans-serif;
   display: flex;
   align-items: center;
   width: 111px;
@@ -23,7 +23,7 @@
   background-color: transparent;
   position: relative;
   font-size: 19px;
-  font-family: Inter;
+  font-family: "Mulish", sans-serif;
   color: #e4e4e4;
   text-align: center;
   align-items: center;
@@ -55,7 +55,7 @@
   background-color: transparent;
   position: relative;
   font-size: 19px;
-  font-family: Inter;
+  font-family: "Mulish", sans-serif;
   color: #5da395;
   text-align: left;
   width: 135px;
@@ -89,5 +89,5 @@
   text-align: left;
   font-size: 25px;
   color: #e4e4e4;
-  font-family: Inter;
+  font-family: "Mulish", sans-serif;
 }
