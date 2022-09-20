@@ -6,11 +6,6 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@aave/contracts/interfaces/IPoolAddressesProvider.sol";
 import "@aave/contracts/interfaces/IPool.sol";
 
-/*
-09/06: TODO: Set up chainlink Keeper to update balance one a week with AAVE
-             Write foundry test to check if it works
-*/
-
 contract Governor is Ownable {
     IERC20 public wmatic = IERC20(0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270);
     IERC20 public aWmatic = IERC20(0x6d80113e533a2C0fe82EaBD35f1875DcEA89Ea97);
