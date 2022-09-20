@@ -46,8 +46,8 @@ const educatorDashboard = () => {
   useEffect(() => {
     getIfUserIsEducator();
     getNumberCourse();
-    // getLifeTimePayout();
-    // getEducatorNbMinted();
+    getLifeTimePayout();
+    getEducatorNbMinted();
   }, [user]);
 
   async function getIfUserIsEducator() {
