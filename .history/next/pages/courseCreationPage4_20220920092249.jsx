@@ -576,7 +576,7 @@ const courseCreationPage4 = () => {
                             max={10}
                             precision={0}
                             step={1}
-                            onChange={(valueString) => setPassingGrade(valueString)}
+                            onChange={(e) => setPassingGrade(e.target.value)}
                         >
                             <NumberInputField />
                         </NumberInput>

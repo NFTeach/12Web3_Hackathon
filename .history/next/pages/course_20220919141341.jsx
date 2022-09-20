@@ -45,7 +45,7 @@ const course = (props) => {
         setSelectedSectionVideo(course[0].get("courseSection1").vid);
     }, []);
 
-    // console.log(props.courseObjectId);
+    console.log(props.courseObjectId);
     useEffect (async () => {
         const courseSection1Name = courseSection1?.sectionName;
         const courseSection1Description = courseSection1?.sectionDescription;
@@ -86,7 +86,6 @@ const course = (props) => {
                 <Input
                 className={stylesFirstBlock.frameInput}
                 type="text"
-                isDisabled={true}
                 placeholder={courseName}
                 />
                 <video className={stylesFirstBlock.frameVideo} src={selectedSectionVideo} controls>
@@ -107,13 +106,14 @@ const course = (props) => {
                     placeholder={selectedSectionDescription}
                     />
                 </div>
-                <Link href={{ pathname: "/test/question1",
+                <Link href={{ pathname: "/test/question1", 
                     query: {  
                         courseObjectId: courseObjectId, 
-                        }}} passHref>
-                    <Button variant="solid" w="272px" colorScheme="green">
+                        }}}>"
                         Attempt Test
-                    </Button>
+                    {/* <Button variant="solid" w="272px" colorScheme="green">
+                        Attempt Test
+                    </Button> */}
                 </Link>
                 </div>
             </div>
