@@ -166,7 +166,7 @@ const profileSettings = () => {
           <div className={stylesHeader.profilePictureDiv}>
             <img
               className={stylesHeader.displayedNFTIcon}
-              alt="profilePFP"
+              alt='profilePFP'
               src={pfp ? pfp : defaultImgs[0]}
             />
             <button className={stylesHeader.nameButton}>

@@ -1,7 +1,8 @@
 .imageIcon {
+  align-self: stretch;
   position: relative;
+  max-height: 100%;
   width: 404px;
-  height: 429px;
   flex-shrink: 0;
   object-fit: cover;
 }
@@ -20,22 +21,30 @@
   position: relative;
   font-size: inherit;
   font-weight: 600;
-  font-family: inherit;
+  font-family: "Mulish", sans-serif;
   display: inline-block;
 }
 .chooseACourseBelowToStart {
   font-size: 20px;
   font-weight: 400;
 }
+.frameDiv1,
+.frameDiv2 {
+  display: flex;
+  align-items: center;
+}
+.frameDiv2 {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
 .frameDiv1 {
   align-self: stretch;
   height: 422px;
   flex-shrink: 0;
-  display: flex;
   flex-direction: row;
   padding: 0 0 0 79px;
   box-sizing: border-box;
-  align-items: center;
   justify-content: flex-start;
 }
 .chem101Icon,
@@ -53,7 +62,7 @@
   margin: 0;
   font-size: inherit;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Mulish", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +79,8 @@
   gap: 18px;
 }
 .chem101Div {
-  flex: 1;
+  width: 293.13px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
 }
@@ -79,14 +89,14 @@
   position: relative;
   font-size: inherit;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Mulish", sans-serif;
   width: 292px;
   height: 50px;
-  flex-shrink: 0;
 }
 .blockchainBasicsH2,
 .frameDiv7,
 .math101H2 {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,30 +106,24 @@
   position: relative;
   font-size: inherit;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Mulish", sans-serif;
   width: 295px;
   height: 50px;
-  flex-shrink: 0;
 }
 .frameDiv7 {
-  flex: 1;
+  width: 293.13px;
   flex-direction: column;
   gap: 18px;
 }
-.frameDiv,
 .frameDiv3 {
+  flex: 1;
+  align-self: stretch;
   display: flex;
-  justify-content: flex-start;
-}
-.frameDiv3 {
-  width: 1322.5px;
-  height: 350px;
   flex-direction: row;
   align-items: flex-start;
-  gap: 50px;
-  overflow-x: auto;
+  justify-content: space-between;
   font-size: 18px;
-  font-family: Inter;
+  font-family: "Mulish", sans-serif;
 }
 .frameDiv {
   position: absolute;
@@ -127,8 +131,11 @@
   top: 96px;
   right: 58.5px;
   left: 59px;
+  height: 866px;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   gap: 55px;
 }
 .explorePageDiv {
@@ -141,5 +148,5 @@
   text-align: center;
   font-size: 55px;
   color: #e4e4e4;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
 }

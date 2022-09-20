@@ -28,13 +28,13 @@
 .frameDiv2 {
   height: 140px;
   flex-shrink: 0;
+  padding: 0 200px;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 16px;
 }
 .frameDiv {
-  padding: 0 0 0 54px;
-  box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 55px;
@@ -65,8 +65,11 @@
   flex-shrink: 0;
 }
 .frameDiv4,
+.frameDiv6,
+.frameDiv7,
 .uploadFormDiv {
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 .uploadFormDiv {
@@ -76,43 +79,56 @@
   position: relative;
   width: 878px;
   height: 176px;
-  display: flex;
-  flex-direction: column;
+  flex-shrink: 0;
   padding: 19px 140px;
   justify-content: space-between;
   text-align: center;
   font-size: 45px;
   color: #f2f2f2;
-  font-family: Inter;
+  font-family: "Mulish", sans-serif;
 }
-.frameDiv4 {
+.frameDiv4,
+.frameDiv6,
+.frameDiv7 {
   align-self: stretch;
-  height: 382px;
-  gap: 38px;
 }
-.courseCreationPage4,
-.frameDiv3,
 .frameDiv4 {
+  justify-content: flex-start;
+  gap: 16px;
+}
+.frameDiv6,
+.frameDiv7 {
+  justify-content: center;
+}
+.frameDiv6 {
+  height: 108px;
+  flex-shrink: 0;
+  padding: 0 10px 10px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.courseCreationPage2,
+.frameDiv3 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 55px;
 }
 .frameDiv3 {
   align-self: stretch;
   align-items: flex-start;
+  text-align: left;
   font-size: 25px;
 }
-.courseCreationPage4 {
+.courseCreationPage2 {
   position: relative;
-  background-color: #121212;
+  background-color: #181919;
   width: 100%;
-  height: 789px;
   padding: 41px 0;
   box-sizing: border-box;
   align-items: center;
-  gap: 55px;
-  text-align: left;
-  font-size: 55px;
+  text-align: center;
+  font-size: 35px;
   color: #e4e4e4;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
 }
