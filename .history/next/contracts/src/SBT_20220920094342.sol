@@ -376,8 +376,3 @@ contract SBT is ERC1155, Ownable {
         return (educators[_educator].lifetimePayout);
     }
 }
-
-/*
- *  Constructor Uri
- *  https://gateway.moralisipfs.com/ipfs/
- */

@@ -111,7 +111,7 @@ contract SBT is ERC1155, Ownable {
     /*                             STATE VARIABLES                                */
     /* -------------------------------------------------------------------------- */
 
-    uint256 public stakingRequired = 0.0001 ether;
+    uint256 public stakingRequired = 1 ether;
     // Incrementing tokenId
     uint256 public counterIDs;
 
@@ -368,7 +368,7 @@ contract SBT is ERC1155, Ownable {
         return (educators[_educator].nbStudentsMinted);
     }
 
-    function getEducatorLifetimePayout(address _educator)
+    unction getEducatorLifetimePayout(address _educator)
         public
         view
         returns (uint256)
@@ -376,8 +376,3 @@ contract SBT is ERC1155, Ownable {
         return (educators[_educator].lifetimePayout);
     }
 }
-
-/*
- *  Constructor Uri
- *  https://gateway.moralisipfs.com/ipfs/
- */

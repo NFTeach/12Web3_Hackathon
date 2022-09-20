@@ -35,7 +35,7 @@ contract SBT is ERC1155, Ownable {
      * @param educator address of the educator who creates the test
      * @param mintPrice price of minting the SBT after test completion
      */
-    event CreateSBT(uint256 tokenId, address educator, uint256 mintPrice, string courseObjectId);
+    event CreateTest(uint256 tokenId, address educator, uint256 mintPrice);
 
     /**
      * @notice emited when an educator validates a students completion of a test
@@ -111,7 +111,7 @@ contract SBT is ERC1155, Ownable {
     /*                             STATE VARIABLES                                */
     /* -------------------------------------------------------------------------- */
 
-    uint256 public stakingRequired = 0.0001 ether;
+    uint256 public stakingRequired = 1 ether;
     // Incrementing tokenId
     uint256 public counterIDs;
 
@@ -211,7 +211,7 @@ contract SBT is ERC1155, Ownable {
         );
         educators[msg.sender].classesCreated += 1;
 
-        emit CreateSBT(counterIDs, msg.sender, _price, _courseObjectId);
+        emit CreateTest(counterIDs, msg.sender, _price, _courseObjectId);
 
         counterIDs += 1;
     }
@@ -368,7 +368,7 @@ contract SBT is ERC1155, Ownable {
         return (educators[_educator].nbStudentsMinted);
     }
 
-    function getEducatorLifetimePayout(address _educator)
+    unction getEducatorLifetimePayout(address _educator)
         public
         view
         returns (uint256)
@@ -376,8 +376,3 @@ contract SBT is ERC1155, Ownable {
         return (educators[_educator].lifetimePayout);
     }
 }
-
-/*
- *  Constructor Uri
- *  https://gateway.moralisipfs.com/ipfs/
- */
