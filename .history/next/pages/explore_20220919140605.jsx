@@ -142,7 +142,7 @@ const explore = () => {
                             <Link href={{pathname: "/course", 
                                 query: {
                                     courseObjectId: courseObjectId?.[index],
-                                }}}>
+                                    }}}>
                                 <Image 
                                     borderRadius='full' 
                                     boxSize='250px' 

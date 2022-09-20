@@ -45,7 +45,7 @@ const course = (props) => {
         setSelectedSectionVideo(course[0].get("courseSection1").vid);
     }, []);
 
-    // console.log(props.courseObjectId);
+    console.log(props.courseObjectId);
     useEffect (async () => {
         const courseSection1Name = courseSection1?.sectionName;
         const courseSection1Description = courseSection1?.sectionDescription;
