@@ -22,19 +22,27 @@
 }
 .b,
 .yourCompletedCourses {
-  position: absolute;
-  width: calc(100% - 88.48px);
-  top: 24px;
-  right: 44.24px;
-  left: 44.24px;
+  align-self: stretch;
+  position: relative;
   letter-spacing: 0.4px;
   display: inline-block;
 }
 .b {
-  top: 60px;
   font-size: 40px;
   letter-spacing: 1px;
   color: #e4e4e4;
+}
+.frameDiv2 {
+  position: absolute;
+  width: calc(100% - 87.73px);
+  top: 24px;
+  right: 43.87px;
+  left: 43.87px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
 }
 .completedDiv {
   flex: 1;
@@ -67,274 +75,185 @@
   height: 134px;
   color: #121212;
 }
-.frameDiv2 {
+.frameDiv1 {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 57px;
-  text-align: center;
-  color: #9fa2b4;
+  gap: 56px;
 }
-.dateB,
-.goodMorningB,
-.youveCompleted65OfYourL {
+.dateB {
   align-self: stretch;
   position: relative;
+  font-size: 19px;
   letter-spacing: 0.4px;
   display: inline-block;
 }
-.dateB,
-.youveCompleted65OfYourL {
-  font-size: 19px;
+.comingSoonSpan {
+  color: #e4e4e4;
 }
 .youveCompleted65OfYourL {
-  font-size: 27px;
+  align-self: stretch;
+  position: relative;
+  font-size: 23px;
+  letter-spacing: 0.4px;
+  display: inline-block;
   color: #3eb489;
 }
-.frameDiv5 {
+.frameDiv7 {
   flex: 1;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
+  padding: 0 0 0 20px;
+  box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 31px;
-}
-.completedDiv1,
-.math101Div {
-  position: absolute;
-  right: 0;
-  letter-spacing: 0.3px;
-  line-height: 22px;
-  display: inline-block;
-}
-.math101Div {
-  top: 17px;
-  font-weight: 600;
-  width: 144px;
-  height: 44px;
-}
-.completedDiv1 {
-  top: 73px;
-  font-size: 19px;
-  width: 210px;
-  height: 31px;
-}
-.courseImageIcon,
-.frameDiv7 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 52.36px;
-  height: 50px;
-}
-.frameDiv7 {
-  top: 30px;
-  left: 37.42px;
-  width: 210.58px;
-  height: 104px;
-  font-size: 23px;
-}
-.blockchainBasicsDiv,
-.completedDiv2 {
-  position: absolute;
-  letter-spacing: 0.3px;
-  line-height: 22px;
-  display: inline-block;
-}
-.completedDiv2 {
-  top: 76px;
-  right: 0;
-  width: 366px;
-  height: 34px;
-}
-.blockchainBasicsDiv {
-  top: calc(50% - 38px);
-  right: 60px;
-  font-size: 23px;
-  font-weight: 600;
-  width: 240px;
-  height: 39px;
-}
-.rectangleDiv {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 25px;
-  background-color: #d9d9d9;
-  width: 52.36px;
-  height: 50px;
-}
-.vectorIcon {
-  position: absolute;
-  height: 37.63%;
-  width: 31.91%;
-  top: 31.37%;
-  right: 33.04%;
-  bottom: 31%;
-  left: 35.05%;
-  border-radius: 1px;
-  max-width: 100%;
-  max-height: 100%;
-}
-.frameDiv8 {
-  position: absolute;
-  top: 185px;
-  left: 37.42px;
-  width: 366.58px;
-  height: 110px;
-  font-size: 19px;
-}
-.dividerLineHorizontal {
-  position: absolute;
-  top: 156px;
-  right: 0;
-  width: 594px;
-  height: 14.5px;
-}
-.dividerLineVertical {
-  position: absolute;
-  top: 0;
-  left: -0.5px;
-  width: 1px;
-  height: 340px;
-}
-.dividerLineHorizontal1 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 594px;
-  height: 0;
-}
-.bestStudentDiv,
-.nFT2Icon {
-  position: relative;
-  flex-shrink: 0;
-}
-.nFT2Icon {
-  width: 116px;
-  height: 111px;
-  object-fit: cover;
-}
-.bestStudentDiv {
-  letter-spacing: 0.3px;
-  line-height: 22px;
-  display: inline-block;
-  width: 211px;
-  height: 31px;
+  gap: 27px;
 }
 .frameDiv10,
-.frameDiv9 {
-  position: absolute;
-  top: 183px;
-  left: 379px;
+.inProgressDiv1 {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  gap: 11px;
-  text-align: center;
+}
+.inProgressDiv1 {
+  flex: 1;
+  position: relative;
+  letter-spacing: 0.3px;
+  line-height: 22px;
+  font-weight: 600;
+  height: 44px;
 }
 .frameDiv10 {
-  top: 11px;
-}
-.frameDiv6 {
-  position: relative;
-  width: 543px;
-  height: 340px;
-  flex-shrink: 0;
-  font-size: 18px;
-  color: #9fa2b4;
-}
-.frameDiv4 {
   align-self: stretch;
-  display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 127px;
+  justify-content: center;
+  font-size: 27px;
+  color: #e4e4e4;
 }
-.frameDiv3,
-.sheetDiv3 {
-  border-radius: 8px;
-  background-color: #121212;
-  box-sizing: border-box;
-}
-.frameDiv3 {
+.math101Div {
   align-self: stretch;
-  border: 1px solid #e4e4e4;
   position: relative;
+  letter-spacing: 0.3px;
+  line-height: 22px;
+  display: inline-block;
+  height: 31px;
+  flex-shrink: 0;
+}
+.frameDiv8,
+.frameDiv9 {
+  flex: 1;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 24px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: 23px;
 }
-.sheetDiv3 {
-  border: 1px solid #dfe0eb;
+.frameDiv9 {
+  padding: 0 0 0 20px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.frameDiv8 {
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 19px;
+  color: #9fa2b4;
+}
+.frameDiv,
+.frameDiv5,
+.frameDiv6 {
+  display: flex;
+  justify-content: flex-start;
+}
+.frameDiv6 {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: center;
+  gap: 200px;
+}
+.frameDiv,
+.frameDiv5 {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.frameDiv5 {
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: #121212;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  position: relative;
+  padding: 26px 0;
+  text-align: left;
+  font-size: 34px;
+  color: #e4e4e4;
+}
+.frameDiv {
+  position: absolute;
+  width: calc(100% - 267px);
+  top: 142px;
+  right: 133px;
+  left: 134px;
+  gap: 81px;
+  color: #9fa2b4;
 }
 .areaDiv,
 .sheetDiv3 {
   position: absolute;
   height: 100%;
-  width: 100%;
   top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
 }
+.sheetDiv3 {
+  width: 100%;
+  right: 0;
+  border-radius: 8px;
+  background-color: #121212;
+  border: 1px solid #dfe0eb;
+  box-sizing: border-box;
+}
+.areaDiv {
+  width: calc(100% - 0.03px);
+  right: 0.03px;
+}
+.eTHDiv,
 .titleB {
-  position: absolute;
-  width: calc(100% - 387px);
-  top: 29px;
-  right: 355px;
-  left: 32px;
+  display: inline-block;
+}
+.titleB {
+  align-self: stretch;
+  position: relative;
   font-size: 19px;
   letter-spacing: 0.4px;
-  display: inline-block;
+  text-align: center;
 }
-.basedOnYourPrevious3,
 .eTHDiv {
   position: absolute;
-  color: #9fa2b4;
-  display: inline-block;
-}
-.basedOnYourPrevious3 {
-  width: calc(100% - 210px);
-  top: 80px;
-  right: 178px;
-  left: 32px;
-  font-size: 12px;
-  letter-spacing: 0.1px;
-  line-height: 16px;
-  height: 16px;
-}
-.eTHDiv {
   top: calc(50% - 9px);
   right: 32px;
   letter-spacing: 0.2px;
   line-height: 20px;
   font-weight: 600;
+  color: #9fa2b4;
   text-align: right;
   width: 104px;
 }
-.dividerLineHorizontal2,
-.math102Div {
+.dividerLineHorizontal {
   position: absolute;
   width: 100%;
   right: 0;
-  left: 0;
-}
-.dividerLineHorizontal2 {
   bottom: -0.5px;
+  left: 0;
   max-width: 100%;
   height: 1px;
 }
 .math102Div {
-  top: 96px;
+  align-self: stretch;
+  position: relative;
   height: 58px;
+  flex-shrink: 0;
 }
 .eTHDiv1,
 .understandingBitcoinDiv {
@@ -356,283 +275,163 @@
   text-align: right;
   width: 80px;
 }
-.aIDiv,
-.bitcoinDiv,
-.tokenomicsDiv {
+.frameDiv11 {
   position: absolute;
-  width: 100%;
-  top: 154px;
-  right: 0;
+  width: calc(100% - 0.03px);
+  top: 32px;
+  right: 0.03px;
   left: 0;
-  height: 58px;
+  height: 296px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
 }
-.aIDiv,
-.tokenomicsDiv {
-  top: 212px;
-}
-.aIDiv {
-  top: 270px;
+.groupDiv,
+.suggestedDiv {
+  position: absolute;
+  height: 336px;
 }
 .suggestedDiv {
-  flex: 1;
-  position: relative;
-  height: 336px;
-  overflow: hidden;
-}
-.areaIcon {
-  position: absolute;
-  height: 100%;
   width: 100%;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
-  max-width: 100%;
-  max-height: 100%;
+  overflow: hidden;
 }
-.titleB1 {
-  top: 32px;
-  font-size: 19px;
-  letter-spacing: 0.4px;
-  color: #e4e4e4;
+.groupDiv {
+  width: calc(100% - 908.97px);
+  top: 689px;
+  right: 774.97px;
+  left: 134px;
+  text-align: left;
+  font-size: 14px;
 }
 .thisWeekDiv,
-.titleB1,
-.topStudentsDiv {
-  position: absolute;
-  width: calc(100% - 210px);
-  right: 178px;
-  left: 32px;
+.titleB1 {
+  position: relative;
+  letter-spacing: 0.4px;
   display: inline-block;
 }
 .thisWeekDiv {
-  top: 64px;
+  align-self: stretch;
   font-size: 12px;
   letter-spacing: 0.1px;
   line-height: 16px;
   color: #9fa2b4;
   height: 16px;
+  flex-shrink: 0;
+}
+.frameDiv13 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.satoshiNDiv,
+.topStudentsDiv {
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  font-weight: 600;
+  display: inline-block;
 }
 .topStudentsDiv {
-  top: calc(50% - 9px);
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  font-weight: 600;
-}
-.topDiv {
-  position: absolute;
-  width: 100%;
-  top: 96px;
-  right: 0;
-  left: 0;
-  height: 58px;
-  color: #c5c7cd;
-}
-.charlesHDiv {
   position: absolute;
   width: calc(100% - 210px);
-  top: calc(50% - 9px);
-  right: 142px;
-  left: 68px;
-  letter-spacing: 0.2px;
-  line-height: 20px;
-  font-weight: 600;
-  color: #e4e4e4;
-  text-align: left;
-  display: inline-block;
-}
-.sheetDiv4 {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 8px;
-  background-color: #29cc97;
-}
-.titleDiv {
-  position: absolute;
-  width: calc(100% - 24px);
-  top: calc(50% - 7px);
-  right: 12px;
-  left: 12px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 14px;
-}
-.chipDefaultSuccess {
-  position: absolute;
-  top: calc(50% - 12px);
-  right: 32px;
-  width: 54px;
-  height: 24px;
-  overflow: hidden;
-  font-size: 6px;
-}
-.circleIcon {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  max-width: 100%;
-  max-height: 100%;
-}
-.titleDiv1 {
-  position: absolute;
-  height: 55%;
-  width: 50%;
-  top: 20%;
-  right: 25%;
-  bottom: 25%;
-  left: 25%;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.controlsCheckboxActive1 {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-}
-.controlsCheckboxActive {
-  position: absolute;
   top: calc(50% - 10px);
-  left: 32px;
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-  font-size: 13px;
-}
-.name2Div {
-  position: absolute;
-  width: 100%;
-  top: 212px;
-  right: 0;
-  left: 0;
-  height: 58px;
-  text-align: center;
+  right: 105px;
+  left: 105px;
 }
 .satoshiNDiv {
-  position: absolute;
-  width: calc(100% - 210px);
-  top: calc(50% - 9px);
-  right: 142px;
-  left: 68px;
+  align-self: stretch;
+  position: relative;
+}
+.dividerLineHorizontal4 {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+}
+.name1Div,
+.name2Div {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  padding: 19px 0 0;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 19px;
+}
+.name2Div {
+  gap: 18px;
+  color: #e4e4e4;
+}
+.silvioMDiv {
+  flex: 1;
+  position: relative;
   letter-spacing: 0.2px;
   line-height: 20px;
   font-weight: 600;
-  color: #c5c7cd;
-  text-align: left;
   display: inline-block;
 }
-.titleDiv3 {
-  position: absolute;
-  height: 55%;
-  width: 60%;
-  top: 20%;
-  right: 20%;
-  bottom: 25%;
-  left: 20%;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.name1Div {
-  position: absolute;
-  width: 100%;
-  top: 154px;
-  right: 0;
-  left: 0;
-  height: 58px;
-  text-align: center;
-}
-.controlsCheckboxActive3 {
-  position: absolute;
-  top: calc(50% - 10px);
-  left: 32px;
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-}
-.titleDiv5 {
-  position: absolute;
-  height: 65%;
-  width: 55%;
-  top: 15%;
-  right: 20%;
-  bottom: 20%;
-  left: 25%;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.frameDiv14,
 .name3Div {
-  position: absolute;
-  width: 100%;
-  top: 270px;
-  right: 0;
-  left: 0;
-  height: 58px;
-  text-align: center;
-}
-.leaderboardsDiv {
-  flex: 1;
-  position: relative;
-  height: 336px;
-  overflow: hidden;
-  color: #fff;
-}
-.frameDiv,
-.frameDiv1,
-.frameDiv11 {
+  align-self: stretch;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frameDiv11 {
-  align-self: stretch;
+.name3Div {
   flex-direction: row;
-  gap: 36px;
-  font-size: 14px;
+  padding: 19px 0 0;
+  box-sizing: border-box;
+  color: #e4e4e4;
 }
-.frameDiv,
-.frameDiv1 {
+.frameDiv14 {
   flex-direction: column;
+  font-size: 14px;
+  color: #c5c7cd;
 }
-.frameDiv1 {
-  align-self: stretch;
-  gap: 60px;
+.frameDiv12,
+.groupDiv1 {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  left: 0;
 }
-.frameDiv {
+.frameDiv12 {
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.groupDiv1 {
+  top: 30px;
+  height: 276px;
+}
+.areaDiv1 {
+  position: absolute;
+  height: calc(100% - 755px);
+  width: calc(100% - 909px);
+  top: 689px;
+  right: 133px;
+  bottom: 66px;
+  left: 776px;
+}
+.desktop1 {
   position: relative;
   background-color: #181919;
   width: 100%;
-  padding: 72px 162px;
-  box-sizing: border-box;
-  text-align: left;
+  height: 1091px;
+  overflow: hidden;
+  text-align: center;
   font-size: 19px;
   color: #e4e4e4;
   font-family: Mulish;
