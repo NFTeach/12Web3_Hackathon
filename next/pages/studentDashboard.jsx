@@ -113,12 +113,7 @@ const studentDashboard = () => {
       <div className={stylesHeader.header4Div}>
         <div className={stylesHeader.frameDiv}>
           <div className={stylesHeader.frameDiv1}>
-            <h2 className={stylesHeader.textH2}>NFTeach.</h2>
-            <img
-              className={stylesHeader.discordIcon}
-              alt=""
-              src="/studentDashboard_imgs/discord.svg"
-            />
+            <h2 className={stylesHeader.textH2}>NFTeach</h2>
           </div>
           <div className={stylesHeader.tabsDiv}>
             <button className={stylesHeader.studentDashboardButton}>
@@ -140,7 +135,7 @@ const studentDashboard = () => {
           <div className={stylesHeader.profilePictureDiv}>
             <img
               className={stylesHeader.image1Icon}
-              alt="profilePFP"
+              alt='profilePFP'
               src={pfp ? pfp : defaultImgs[0]}
               data-animate-on-scroll-header
             />
@@ -202,8 +197,8 @@ const studentDashboard = () => {
                   </div>
                   <img
                     className={stylesFirstBlock.courseImageIcon}
-                    alt="Math 101"
-                    src="/studentDashboard_imgs/math101.svg"
+                    alt='Math 101'
+                    src='/studentDashboard_imgs/math101.svg'
                   />
                 </div>
                 <div className={stylesFirstBlock.frameDiv8}>
@@ -217,23 +212,23 @@ const studentDashboard = () => {
                     <div className={stylesFirstBlock.rectangleDiv} />
                     <img
                       className={stylesFirstBlock.vectorIcon}
-                      alt="Blockchain"
-                      src="/studentDashboard_imgs/blockchain.svg"
+                      alt='Blockchain'
+                      src='/studentDashboard_imgs/blockchain.svg'
                     />
                   </div>
                 </div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal}
-                  alt="Horizontal Line"
-                  src="/studentDashboard_imgs/line.svg"
+                  alt='Horizontal Line'
+                  src='/studentDashboard_imgs/line.svg'
                 />
 
                 <div className={stylesFirstBlock.dividerLineHorizontal1} />
                 <div className={stylesFirstBlock.frameDiv9}>
                   <img
                     className={stylesFirstBlock.nFT2Icon}
-                    alt="Best Student 1"
-                    src="/studentDashboard_imgs/bestStudent1.png"
+                    alt='Best Student 1'
+                    src='/studentDashboard_imgs/bestStudent1.png'
                   />
                   <div className={stylesFirstBlock.bestStudentDiv}>
                     Best Student
@@ -242,8 +237,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.frameDiv10}>
                   <img
                     className={stylesFirstBlock.nFT2Icon}
-                    alt="Best Student 2"
-                    src="/studentDashboard_imgs/bestStudent2.png"
+                    alt='Best Student 2'
+                    src='/studentDashboard_imgs/bestStudent2.png'
                   />
                   <div className={stylesFirstBlock.bestStudentDiv}>
                     Best Student
@@ -268,8 +263,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.eTHDiv}>0.01 ETH</div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal2}
-                  alt=""
-                  src="/studentDashboard_imgs/line.svg"
+                  alt=''
+                  src='/studentDashboard_imgs/line.svg'
                 />
               </div>
               <div className={stylesFirstBlock.bitcoinDiv}>
@@ -279,8 +274,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.eTHDiv1}>0.02 ETH</div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal2}
-                  alt=""
-                  src="/studentDashboard_imgs/line.svg"
+                  alt=''
+                  src='/studentDashboard_imgs/line.svg'
                 />
               </div>
               <div className={stylesFirstBlock.tokenomicsDiv}>
@@ -290,8 +285,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.eTHDiv1}>0.008 ETH</div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal2}
-                  alt=""
-                  src="/studentDashboard_imgs/line.svg"
+                  alt=''
+                  src='/studentDashboard_imgs/line.svg'
                 />
               </div>
               <div className={stylesFirstBlock.aIDiv}>
@@ -304,10 +299,12 @@ const studentDashboard = () => {
             <div className={stylesFirstBlock.leaderboardsDiv}>
               <img
                 className={stylesFirstBlock.areaIcon}
-                alt=""
-                src="/studentDashboard_imgs/area.svg"
+                alt=''
+                src='/studentDashboard_imgs/area.svg'
               />
-              <b className={stylesFirstBlock.titleB1}>Leaderboards</b>
+              <b className={stylesFirstBlock.titleB1}>
+                Leaderboards (Coming Soon)
+              </b>
               <div className={stylesFirstBlock.thisWeekDiv}>This Week</div>
               <div className={stylesFirstBlock.topDiv}>
                 <div className={stylesFirstBlock.topStudentsDiv}>
@@ -315,16 +312,16 @@ const studentDashboard = () => {
                 </div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal2}
-                  alt=""
-                  src="/studentDashboard_imgs/line.svg"
+                  alt=''
+                  src='/studentDashboard_imgs/line.svg'
                 />
               </div>
               <div className={stylesFirstBlock.name2Div}>
                 <div className={stylesFirstBlock.charlesHDiv}>Charles H.</div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal2}
-                  alt=""
-                  src="/studentDashboard_imgs/line.svg"
+                  alt=''
+                  src='/studentDashboard_imgs/line.svg'
                 />
                 <div className={stylesFirstBlock.chipDefaultSuccess}>
                   <div className={stylesFirstBlock.sheetDiv4} />
@@ -333,14 +330,14 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.controlsCheckboxActive}>
                   <img
                     className={stylesFirstBlock.circleIcon}
-                    alt=""
-                    src="/studentDashboard_imgs/circle.svg"
+                    alt=''
+                    src='/studentDashboard_imgs/circle.svg'
                   />
                   <div className={stylesFirstBlock.controlsCheckboxActive1}>
                     <img
                       className={stylesFirstBlock.circleIcon}
-                      alt=""
-                      src="/studentDashboard_imgs/circle.svg"
+                      alt=''
+                      src='/studentDashboard_imgs/circle.svg'
                     />
                     <div className={stylesFirstBlock.titleDiv1}>2</div>
                   </div>
@@ -350,8 +347,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.satoshiNDiv}>Satoshi N.</div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal2}
-                  alt=""
-                  src="/studentDashboard_imgs/line.svg"
+                  alt=''
+                  src='/studentDashboard_imgs/line.svg'
                 />
                 <div className={stylesFirstBlock.chipDefaultSuccess}>
                   <div className={stylesFirstBlock.sheetDiv4} />
@@ -360,8 +357,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.controlsCheckboxActive}>
                   <img
                     className={stylesFirstBlock.circleIcon}
-                    alt=""
-                    src="/studentDashboard_imgs/circle.svg"
+                    alt=''
+                    src='/studentDashboard_imgs/circle.svg'
                   />
                   <div className={stylesFirstBlock.titleDiv3}>1</div>
                 </div>
@@ -376,8 +373,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.controlsCheckboxActive}>
                   <img
                     className={stylesFirstBlock.circleIcon}
-                    alt=""
-                    src="/studentDashboard_imgs/circle.svg"
+                    alt=''
+                    src='/studentDashboard_imgs/circle.svg'
                   />
                   <div className={stylesFirstBlock.titleDiv5}>3</div>
                 </div>
@@ -387,11 +384,8 @@ const studentDashboard = () => {
         </div>
       </div>
       {/* Footer */}
-      <div className={stylesFooter.footerDiv}>
-        <div className={stylesFooter.frameDiv}>
-          <h3 className={stylesFooter.logoH3}>© 2022 NFTeach</h3>
-          <h3 className={stylesFooter.titleH3}>NFTeach</h3>
-        </div>
+      <div className={stylesFooter.frameDiv}>
+        <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
       </div>
     </>
   );
