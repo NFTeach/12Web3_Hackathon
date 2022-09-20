@@ -76,7 +76,7 @@ const courseStaking = () => {
   };
 
   const createSBTandStake = async () => {
-
+    console.log(courseObjectId);
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,
@@ -84,7 +84,7 @@ const courseStaking = () => {
         functionName: "createSBT",
         params: {
           _price: Moralis.Units.ETH(courseCost),
-          _courseObjectId: courseObjectId, 
+          _testHash: courseObjectId,
         },
       },
       onSuccess: () => {

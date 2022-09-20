@@ -172,7 +172,7 @@ const CourseCreationPage1 = () => {
                 textColor="#e4e4e4"
                 placeholder="How much will your course cost? (Specify in Matic)" 
                 defaultValue={15}
-                precision={5} 
+                precision={2} 
                 step={0.01}
                 onChange={(valueString) => setCost(valueString)}
               >

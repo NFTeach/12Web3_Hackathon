@@ -63,7 +63,7 @@ const courseStaking = () => {
     }
   }, [user]);
 
-  // console.log("courseObjectId", courseObjectId);
+  console.log("courseObjectId", courseObjectId);
   const approveERC20 = async () => {
     const contract = new web3.eth.Contract(
       NFTEACH_ERC20_CONTRACT_ABI,
@@ -76,7 +76,6 @@ const courseStaking = () => {
   };
 
   const createSBTandStake = async () => {
-
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,
@@ -84,7 +83,7 @@ const courseStaking = () => {
         functionName: "createSBT",
         params: {
           _price: Moralis.Units.ETH(courseCost),
-          _courseObjectId: courseObjectId, 
+          _testHash: courseObjectId,
         },
       },
       onSuccess: () => {
