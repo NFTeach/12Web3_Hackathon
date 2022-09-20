@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Input, Button, NumberInput, NumberInputField } from "@chakra-ui/react";
+import { Input, Button, NumberInput } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
@@ -576,7 +576,7 @@ const courseCreationPage4 = () => {
                             max={10}
                             precision={0}
                             step={1}
-                            onChange={(valueString) => setPassingGrade(valueString)}
+                            onChange={(e) => setPassingGrade(e.target.value)}
                         >
                             <NumberInputField />
                         </NumberInput>

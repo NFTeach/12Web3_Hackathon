@@ -439,7 +439,7 @@ const courseReview = () => {
                         <Input
                         className={stylesFirstBlock.inputOutline}
                         variant="outline"
-                        textColor="#e4e4e4"
+                        textColor="#ffffff"
                         isDisabled={true}
                         placeholder={courseCost}
                         />

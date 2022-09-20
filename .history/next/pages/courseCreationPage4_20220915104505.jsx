@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Input, Button, NumberInput, NumberInputField } from "@chakra-ui/react";
+import { Input, Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
@@ -566,20 +566,13 @@ const courseCreationPage4 = () => {
                     </div>
                     <div className={stylesFirstBlock.passingGradeDiv}>
                         <div className={stylesFirstBlock.courseNameDiv}>Passing Grade</div>
-                        <NumberInput
+                        <Input
                             className={stylesFirstBlock.inputOutline}
                             variant="outline"
                             textColor="#e4e4e4"
-                            placeholder="What will the passing grade be for your test out of 10?"
-                            defaultValue={7}
-                            min={1}
-                            max={10}
-                            precision={0}
-                            step={1}
-                            onChange={(valueString) => setPassingGrade(valueString)}
-                        >
-                            <NumberInputField />
-                        </NumberInput>
+                            placeholder="What will the passing grade be for your test?"
+                            onChange={(e) => setPassingGrade(e.target.value)}
+                        />
                     </div>
                     <Button 
                         variant="solid" 
