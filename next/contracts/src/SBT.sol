@@ -74,7 +74,6 @@ contract SBT is ERC1155, Ownable {
      */
     struct Test {
         address educator;
-        string testHash;
         uint256 lifetimePayout;
         uint256 price;
         uint256 nbCompleted;
@@ -195,7 +194,7 @@ contract SBT is ERC1155, Ownable {
      * @dev Called whenever a new test and corresponding token are created
      * @param _price educator set price to mintSBT after test completion
      */
-    function createSBT(uint256 _price, string memory _testHash)
+    function createSBT(uint256 _price, string calldata _courseObjectId)
         external
         onlyEducator
     {
@@ -203,7 +202,6 @@ contract SBT is ERC1155, Ownable {
         governor.teacherStaking(counterIDs, msg.sender);
         tests[counterIDs] = Test(
             msg.sender,
-            _testHash,
             0,
             _price,
             0,
@@ -213,7 +211,7 @@ contract SBT is ERC1155, Ownable {
         );
         educators[msg.sender].classesCreated += 1;
 
-        emit CreateTest(counterIDs, msg.sender, _price);
+        emit CreateTest(counterIDs, msg.sender, _price, _courseObjectId);
 
         counterIDs += 1;
     }
@@ -368,5 +366,13 @@ contract SBT is ERC1155, Ownable {
         returns (uint256)
     {
         return (educators[_educator].nbStudentsMinted);
+    }
+
+    unction getEducatorLifetimePayout(address _educator)
+        public
+        view
+        returns (uint256)
+    {
+        return (educators[_educator].lifetimePayout);
     }
 }

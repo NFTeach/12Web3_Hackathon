@@ -28,6 +28,8 @@ const educatorDashboard = () => {
 
   const user = moralis.User.current();
   const nbClasses = 0;
+  const nbMinted = 0;
+  const lifeTimePayout = 0;
 
   useEffect(() => {
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3();
@@ -44,6 +46,8 @@ const educatorDashboard = () => {
   useEffect(() => {
     getIfUserIsEducator();
     getNumberCourse();
+    // getLifeTimePayout();
+    // getEducatorNbMinted();
   }, [user]);
 
   async function getIfUserIsEducator() {
@@ -66,6 +70,31 @@ const educatorDashboard = () => {
       params: { _educator: user.attributes.accounts[0] },
     };
     nbClasses = await Moralis.executeFunction(options);
+  }
+
+  //Doesn't work right now since deployed version of Smart Contract do not have this function on them
+  async function getEducatorNbMinted() {
+    const web3 = await Moralis.enableWeb3();
+    const options = {
+      contractAddress: SBT_CONTRACT_ADDRESS,
+      functionName: "getEducatorNbMinted",
+      abi: NFTEACH_SBT_CONTRACT_ABI,
+      params: { _educator: user.attributes.accounts[0] },
+    };
+    nbMinted = await Moralis.executeFunction(options);
+  }
+
+  //Doesn't work right now since deployed version of Smart Contract do not have this function on them
+  async function getLifeTimePayout() {
+    const web3 = await Moralis.enableWeb3();
+    const options = {
+      contractAddress: SBT_CONTRACT_ADDRESS,
+      functionName: "getEducatorLifetimePayout",
+      abi: NFTEACH_SBT_CONTRACT_ABI,
+      params: { _educator: user.attributes.accounts[0] },
+    };
+    lifeTimePayout = await Moralis.executeFunction(options);
+    console.log(lifeTimePayout);
   }
 
   // Header effects
@@ -222,7 +251,7 @@ const educatorDashboard = () => {
                 <div className={stylesFirstBlock.sheetDiv} />
               </div>
               <b className={stylesFirstBlock.sBTsIssued}>SBTs Issued</b>
-              <b className={stylesFirstBlock.b}>23</b>
+              <b className={stylesFirstBlock.b}>{nbMinted}</b>
             </div>
             <div className={stylesFirstBlock.groupDiv1}>
               <div className={stylesFirstBlock.cardsDefault}>
