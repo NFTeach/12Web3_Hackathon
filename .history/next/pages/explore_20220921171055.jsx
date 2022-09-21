@@ -115,21 +115,12 @@ const explore = () => {
       onOpen();
     }
     // console.log(courseObjectId)
-
+    
     const handleEnroll = async () => {
       const User = Moralis.Object.extend("_User");
       const query3 = new Moralis.Query(User);
-      const myDetails = await query3.first();
-      const enrolledCourses = myDetails?.get("enrolledCourses");
-      const alreadyEnrolled = enrolledCourses?.includes(courseObjectId[chosenIndex]);
-      console.log(alreadyEnrolled);
-      if (enrolledCourses === undefined) {
-        myDetails.set("enrolledCourses", [courseObjectId[chosenIndex]]);  
-      } else if (alreadyEnrolled === true) {
-        return;
-      } else {
-        myDetails.set("enrolledCourses", enrolledCourses.concat(courseObjectId[chosenIndex]));
-      }
+      const myDetails = await query3.find();
+      myDetails.set("enrolledCourses", courseObjectId[chosenIndex]);
       await myDetails.save();
     }
 

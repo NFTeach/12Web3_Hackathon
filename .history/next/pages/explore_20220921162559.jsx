@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
 import Link from "next/link";
@@ -40,10 +40,12 @@ const explore = () => {
     const [prerequisitePass, setPrerequisitePass] = useState(false);
     const [userSBTs, setUserSBTs] = useState([]);
     const [userTokenIds, setUserTokenIds] = useState("");
+    const [userCourseObjectIds, setUserCourseObjectIds] = useState([]);
     const [chosenIndex, setChosenIndex] = useState();
-    const [coursePrereq, setCoursePrereq] = useState();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const user = moralis.User.current();
+
+    const [showPopup, setShowPopup] = useState(undefined);
 
     useEffect(() => {
       if (!user) return null;
@@ -79,6 +81,7 @@ const explore = () => {
         }
     }, []);
 
+    // console.log(courseprerequisite);
     useEffect (async () => {
         const MintSBTs = Moralis.Object.extend("MintSBT");
         const query = new Moralis.Query(MintSBTs);
@@ -91,13 +94,17 @@ const explore = () => {
 
     const checkPrerequisite = async (index) => {
       setChosenIndex(index);
+      // console.log(index)
       const createSBTs = Moralis.Object.extend("CreateSBT");
       const query = new Moralis.Query(createSBTs);
+      // console.log(courseprerequisite[index]);
       query.equalTo("courseObjectId", courseprerequisite[index]);
       const createSBT = await query.find();
+      // console.log(createSBT);
       const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
+      // console.log(courseSBT);
       const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-
+      console.log(courseprerequisite[index]);
       if (courseprerequisite[index] === undefined) {
         setPrerequisitePass(true);
       } else if (prerequisiteSBT.length === 0) {
@@ -105,33 +112,23 @@ const explore = () => {
       } else {
         setPrerequisitePass(true);
       }
-
-      const Courses = Moralis.Object.extend("Courses");
-      const query2 = new Moralis.Query(Courses);
-      query2.equalTo("objectId", courseprerequisite[index]);
-      const course = await query2.find();
-      setCoursePrereq(course[0]?.get("courseName"));
-
       onOpen();
     }
-    // console.log(courseObjectId)
 
-    const handleEnroll = async () => {
-      const User = Moralis.Object.extend("_User");
-      const query3 = new Moralis.Query(User);
-      const myDetails = await query3.first();
-      const enrolledCourses = myDetails?.get("enrolledCourses");
-      const alreadyEnrolled = enrolledCourses?.includes(courseObjectId[chosenIndex]);
-      console.log(alreadyEnrolled);
-      if (enrolledCourses === undefined) {
-        myDetails.set("enrolledCourses", [courseObjectId[chosenIndex]]);  
-      } else if (alreadyEnrolled === true) {
-        return;
-      } else {
-        myDetails.set("enrolledCourses", enrolledCourses.concat(courseObjectId[chosenIndex]));
-      }
-      await myDetails.save();
-    }
+    // const handleOnClick = async (index) => {
+    //     checkPrerequisite(index);
+    //     onOpen();
+    // }
+
+    // const handleEnroll = async () => {
+    //     const Courses = Moralis.Object.extend("Courses");
+    //     const query = new Moralis.Query(Courses);
+    //     const course = await query.get(courseObjectId[chosenIndex]);
+    //     const relation = course.relation("students");
+    //     relation.add(user);
+    //     await course.save();
+    //     router.push("/dashboard");
+    // }
 
   return (
     <>
@@ -208,15 +205,18 @@ const explore = () => {
             <HStack spacing="100px">
               {courses?.map((e, index) => (
                 <Box key={index} w='250px' h='250px'>
-                  <Image
-                    borderRadius='full'
-                    boxSize='250px'
-                    src={images[index]?.img}
-                    alt={courseName?.[index]}
-                    onClick={async () => {
-                      await checkPrerequisite(index);
-                    }}
-                  />
+                  
+                    <Image
+                      borderRadius='full'
+                      boxSize='250px'
+                      src={images[index]?.img}
+                      alt={courseName?.[index]}
+                      onClick={async () => {
+                        await checkPrerequisite(index);
+                        // onOpen();
+                      }}
+                    />
+                {/*  </Link> */}
                   <br />
                   <Text>{courseName?.[index]}</Text>
                 </Box>
@@ -237,13 +237,6 @@ const explore = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text>{courseDescription?.[chosenIndex]}</Text>
-            <br />
-            <Image 
-              src={images[chosenIndex]?.img} 
-              alt={courseName?.[chosenIndex]}
-              boxSize='250px'
-              align={'center'}
-              />
           </ModalBody>
           <ModalFooter>
             { prerequisitePass ? (
@@ -259,19 +252,33 @@ const explore = () => {
                 variant='ghost'
                 colorScheme='green'
                 mr={3}
-                onClick={async () => {
-                  await handleEnroll();
-                }}
                 >
                   Start Course
                 </Button>
               </Link>
               ) : (
-                <Text>To access course, you to complete <b>{coursePrereq}</b> first!</Text>
+                <Text>To access course, obtain previos course SBT</Text>
               )}
             </ModalFooter>
         </ModalContent>
       </Modal>
+
+
+      {/* {!showPopup ? (
+        <></>
+      ) : (
+        <div className={stylesFirstBlock.popupClassDescription}>
+          <div>{showPopup.attributes.courseName}</div>
+          <img src={showPopup.attributes.imageFile.img} alt="" />
+          <div>Description: {showPopup.attributes.description}</div>
+          <div>This course creator: {showPopup.attributes.educatorAddress}</div>
+          <div>
+            Once completed, you will be able to mint a SBT of this class for{" "}
+            {showPopup.attributes.cost} Matic
+          </div>
+          <button>Register to the Course</button>
+        </div>
+      )} */}
     </>
   );
 };
