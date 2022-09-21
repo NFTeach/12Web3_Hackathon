@@ -247,14 +247,14 @@ const explore = () => {
           </ModalBody>
           <ModalFooter>
             { prerequisitePass ? (
-              <Link
-                href={{
-                  pathname: "/course",
-                  query: {
-                    courseObjectId: courseObjectId?.[chosenIndex],
-                  },
-                }}
-              > 
+              // <Link
+              //   href={{
+              //     pathname: "/course",
+              //     query: {
+              //       courseObjectId: courseObjectId?.[chosenIndex],
+              //     },
+              //   }}
+              // > 
                 <Button
                 variant='ghost'
                 colorScheme='green'
@@ -265,7 +265,7 @@ const explore = () => {
                 >
                   Start Course
                 </Button>
-              </Link>
+              // </Link>
               ) : (
                 <Text>To access course, you to complete <b>{coursePrereq}</b> first!</Text>
               )}

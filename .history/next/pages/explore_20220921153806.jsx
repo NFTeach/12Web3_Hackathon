@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
 import Link from "next/link";
@@ -36,14 +36,15 @@ const explore = () => {
     const [images, setImages] = useState([]);
     const [courseName, setCourseName] = useState([]);
     const [courseDescription, setCourseDescription] = useState([]);
-    const [courseprerequisite, setCoursePrerequisite] = useState([]);
+    const [courseprerequisite, setCoursePrerequisite] = useState("");
     const [prerequisitePass, setPrerequisitePass] = useState(false);
     const [userSBTs, setUserSBTs] = useState([]);
     const [userTokenIds, setUserTokenIds] = useState("");
-    const [chosenIndex, setChosenIndex] = useState();
-    const [coursePrereq, setCoursePrereq] = useState();
+    const [userCourseObjectIds, setUserCourseObjectIds] = useState([]);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const user = moralis.User.current();
+
+    const [showPopup, setShowPopup] = useState(undefined);
 
     useEffect(() => {
       if (!user) return null;
@@ -74,11 +75,12 @@ const explore = () => {
         setCourseObjectId(course.map((course) => course.id));
         setImages(course.map((course) => course.get("imageFile")));
         setCourseName(course.map((course) => course.get("courseName")));
-        setCourseDescription(course.map((course) => course.get("description")));
+        setCourseDescription(course.map((course) => course.get("courseDescription")));
         setCoursePrerequisite(course.map((course) => course.get("prerequisite")));
         }
     }, []);
 
+    // console.log(courseprerequisite);
     useEffect (async () => {
         const MintSBTs = Moralis.Object.extend("MintSBT");
         const query = new Moralis.Query(MintSBTs);
@@ -88,50 +90,49 @@ const explore = () => {
         setUserSBTs(mintSBT);
         setUserTokenIds((mintSBT).map((mintSBT) => mintSBT.get("tokenId")));
     }, []);
+    console.log(userTokenIds);
 
     const checkPrerequisite = async (index) => {
-      setChosenIndex(index);
-      const createSBTs = Moralis.Object.extend("CreateSBT");
-      const query = new Moralis.Query(createSBTs);
-      query.equalTo("courseObjectId", courseprerequisite[index]);
-      const createSBT = await query.find();
-      const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
-      const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-
-      if (courseprerequisite[index] === undefined) {
-        setPrerequisitePass(true);
-      } else if (prerequisiteSBT.length === 0) {
-        setPrerequisitePass(false);
-      } else {
-        setPrerequisitePass(true);
-      }
-
-      const Courses = Moralis.Object.extend("Courses");
-      const query2 = new Moralis.Query(Courses);
-      query2.equalTo("objectId", courseprerequisite[index]);
-      const course = await query2.find();
-      setCoursePrereq(course[0]?.get("courseName"));
-
-      onOpen();
+        // console.log(index)
+        if (userSBTs.length === 0) {
+            return;
+        } else {
+            const createSBTs = Moralis.Object.extend("CreateSBT");
+            const query = new Moralis.Query(createSBTs);
+            query.equalTo("courseObjectId", courseprerequisite[index]);
+            const createSBT = await query.find();
+            // console.log(createSBT);
+            const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
+            // console.log(courseSBT);
+            const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
+            console.log(prerequisiteSBT);
+            // if (prerequisiteSBT.length === 0) {
+            //     if (courseprerequisite === "") {
+            //         setPrerequisitePass(true);
+            //         console.log("pass");
+            //     } else {
+            //         setPrerequisitePass(false);
+            //         console.log("fail");
+            //     }
+            // } else {
+            //     setPrerequisitePass(true);
+            //     console.log("pass2");
+            // }
+        }
     }
-    // console.log(courseObjectId)
 
-    const handleEnroll = async () => {
-      const User = Moralis.Object.extend("_User");
-      const query3 = new Moralis.Query(User);
-      const myDetails = await query3.first();
-      const enrolledCourses = myDetails?.get("enrolledCourses");
-      const alreadyEnrolled = enrolledCourses?.includes(courseObjectId[chosenIndex]);
-      console.log(alreadyEnrolled);
-      if (enrolledCourses === undefined) {
-        myDetails.set("enrolledCourses", [courseObjectId[chosenIndex]]);  
-      } else if (alreadyEnrolled === true) {
-        return;
-      } else {
-        myDetails.set("enrolledCourses", enrolledCourses.concat(courseObjectId[chosenIndex]));
-      }
-      await myDetails.save();
-    }
+    const onStudentDashboardButtonClick = useCallback(() => {
+        router.push("/studentDashboard");
+    }, [router]);
+
+    const onProfileButtonClick = useCallback(() => {
+        router.push("/profileSettings");
+    }, []);
+
+  const onCourseClick = (element) => {
+    setShowPopup(element);
+    console.log(element);
+  };
 
   return (
     <>
@@ -147,7 +148,7 @@ const explore = () => {
             <div className={stylesHeader.tabsDiv}>
               <button
                 className={stylesHeader.exploreButton}
-                onClick={() => router.push("/studentDashboard")}
+                onClick={onStudentDashboardButtonClick}
               >
                 Student Dashboard
               </button>
@@ -173,7 +174,7 @@ const explore = () => {
               />
               <button
                 className={stylesHeader.nameButton}
-                onClick={() => router.push("/profileSettings")}
+                onClick={onProfileButtonClick}
               >
                 {user?.attributes.username.slice(0, 15)}
               </button>
@@ -208,15 +209,24 @@ const explore = () => {
             <HStack spacing="100px">
               {courses?.map((e, index) => (
                 <Box key={index} w='250px' h='250px'>
-                  <Image
-                    borderRadius='full'
-                    boxSize='250px'
-                    src={images[index]?.img}
-                    alt={courseName?.[index]}
-                    onClick={async () => {
-                      await checkPrerequisite(index);
+                  {/* <Link
+                    href={{
+                      pathname: "/course",
+                      query: {
+                        courseObjectId: courseObjectId?.[index],
+                      },
                     }}
-                  />
+                  > */}
+                    <Image
+                      borderRadius='full'
+                      boxSize='250px'
+                      src={images[index]?.img}
+                      alt={courseName?.[index]}
+                      onClick={async () => {
+                        await checkPrerequisite(index);
+                        }}
+                    />
+                {/*  </Link> */}
                   <br />
                   <Text>{courseName?.[index]}</Text>
                 </Box>
@@ -229,49 +239,21 @@ const explore = () => {
       <div className={stylesFooter.frameDiv}>
         <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
       </div>
-      {/* Course Modal */}
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>  
-          <ModalHeader>{courseName?.[chosenIndex]}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Text>{courseDescription?.[chosenIndex]}</Text>
-            <br />
-            <Image 
-              src={images[chosenIndex]?.img} 
-              alt={courseName?.[chosenIndex]}
-              boxSize='250px'
-              align={'center'}
-              />
-          </ModalBody>
-          <ModalFooter>
-            { prerequisitePass ? (
-              <Link
-                href={{
-                  pathname: "/course",
-                  query: {
-                    courseObjectId: courseObjectId?.[chosenIndex],
-                  },
-                }}
-              > 
-                <Button
-                variant='ghost'
-                colorScheme='green'
-                mr={3}
-                onClick={async () => {
-                  await handleEnroll();
-                }}
-                >
-                  Start Course
-                </Button>
-              </Link>
-              ) : (
-                <Text>To access course, you to complete <b>{coursePrereq}</b> first!</Text>
-              )}
-            </ModalFooter>
-        </ModalContent>
-      </Modal>
+      {!showPopup ? (
+        <></>
+      ) : (
+        <div className={stylesFirstBlock.popupClassDescription}>
+          <div>{showPopup.attributes.courseName}</div>
+          <img src={showPopup.attributes.imageFile.img} alt="" />
+          <div>Description: {showPopup.attributes.description}</div>
+          <div>This course creator: {showPopup.attributes.educatorAddress}</div>
+          <div>
+            Once completed, you will be able to mint a SBT of this class for{" "}
+            {showPopup.attributes.cost} Matic
+          </div>
+          <button>Register to the Course</button>
+        </div>
+      )}
     </>
   );
 };

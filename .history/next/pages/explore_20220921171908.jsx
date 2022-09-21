@@ -120,15 +120,11 @@ const explore = () => {
       const User = Moralis.Object.extend("_User");
       const query3 = new Moralis.Query(User);
       const myDetails = await query3.first();
-      const enrolledCourses = myDetails?.get("enrolledCourses");
-      const alreadyEnrolled = enrolledCourses?.includes(courseObjectId[chosenIndex]);
-      console.log(alreadyEnrolled);
-      if (enrolledCourses === undefined) {
-        myDetails.set("enrolledCourses", [courseObjectId[chosenIndex]]);  
-      } else if (alreadyEnrolled === true) {
-        return;
+      // console.log(myDetails);
+      if (myDetails[0]?.get("enrolledCourses") === undefined) {
+        myDetails.set("enrolledCourses", courseObjectId[chosenIndex]);  
       } else {
-        myDetails.set("enrolledCourses", enrolledCourses.concat(courseObjectId[chosenIndex]));
+        myDetails.set("enrolledCourses", myDetails[0].get("enrolledCourses").concat(courseObjectId[chosenIndex]));
       }
       await myDetails.save();
     }

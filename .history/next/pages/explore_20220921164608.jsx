@@ -91,13 +91,17 @@ const explore = () => {
 
     const checkPrerequisite = async (index) => {
       setChosenIndex(index);
+      // console.log(index)
       const createSBTs = Moralis.Object.extend("CreateSBT");
       const query = new Moralis.Query(createSBTs);
+      // console.log(courseprerequisite[index]);
       query.equalTo("courseObjectId", courseprerequisite[index]);
       const createSBT = await query.find();
+      // console.log(createSBT);
       const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
+      // console.log(courseSBT);
       const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-
+      // console.log(courseprerequisite[index]);
       if (courseprerequisite[index] === undefined) {
         setPrerequisitePass(true);
       } else if (prerequisiteSBT.length === 0) {
@@ -114,24 +118,21 @@ const explore = () => {
 
       onOpen();
     }
-    // console.log(courseObjectId)
 
-    const handleEnroll = async () => {
-      const User = Moralis.Object.extend("_User");
-      const query3 = new Moralis.Query(User);
-      const myDetails = await query3.first();
-      const enrolledCourses = myDetails?.get("enrolledCourses");
-      const alreadyEnrolled = enrolledCourses?.includes(courseObjectId[chosenIndex]);
-      console.log(alreadyEnrolled);
-      if (enrolledCourses === undefined) {
-        myDetails.set("enrolledCourses", [courseObjectId[chosenIndex]]);  
-      } else if (alreadyEnrolled === true) {
-        return;
-      } else {
-        myDetails.set("enrolledCourses", enrolledCourses.concat(courseObjectId[chosenIndex]));
-      }
-      await myDetails.save();
-    }
+    // const handleOnClick = async (index) => {
+    //     checkPrerequisite(index);
+    //     onOpen();
+    // }
+
+    // const handleEnroll = async () => {
+    //     const Courses = Moralis.Object.extend("Courses");
+    //     const query = new Moralis.Query(Courses);
+    //     const course = await query.get(courseObjectId[chosenIndex]);
+    //     const relation = course.relation("students");
+    //     relation.add(user);
+    //     await course.save();
+    //     router.push("/dashboard");
+    // }
 
   return (
     <>
@@ -259,9 +260,6 @@ const explore = () => {
                 variant='ghost'
                 colorScheme='green'
                 mr={3}
-                onClick={async () => {
-                  await handleEnroll();
-                }}
                 >
                   Start Course
                 </Button>

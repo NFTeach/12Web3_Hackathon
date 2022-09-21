@@ -112,26 +112,22 @@ const explore = () => {
       const course = await query2.find();
       setCoursePrereq(course[0]?.get("courseName"));
 
-      onOpen();
-    }
-    // console.log(courseObjectId)
-
-    const handleEnroll = async () => {
       const User = Moralis.Object.extend("_User");
       const query3 = new Moralis.Query(User);
-      const myDetails = await query3.first();
-      const enrolledCourses = myDetails?.get("enrolledCourses");
-      const alreadyEnrolled = enrolledCourses?.includes(courseObjectId[chosenIndex]);
-      console.log(alreadyEnrolled);
-      if (enrolledCourses === undefined) {
-        myDetails.set("enrolledCourses", [courseObjectId[chosenIndex]]);  
-      } else if (alreadyEnrolled === true) {
-        return;
-      } else {
-        myDetails.set("enrolledCourses", enrolledCourses.concat(courseObjectId[chosenIndex]));
-      }
-      await myDetails.save();
+      const myDetails = await query3.find();
+      console.log(myDetails);
+
+      onOpen();
     }
+
+    // const handleEnroll = async () => {
+    //   const Courses = Moralis.Object.extend("Courses");
+    //   const query = new Moralis.Query(Courses);
+    //   const course = await query.get(courseObjectId[chosenIndex]);
+    //   const relation = course.relation("students");
+    //   relation.add(user);
+    //   await course.save();
+    // }
 
   return (
     <>
@@ -259,9 +255,6 @@ const explore = () => {
                 variant='ghost'
                 colorScheme='green'
                 mr={3}
-                onClick={async () => {
-                  await handleEnroll();
-                }}
                 >
                   Start Course
                 </Button>

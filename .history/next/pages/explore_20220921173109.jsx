@@ -121,16 +121,16 @@ const explore = () => {
       const query3 = new Moralis.Query(User);
       const myDetails = await query3.first();
       const enrolledCourses = myDetails?.get("enrolledCourses");
-      const alreadyEnrolled = enrolledCourses?.includes(courseObjectId[chosenIndex]);
-      console.log(alreadyEnrolled);
-      if (enrolledCourses === undefined) {
+      console.log(enrolledCourses);
+      if (myDetails[0]?.get("enrolledCourses") === undefined) {
         myDetails.set("enrolledCourses", [courseObjectId[chosenIndex]]);  
-      } else if (alreadyEnrolled === true) {
-        return;
       } else {
-        myDetails.set("enrolledCourses", enrolledCourses.concat(courseObjectId[chosenIndex]));
+        
+        // console.log(enrolledCourses);
+        // myDetails.set("enrolledCourses", [...myDetails[0]?.get("enrolledCourses"), courseObjectId[chosenIndex]]);
+        // myDetails.set("enrolledCourses", myDetails[0].get("enrolledCourses").concat(courseObjectId[chosenIndex]));
       }
-      await myDetails.save();
+      // await myDetails.save();
     }
 
   return (
@@ -247,14 +247,14 @@ const explore = () => {
           </ModalBody>
           <ModalFooter>
             { prerequisitePass ? (
-              <Link
-                href={{
-                  pathname: "/course",
-                  query: {
-                    courseObjectId: courseObjectId?.[chosenIndex],
-                  },
-                }}
-              > 
+              // <Link
+              //   href={{
+              //     pathname: "/course",
+              //     query: {
+              //       courseObjectId: courseObjectId?.[chosenIndex],
+              //     },
+              //   }}
+              // > 
                 <Button
                 variant='ghost'
                 colorScheme='green'
@@ -265,7 +265,7 @@ const explore = () => {
                 >
                   Start Course
                 </Button>
-              </Link>
+              // </Link>
               ) : (
                 <Text>To access course, you to complete <b>{coursePrereq}</b> first!</Text>
               )}
