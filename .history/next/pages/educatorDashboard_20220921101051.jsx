@@ -167,6 +167,11 @@ const educatorDashboard = () => {
     lifeTimePayout = await Moralis.executeFunction(options);
   }
 
+  // Header effects
+  const onExploreButtonClick = useCallback(() => {
+    router.push("/explore");
+  }, [router]);
+
   const onStudentDashboardButtonClick = useCallback(() => {
     router.push("/studentDashboard");
   }, [router]);
@@ -177,6 +182,36 @@ const educatorDashboard = () => {
 
   const onAddCourseButtonClick = useCallback(() => {
     router.push("/courseCreationPage1");
+  }, []);
+
+  useEffect(() => {
+    const scrollAnimElements = document.querySelectorAll(
+      "[data-animate-on-scroll-header]"
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
+            const targetElement = entry.target;
+            targetElement.classList.add(stylesHeader.animate);
+            observer.unobserve(targetElement);
+          }
+        }
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    for (let i = 0; i < scrollAnimElements.length; i++) {
+      observer.observe(scrollAnimElements[i]);
+    }
+
+    return () => {
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.unobserve(scrollAnimElements[i]);
+      }
+    };
   }, []);
 
   return (
@@ -237,16 +272,29 @@ const educatorDashboard = () => {
             <div className={stylesFirstBlock.cardsDefault}>
               <div className={stylesFirstBlock.sheetDiv} />
             </div>
-            <div className={stylesFirstBlock.frameDiv1}>
+            {/* <div className={stylesFirstBlock.frameDiv1}>
               <h3 className={stylesFirstBlock.sBTsIssuedH3}>SBTs Issued</h3>
               <b className={stylesFirstBlock.b}>23</b>
-            </div>
+            </div> */}
           </div>
           <div className={stylesFirstBlock.groupDiv1}>
             <div className={stylesFirstBlock.cardsDefault1}>
               <div className={stylesFirstBlock.sheetDiv1} />
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
+              <div className={stylesFirstBlock.frameDiv3}>
+                {/* <div className={stylesFirstBlock.overviewDiv}>Overview</div> */}
+                {/* <Button 
+                  variant="solid" 
+                  w="133px" 
+                  colorScheme="green"
+                  onClick={async () => {
+                    await withdrawFunds();
+                  }}
+                >
+                  Withdraw Funds
+                </Button> */}
+              </div>
               <div className={stylesFirstBlock.frameDiv4}>
                 <div className={stylesFirstBlock.incomeInfoDiv}>
                   <div className={stylesFirstBlock.frameDiv5}>
@@ -255,6 +303,23 @@ const educatorDashboard = () => {
                   <div className={stylesFirstBlock.frameDiv6}>
                     <div className={stylesFirstBlock.overviewDiv}>Students</div>
                     <div className={stylesFirstBlock.div}>209</div>
+                  </div>
+                  <div className={stylesFirstBlock.frameDiv7}>
+                    <div className={stylesFirstBlock.overviewDiv}>
+                      <Button
+                        variant="solid"
+                        w="133px"
+                        colorScheme="green"
+                        onClick={() => {
+                          fetch({ params: options });
+                        }}
+                      >
+                        Check Balance
+                      </Button>
+                    </div>
+                    <div className={stylesFirstBlock.div}>
+                      {data && <pre>{Moralis.Units.FromWei(data)}</pre>} 
+                    </div>
                   </div>
                   <div className={stylesFirstBlock.frameDiv8}>
                     <img
@@ -283,30 +348,13 @@ const educatorDashboard = () => {
                 className={stylesFirstBlock.buttonSolidTextAndIcon}
                 variant='solid'
                 colorScheme='green'
-                onClick={onAddCourseButtonClick}
               >
                 Add Courses
               </Button>
               <Button
-              className={stylesFirstBlock.buttonSolidTextAndIcon}
-                variant="solid"
-                colorScheme="green"
-                onClick={() => {
-                  fetch({ params: options });
-                }}
-              >
-                Check Balance
-              </Button>
-              <div className={stylesFirstBlock.div}>
-                {data && <pre>{Moralis.Units.FromWei(data)}</pre>} 
-              </div>
-              <Button
                 className={stylesFirstBlock.buttonSolidTextAndIcon}
                 variant='solid'
                 colorScheme='cyan'
-                onClick={async () => {
-                  await withdrawFunds();
-                }}
               >
                 Withdraw
               </Button>
@@ -318,7 +366,7 @@ const educatorDashboard = () => {
             <div className={stylesFirstBlock.frameDiv9}>
               <h3 className={stylesFirstBlock.frameH3}>
                 <div className={stylesFirstBlock.yourCoursesDiv}>
-                  Your Courses (Coming Soon)
+                  Your Courses
                 </div>
               </h3>
             </div>

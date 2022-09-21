@@ -167,6 +167,11 @@ const educatorDashboard = () => {
     lifeTimePayout = await Moralis.executeFunction(options);
   }
 
+  // Header effects
+  const onExploreButtonClick = useCallback(() => {
+    router.push("/explore");
+  }, [router]);
+
   const onStudentDashboardButtonClick = useCallback(() => {
     router.push("/studentDashboard");
   }, [router]);
@@ -177,6 +182,36 @@ const educatorDashboard = () => {
 
   const onAddCourseButtonClick = useCallback(() => {
     router.push("/courseCreationPage1");
+  }, []);
+
+  useEffect(() => {
+    const scrollAnimElements = document.querySelectorAll(
+      "[data-animate-on-scroll-header]"
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
+            const targetElement = entry.target;
+            targetElement.classList.add(stylesHeader.animate);
+            observer.unobserve(targetElement);
+          }
+        }
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    for (let i = 0; i < scrollAnimElements.length; i++) {
+      observer.observe(scrollAnimElements[i]);
+    }
+
+    return () => {
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.unobserve(scrollAnimElements[i]);
+      }
+    };
   }, []);
 
   return (
@@ -283,7 +318,6 @@ const educatorDashboard = () => {
                 className={stylesFirstBlock.buttonSolidTextAndIcon}
                 variant='solid'
                 colorScheme='green'
-                onClick={onAddCourseButtonClick}
               >
                 Add Courses
               </Button>

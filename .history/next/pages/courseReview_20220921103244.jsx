@@ -403,7 +403,6 @@ const courseReview = () => {
               <Input
                 className={stylesFirstBlock.inputOutline}
                 variant='outline'
-                isDisabled={true}
                 textColor='#e4e4e4'
                 placeholder={courseDescription}
               />
@@ -416,7 +415,6 @@ const courseReview = () => {
                 className={stylesFirstBlock.inputOutline}
                 variant='outline'
                 textColor='#e4e4e4'
-                isDisabled={true}
                 placeholder={courseCost}
               />
             </div>
@@ -428,7 +426,6 @@ const courseReview = () => {
                 className={stylesFirstBlock.inputOutline}
                 variant='outline'
                 textColor='#e4e4e4'
-                isDisabled={true}
                 placeholder={coursePrerequisiteName}
               />
             </div>

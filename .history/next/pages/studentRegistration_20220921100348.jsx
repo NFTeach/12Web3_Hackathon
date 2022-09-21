@@ -123,13 +123,13 @@ const studentRegistration = () => {
                   </div>
                   <div className={stylesFirstBlock.frameDiv5}>
                     <div className={stylesFirstBlock.interestsDiv}>
-                      Bio
+                      Interests
                     </div>
                     <Input
                       className={stylesFirstBlock.inputOutline}
                       variant='outline'
                       textColor='#e4e4e4'
-                      placeholder='Bio'
+                      placeholder='Education Interests'
                       onChange={(e) => setBio(e.target.value)}
                     />
                   </div>

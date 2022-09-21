@@ -210,7 +210,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion1Answer1}
-                onChange={(e) => setFakeQuestion1Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -218,7 +217,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion1Answer2}
-                onChange={(e) => setFakeQuestion1Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -226,7 +224,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion1Answer3}
-                onChange={(e) => setFakeQuestion1Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -236,7 +233,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 2'
                 value={question2}
-                onChange={(e) => setQuestion2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -244,7 +240,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question2Answer}
-                onChange={(e) => setQuestion2Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -252,7 +247,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion2Answer1}
-                onChange={(e) => setFakeQuestion2Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -260,7 +254,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion2Answer2}
-                onChange={(e) => setFakeQuestion2Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -268,7 +261,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion2Answer3}
-                onChange={(e) => setFakeQuestion2Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -278,7 +270,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 3'
                 value={question3}
-                onChange={(e) => setQuestion3(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -286,7 +277,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question3Answer}
-                onChange={(e) => setQuestion3Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -294,7 +284,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion3Answer1}
-                onChange={(e) => setFakeQuestion3Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -302,7 +291,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion3Answer2}
-                onChange={(e) => setFakeQuestion3Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -310,7 +298,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion3Answer3}
-                onChange={(e) => setFakeQuestion3Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -320,7 +307,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 4'
                 value={question4}
-                onChange={(e) => setQuestion4(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -328,7 +314,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question4Answer}
-                onChange={(e) => setQuestion4Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -336,7 +321,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion4Answer1}
-                onChange={(e) => setFakeQuestion4Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -344,7 +328,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion4Answer2}
-                onChange={(e) => setFakeQuestion4Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -352,7 +335,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion4Answer3}
-                onChange={(e) => setFakeQuestion4Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -362,7 +344,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 5'
                 value={question5}
-                onChange={(e) => setQuestion5(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -370,7 +351,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question5Answer}
-                onChange={(e) => setQuestion5Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -378,7 +358,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion5Answer1}
-                onChange={(e) => setFakeQuestion5Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -386,7 +365,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion5Answer2}
-                onChange={(e) => setFakeQuestion5Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -394,7 +372,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion5Answer3}
-                onChange={(e) => setFakeQuestion5Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -404,7 +381,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 6'
                 value={question6}
-                onChange={(e) => setQuestion6(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -412,7 +388,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question6Answer}
-                onChange={(e) => setQuestion6Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -420,7 +395,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion6Answer1}
-                onChange={(e) => setFakeQuestion6Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -428,7 +402,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion6Answer2}
-                onChange={(e) => setFakeQuestion6Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -436,7 +409,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion6Answer3}
-                onChange={(e) => setFakeQuestion6Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -446,7 +418,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 7'
                 value={question7}
-                onChange={(e) => setQuestion7(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -454,7 +425,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question7Answer}
-                onChange={(e) => setQuestion7Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -462,7 +432,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion7Answer1}
-                onChange={(e) => setFakeQuestion7Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -470,7 +439,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion7Answer2}
-                onChange={(e) => setFakeQuestion7Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -478,7 +446,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion7Answer3}
-                onChange={(e) => setFakeQuestion7Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -488,7 +455,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 8'
                 value={question8}
-                onChange={(e) => setQuestion8(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -496,7 +462,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question8Answer}
-                onChange={(e) => setQuestion8Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -504,7 +469,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion8Answer1}
-                onChange={(e) => setFakeQuestion8Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -512,7 +476,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion8Answer2}
-                onChange={(e) => setFakeQuestion8Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -520,7 +483,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion8Answer3}
-                onChange={(e) => setFakeQuestion8Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -530,7 +492,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 9'
                 value={question9}
-                onChange={(e) => setQuestion9(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -538,7 +499,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question9Answer}
-                onChange={(e) => setQuestion9Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -546,7 +506,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion9Answer1}
-                onChange={(e) => setFakeQuestion9Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -554,7 +513,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion9Answer2}
-                onChange={(e) => setFakeQuestion9Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -562,7 +520,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion9Answer3}
-                onChange={(e) => setFakeQuestion9Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
@@ -572,7 +529,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Question 10'
                 value={question10}
-                onChange={(e) => setQuestion10(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -580,7 +536,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Answer'
                 value={question10Answer}
-                onChange={(e) => setQuestion10Answer(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -588,7 +543,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 1'
                 value={fakeQuestion10Answer1}
-                onChange={(e) => setFakeQuestion10Answer1(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -596,7 +550,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 2'
                 value={fakeQuestion10Answer2}
-                onChange={(e) => setFakeQuestion10Answer2(e.target.value)}
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
@@ -604,7 +557,6 @@ const courseCreationPage4 = () => {
                 textColor='#e4e4e4'
                 placeholder='Fake Answer 3'
                 value={fakeQuestion10Answer3}
-                onChange={(e) => setFakeQuestion10Answer3(e.target.value)}
               />
             </div>
             <div className={stylesFirstBlock.passingGradeDiv}>

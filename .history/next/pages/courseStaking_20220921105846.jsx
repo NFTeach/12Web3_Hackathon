@@ -98,7 +98,7 @@ const courseStaking = () => {
   };
 
   const onCreateSBTSuccess = useCallback(() => {
-    router.push("/explore");
+    router.push("/educatorDashboard");
   }, []);
 
   return (

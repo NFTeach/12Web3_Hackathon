@@ -98,7 +98,7 @@ const courseStaking = () => {
   };
 
   const onCreateSBTSuccess = useCallback(() => {
-    router.push("/explore");
+    router.push("/educatorDashboard");
   }, []);
 
   return (
@@ -125,10 +125,10 @@ const courseStaking = () => {
               <span className={stylesFirstBlock.titleTxtSpan}>
                 <span>
                   
-                  To prevent <a href="https://academy.binance.com/en/articles/sybil-attacks-explained" target="_blank"><b>Sybil Attacks </b></a> 
+                  To prevent <a href="https://academy.binance.com/en/articles/sybil-attacks-explained" target="_blank">Sybil Attacks </a> 
                   from bad actors, we require educators to stake some funds <br /> (0.001 wMATIC). Once our platform has confirmed the stake, your course
                   will be uploaded <br /> within 24 hours. If you do not have wMATIC, you can vist:
-                  <a href="https://uniswap.org/" target="_blank"> <b>Uniswap.</b></a> 
+                  <a href="https://uniswap.org/" target="_blank"> Uniswap.</a> 
                 </span>
               </span>
             </div>
