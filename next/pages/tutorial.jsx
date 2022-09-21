@@ -1,13 +1,26 @@
 import { useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
+import stylesHeader from "../styles/Tutorial_Page/Header.module.css";
 import stylesFirstBlock from "../styles/Tutorial_Page/FirstBlock.module.css";
+import stylesFooter from "../styles/Tutorial_Page/Footer.module.css";
 import { Button } from "@chakra-ui/react";
 
 const Header = () => {
   const router = useRouter();
-  
+
   return (
     <>
+      {/* Header */}
+      <div className={stylesHeader.frameDiv}>
+        <div className={stylesHeader.frameDiv1}>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.logoDiv}>Welcome to the Future</div>
+        </div>
+      </div>
       {/* First Block */}
       <div className={stylesFirstBlock.tutorialDiv}>
         <div className={stylesFirstBlock.frameDiv}>
@@ -50,9 +63,9 @@ const Header = () => {
                 <h4
                   className={stylesFirstBlock.titleH4}
                 >{`You’ve completed your first course on NFTeach! We hope you get the most out of our platform, and learn as much as possible. Please click the button below to gain access to the full website experience. `}</h4>
-                <Button 
-                  variant='solid' 
-                  w='126px' 
+                <Button
+                  variant='solid'
+                  w='126px'
                   colorScheme='orange'
                   onClick={() => router.push("/studentRegistration")}
                 >
@@ -63,7 +76,7 @@ const Header = () => {
             <img
               className={stylesFirstBlock.pNGImage6}
               alt=''
-              src='/tutorial_imgs/Hands.png'
+              src='/tutorial_imgs/hands.png'
             />
           </div>
         </div>
@@ -88,7 +101,7 @@ const Header = () => {
             <img
               className={stylesFirstBlock.pNGImage12}
               alt=''
-              src='/tutorial_imgs/Student.png'
+              src='/tutorial_imgs/student.png'
             />
             <div className={stylesFirstBlock.frameDiv11}>
               <h2 className={stylesFirstBlock.titleH2}>What are “SBTs?”</h2>
@@ -107,81 +120,44 @@ const Header = () => {
             <b className={stylesFirstBlock.titleB}>
               What is “token-gated content?”
             </b>
-            <h4 className={stylesFirstBlock.weCraftedATutorialToHelp}>
-              <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
-                <b className={stylesFirstBlock.weveSegmentedCourses}>
-                  We’ve segmented courses into stages,
-                </b>
-                <span
-                  className={stylesFirstBlock.weveSegmentedCourses}
-                >{` similar to levels in a game. Each SBT `}</span>
-                <b className={stylesFirstBlock.weveSegmentedCourses}>
-                  unlocks the next stage
-                </b>
-                <span>{` of that respective course. For example, after taking Math 101 and passing the test, `}</span>
-                <b className={stylesFirstBlock.weveSegmentedCourses}>
-                  you will get the Math 101 SBT, and unlock the Math 102 course
-                </b>
-                <span>{`. `}</span>
-              </p>
-              <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
-                <span>&nbsp;</span>
-              </p>
-              <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
-                <span>{`However, say you wanted to check out the Science 102 course instead. `}</span>
-                <b>{`You cannot use the Math 101 SBT to unlock Science 102. `}</b>
-              </p>
-              <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
-                <b>You must take (and pass)</b>
-                <span>{` Science 101 to obtain that respective SBT, and then proceed. `}</span>
-              </p>
-              <p className={stylesFirstBlock.gamingIsFunAndMostOfThe}>
-                <span>&nbsp;</span>
-              </p>
-            </h4>
-          </div>
-          <img
-            className={stylesFirstBlock.pNGImage121}
-            alt=''
-            src='/tutorial_imgs/Path.png'
-          />
-        </div>
-        <div className={stylesFirstBlock.frameDiv12}>
-          <div className={stylesFirstBlock.frameDiv15}>
-            <b className={stylesFirstBlock.titleB}>
-              What is “token-gated content?”
-            </b>
-            <h4 className={stylesFirstBlock.weCraftedATutorialToHelp}>
-              <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
-                <b className={stylesFirstBlock.weveSegmentedCourses}>
-                  We’ve segmented courses into stages,
-                </b>
-                <span
-                  className={stylesFirstBlock.weveSegmentedCourses}
-                >{` similar to levels in a game. Each SBT `}</span>
-                <b className={stylesFirstBlock.weveSegmentedCourses}>
-                  unlocks the next stage
-                </b>
-                <span>{` of that respective course. For example, after taking Math 101 and passing the test, `}</span>
-                <b className={stylesFirstBlock.weveSegmentedCourses}>
-                  you will get the Math 101 SBT, and unlock the Math 102 course
-                </b>
-                <span>{`. `}</span>
-              </p>
-              <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
-                <span>&nbsp;</span>
-              </p>
-              <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
-                <span>{`However, say you wanted to check out the Science 102 course instead. `}</span>
-                <b>{`You cannot use the Math 101 SBT to unlock Science 102. `}</b>
-              </p>
-              <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
-                <b>You must take (and pass)</b>
-                <span>{` Science 101 to obtain that respective SBT, and then proceed. `}</span>
-              </p>
-              <p className={stylesFirstBlock.gamingIsFunAndMostOfThe}>
-                <span>&nbsp;</span>
-              </p>
+            <h4 className={stylesFirstBlock.textH42}>
+              <span className={stylesFirstBlock.textTxtSpan}>
+                <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
+                  <b>&nbsp;</b>
+                </p>
+                <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
+                  <b>&nbsp;</b>
+                </p>
+                <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
+                  <b>We’ve segmented courses into stages,</b>
+                  <span
+                    className={stylesFirstBlock.similarToLevels}
+                  >{` similar to levels in a game. Each SBT `}</span>
+                  <b className={stylesFirstBlock.similarToLevels}>
+                    unlocks the next stage
+                  </b>
+                  <span>{` of that respective course. For example, after taking Math 101 and passing the test, `}</span>
+                  <b className={stylesFirstBlock.similarToLevels}>
+                    you will get the Math 101 SBT, and unlock the Math 102
+                    course
+                  </b>
+                  <span>{`. `}</span>
+                </p>
+                <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
+                  <span>&nbsp;</span>
+                </p>
+                <p className={stylesFirstBlock.ourResponseWhyShouldntIt}>
+                  <span>{`However, say you wanted to check out the Science 102 course instead. `}</span>
+                  <b>
+                    You cannot use the Math 101 SBT to unlock Science 102. You
+                    must take (and pass)
+                  </b>
+                  <span>{` Science 101 to obtain that respective SBT, and then proceed. `}</span>
+                </p>
+                <p className={stylesFirstBlock.gamingIsFunAndMostOfThe}>
+                  <span>&nbsp;</span>
+                </p>
+              </span>
             </h4>
           </div>
           <img
@@ -190,18 +166,13 @@ const Header = () => {
             src='/tutorial_imgs/Path.png'
           />
         </div>
-        <div className={stylesFirstBlock.frameDiv16}>
-          <h4 className={stylesFirstBlock.nFTeachH4}>© 2022 NFTeach</h4>
-        </div>
-        <div className={stylesFirstBlock.frameDiv17}>
-          <div className={stylesFirstBlock.logoDiv}>
-            The Education Platform of the Future
-          </div>
-        </div>
+      </div>
+      {/* Footer */}
+      <div className={stylesFooter.frameDiv}>
+        <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
       </div>
     </>
   );
 };
 
 export default Header;
-

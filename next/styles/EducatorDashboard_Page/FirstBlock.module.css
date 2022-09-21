@@ -1,267 +1,254 @@
-.overviewDiv {
-  position: relative;
-  display: inline-block;
-}
-.frameDiv3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 391px;
-}
-.rectangleDiv {
-  position: relative;
-  border-radius: 19px;
-  background-color: #121212;
-  width: 358.65px;
-  height: 139px;
-  flex-shrink: 0;
-}
-.frameDiv5 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 19px;
-  background-color: #1e1e1e;
-  display: flex;
-  flex-direction: column;
-  padding: 16px 15px;
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.div {
-  position: relative;
-  font-size: 45px;
-  color: #dbdbdb;
-  display: inline-block;
-}
-.frameDiv6,
-.frameDiv7 {
-  position: absolute;
-  top: 31px;
-  left: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 24px;
-}
-.frameDiv7 {
-  top: 29.74px;
-  left: 488.25px;
-  align-items: center;
-}
-.polygonIcon {
-  position: relative;
-  width: 37px;
-  height: 20px;
-  flex-shrink: 0;
-}
-.frameDiv8 {
-  position: absolute;
-  top: 63px;
-  left: 213px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 45px;
-  color: #3eb489;
-}
-.incomeInfoDiv {
-  position: relative;
-  width: 679.25px;
-  height: 171px;
-  flex-shrink: 0;
-}
-.frameDiv2,
-.frameDiv4 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.frameDiv4 {
-  font-size: 25px;
-}
-.frameDiv2 {
-  padding: 27px 31px;
-  box-sizing: border-box;
-  gap: 42px;
-}
-.yourCoursesDiv {
-  position: relative;
-  display: inline-block;
-  width: 221px;
-  height: 47px;
-  flex-shrink: 0;
-}
-.frameDiv10 {
-  width: 657px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.frameDiv1,
-.frameDiv9 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-.frameDiv9 {
-  background-color: #121212;
-  padding: 35px 0;
-  padding-inline: 20px;
-  box-sizing: border-box;
-  gap: 17px;
-}
-.frameDiv1 {
-  flex: 1;
-  gap: 31px;
-}
 .cardsDefault,
 .sheetDiv {
   position: absolute;
+  width: 100%;
   top: 0;
+  right: 0;
   left: 0;
 }
 .sheetDiv {
   height: 100%;
-  width: calc(100% - -0.5px);
-  right: -0.5px;
   bottom: 0;
   border-radius: 8px;
   background-color: #3eb489;
 }
 .cardsDefault {
-  width: 100%;
-  right: 0;
   border-radius: 25px;
-  height: 200px;
+  height: 150px;
 }
 .b,
-.sBTsIssued {
-  position: absolute;
-  width: calc(100% - 174.2px);
-  top: 38.81px;
-  right: 76.35px;
-  left: 97.85px;
-  letter-spacing: 0.4px;
-  display: inline-block;
-  height: 35.82px;
-}
-.b {
-  top: 100px;
-  font-size: 40px;
-  letter-spacing: 1px;
-  color: #e4e4e4;
-  height: 74.63px;
-}
-.groupDiv {
+.sBTsIssuedH3 {
   align-self: stretch;
   position: relative;
-  height: 200px;
-  flex-shrink: 0;
+  display: inline-block;
+}
+.sBTsIssuedH3 {
+  margin: 0;
+  font-size: inherit;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+  font-family: inherit;
+}
+.b {
+  font-size: 45px;
+  letter-spacing: 1px;
+  color: #e4e4e4;
+}
+.frameDiv1 {
+  position: absolute;
+  height: calc(100% - 48.13px);
+  width: calc(100% - 85.99px);
+  top: 29.1px;
+  right: 37.69px;
+  bottom: 19.03px;
+  left: 48.3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+}
+.groupDiv {
+  flex: 1;
+  position: relative;
+  height: 150px;
   color: #121212;
 }
-.b1,
+.cardsDefault1,
 .sheetDiv1 {
   position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
 }
 .sheetDiv1 {
   height: 100%;
-  width: calc(100% - -0.5px);
-  top: 0;
-  right: -0.5px;
   bottom: 0;
-  left: 0;
   border-radius: 8px;
   background-color: #121212;
-  border: 1px solid #e4e4e4;
-  box-sizing: border-box;
-}
-.b1 {
-  width: calc(100% - 174.2px);
-  top: 86.57px;
-  right: 76.35px;
-  left: 97.85px;
-  font-size: 40px;
-  letter-spacing: 1px;
-  display: inline-block;
-  color: #e4e4e4;
-  height: 74.63px;
-}
-.groupDiv1 {
-  align-self: stretch;
-  position: relative;
-  height: 200px;
-  flex-shrink: 0;
 }
 .cardsDefault1 {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
   border-radius: 25px;
-  border: 1px solid #e4e4e4;
-  box-sizing: border-box;
-  height: 200px;
+  height: 150px;
 }
-.b2,
-.sBTsIssued1 {
+.frameDiv2 {
   position: absolute;
-  width: calc(100% - 174.12px);
-  top: 41.79px;
-  right: 90.2px;
-  left: 83.92px;
-  letter-spacing: 0.4px;
-  display: inline-block;
-  height: 35.82px;
-}
-.b2 {
-  top: 92.54px;
-  font-size: 40px;
-  letter-spacing: 1px;
-  color: #e4e4e4;
-  height: 74.63px;
-}
-.sideInformationDiv {
-  flex: 1;
-  height: 874px;
+  height: calc(100% - 69.17px);
+  width: calc(100% - 85.95px);
+  top: 31.34px;
+  right: 44.53px;
+  bottom: 37.82px;
+  left: 41.43px;
+  display: flex;
   flex-direction: column;
-  gap: 86px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.groupDiv1 {
+  flex: 1;
+  position: relative;
+  height: 150px;
+}
+.frameDiv {
+  position: absolute;
+  width: calc(100% - 275px);
+  top: 82px;
+  right: 138px;
+  left: 137px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 87px;
   text-align: center;
-  font-size: 19px;
+  font-size: 25px;
   color: #9fa2b4;
 }
-.educatorDashboardDiv,
-.frameDiv,
-.sideInformationDiv {
+.helpH2 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-block;
+  height: 38px;
+  flex-shrink: 0;
+}
+.buttonSolidTextAndIcon,
+.frameDiv6,
+.helpH2 {
+  align-self: stretch;
+}
+.frameDiv6 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 66px;
+}
+.frameDiv4,
+.frameDiv5,
+.frameDiv6 {
   display: flex;
+  justify-content: flex-start;
+}
+.frameDiv5 {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 66px;
+}
+.frameDiv4 {
+  position: absolute;
+  width: calc(100% - 1061px);
+  top: 334px;
+  right: 139px;
+  left: 922px;
+  border-radius: 15px;
+  background-color: #131313;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  height: 473px;
+  flex-direction: row;
+  padding: 30px 66px 0;
+  align-items: flex-start;
+}
+.yourCoursesDiv {
+  flex: 1;
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  height: 38px;
+}
+.frameDiv9,
+.frameH3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.frameH3 {
+  margin: 0;
+  flex: 1;
+  align-items: center;
+  font-size: inherit;
+  font-family: inherit;
+}
+.frameDiv9 {
+  align-self: stretch;
+  align-items: flex-start;
+}
+.chemistry101H4 {
+  display: flex;
+  align-items: center;
+  width: 528.58px;
+  height: 47px;
+  flex-shrink: 0;
+}
+.blockchainBasicsH4,
+.chemistry101H4,
+.math101H4 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}
+.math101H4 {
+  display: flex;
+  align-items: center;
+  width: 528.62px;
+  height: 54px;
+  flex-shrink: 0;
+}
+.blockchainBasicsH4 {
+  display: inline-block;
+}
+.frameDiv11 {
+  align-self: stretch;
+  gap: 32px;
+}
+.frameDiv10,
+.frameDiv11,
+.frameDiv8 {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frameDiv {
-  align-self: stretch;
-  flex-direction: row;
-  gap: 100px;
+.frameDiv10 {
+  width: 616px;
+  font-size: 20px;
+  color: #fff;
+}
+.frameDiv8 {
+  position: absolute;
+  top: 40px;
+  left: 44px;
+  gap: 74px;
+}
+.frameDiv7 {
+  position: absolute;
+  width: calc(100% - 779px);
+  top: 334px;
+  right: 642px;
+  left: 137px;
+  border-radius: 15px;
+  background-color: #121212;
+  border: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  height: 473px;
+  overflow: hidden;
 }
 .educatorDashboardDiv {
   position: relative;
-  /* border-radius: 25px; */
-  background-color: #18191a;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  background-color: #181919;
   width: 100%;
-  height: 989px;
-  flex-direction: column;
-  padding: 57px 25px;
-  box-sizing: border-box;
+  height: 891px;
+  overflow: hidden;
   text-align: left;
   font-size: 35px;
-  color: #797777;
+  color: #878787;
   font-family: Mulish;
 }

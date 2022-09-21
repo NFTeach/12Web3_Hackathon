@@ -1,29 +1,42 @@
-.frameDiv,
-.titleH1 {
+.nFTeach1Icon {
   position: relative;
+  width: 120px;
+  height: 60px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.frameDiv,
+.frameDiv1,
+.logoDiv {
   display: flex;
   align-items: center;
 }
-.titleH1 {
-  margin: 0;
-  font-size: inherit;
-  font-weight: 400;
-  font-family: "Mulish", sans-serif;
+.logoDiv {
+  position: relative;
   justify-content: center;
-  width: 1440px;
-  height: 33px;
+  width: 1105px;
   flex-shrink: 0;
 }
+.frameDiv,
+.frameDiv1 {
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.frameDiv1 {
+  flex: 1;
+  padding: 0 0 0 10px;
+  justify-content: flex-start;
+  gap: 60px;
+}
 .frameDiv {
+  position: relative;
   background-color: #121212;
   width: 100%;
-  height: 45px;
-  flex-direction: row;
-  padding: 25px 173px 25px 0;
-  box-sizing: border-box;
-  justify-content: flex-start;
+  height: 71px;
+  padding: 26px 11px 26px 0;
+  justify-content: center;
   text-align: center;
-  font-size: 19px;
+  font-size: 18px;
   color: #e4e4e4;
   font-family: Mulish;
 }

@@ -77,7 +77,14 @@ const CourseCreationPage1 = () => {
     <>
       {/* Header */}
       <div className={stylesHeader.frameDiv}>
-        <h1 className={stylesHeader.titleH1}>Build The Future</h1>
+        <div className={stylesHeader.frameDiv1}>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.logoDiv}>Build the Future</div>
+        </div>
       </div>
       {/* First Block */}
       <div className={stylesFirstBlock.courseCreationPage1}>
@@ -131,7 +138,7 @@ const CourseCreationPage1 = () => {
                 textColor='#e4e4e4'
                 placeholder='How much will your course cost? (Specify in Matic)'
                 defaultValue={15}
-                precision={5} 
+                precision={5}
                 step={0.01}
                 onChange={(valueString) => setCost(valueString)}
               >

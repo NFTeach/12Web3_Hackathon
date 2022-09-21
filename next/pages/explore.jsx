@@ -77,40 +77,48 @@ const explore = () => {
   return (
     <>
       {/* Header */}
-      <div className={stylesHeader.headerDiv}>
+      <div className={stylesHeader.headerExploreDiv}>
         <div className={stylesHeader.frameDiv}>
-          <h2 className={stylesHeader.nFTeachH2}>NFTeach</h2>
-          <div className={stylesHeader.tabsDiv}>
-            <button
-              className={stylesHeader.studentDashboardButton}
-              onClick={onStudentDashboardButtonClick}
-            >
-              Student Dashboard
-            </button>
-            <button className={stylesHeader.exploreButton}>Explore</button>
-            <button
-              className={stylesHeader.studentDashboardButton}
-              onClick={
-                educator
-                  ? () => router.push("/educatorDashboard")
-                  : () => router.push("/educatorRegistration")
-              }
-            >
-              Educator Dashboard
-            </button>
-          </div>
-          <div className={stylesHeader.profilePictureDiv}>
-            <img
-              className={stylesHeader.displayedNFTIcon}
-              alt='profilePFP'
-              src={pfp ? pfp : defaultImgs[0]}
-            />
-            <button
-              className={stylesHeader.nameButton}
-              onClick={onProfileButtonClick}
-            >
-              {user?.attributes.username.slice(0, 15)}
-            </button>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.frameDiv1}>
+            <div className={stylesHeader.tabsDiv}>
+              <button
+                className={stylesHeader.exploreButton}
+                onClick={onStudentDashboardButtonClick}
+              >
+                Student Dashboard
+              </button>
+              <button className={stylesHeader.studentDashboardButton}>
+                Explore
+              </button>
+              <button
+                className={stylesHeader.exploreButton}
+                onClick={
+                  educator
+                    ? () => router.push("/educatorDashboard")
+                    : () => router.push("/educatorRegistration")
+                }
+              >
+                Educator Dashboard
+              </button>
+            </div>
+            <div className={stylesHeader.profilePictureDiv}>
+              <img
+                className={stylesHeader.displayedNFTIcon}
+                alt='profilePFP'
+                src={pfp ? pfp : defaultImgs[0]}
+              />
+              <button
+                className={stylesHeader.nameButton}
+                onClick={onProfileButtonClick}
+              >
+                {user?.attributes.username.slice(0, 15)}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -123,15 +131,15 @@ const explore = () => {
               alt=''
               src='/explore_imgs/space_man.png'
             />
-            <div className={stylesFirstBlock.chem101Div}>
-              <h1 className={stylesFirstBlock.educationThatsOutOfThisW}>
-                <p className={stylesFirstBlock.educationThats}>
-                  <span>{`Education That’s`}</span>
-                </p>
-                <p className={stylesFirstBlock.outOfThisWorld}>
-                  <span>Out Of This World</span>
-                </p>
-              </h1>
+            <div className={stylesFirstBlock.frameDiv2}>
+              <div className={stylesFirstBlock.frameDiv3}>
+                <h1
+                  className={stylesFirstBlock.educationThatsH1}
+                >{`Education That’s `}</h1>
+                <h1 className={stylesFirstBlock.outOfThisWorld}>
+                  Out Of This World
+                </h1>
+              </div>
               <h3 className={stylesFirstBlock.chooseACourseBelowToStart}>
                 Choose a course below to start learning and earning
               </h3>
