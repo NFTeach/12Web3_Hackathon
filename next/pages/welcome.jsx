@@ -32,7 +32,14 @@ const Welcome = () => {
     <>
       {/* Header */}
       <div className={stylesHeader.frameDiv}>
-        <h1 className={stylesHeader.titleH1}>The Future Of Education</h1>
+        <div className={stylesHeader.frameDiv1}>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.logoDiv}>Welcome to the Future</div>
+        </div>
       </div>
       {/* First Block */}
       <div className={stylesFirstBlock.welcomePageDiv}>
@@ -76,7 +83,7 @@ const Welcome = () => {
             variant='solid'
             w='334px'
             colorScheme='teal'
-            onClick={"() => (router.push(“/tutorial))"}
+            onClick={() => router.push("/tutorial")}
           >
             Get Started
           </Button>

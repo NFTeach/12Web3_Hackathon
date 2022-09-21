@@ -90,9 +90,14 @@ const studentRegistration = () => {
     <>
       {/* Header */}
       <div className={stylesHeader.frameDiv}>
-        <h1 className={stylesHeader.titleH1}>
-          Welcome To The Future Of Education
-        </h1>
+        <div className={stylesHeader.frameDiv1}>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.logoDiv}>Welcome to the Future</div>
+        </div>
       </div>
       {/* First Block */}
       <div className={stylesFirstBlock.studentRegistrationDiv}>
