@@ -185,7 +185,7 @@ const profileSettings = () => {
             <div className={stylesFirstBlock.frameDiv2}>
               <img
                 className={stylesFirstBlock.nFTIcon}
-                alt=''
+                alt=""
                 // src='/profileSettings_imgs/Ape.png'
                 src={pfp ? pfp : defaultImgs[0]}
                 onClick={onProfilePicOpen}
@@ -248,17 +248,17 @@ const profileSettings = () => {
           <ModalCloseButton />
           <ModalBody>
             <Input
-              label='Username'
-              name='NameChange'
-              variant='outline'
-              textColor='#000000'
-              placeholder='Username'
+              label="Username"
+              name="NameChange"
+              variant="outline"
+              textColor="#000000"
+              placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
             />
           </ModalBody>
           <ModalFooter>
             <Button
-              variant='ghost'
+              variant="ghost"
               onClick={async () => {
                 await saveUsername();
                 onUsernameClose();
@@ -287,9 +287,9 @@ const profileSettings = () => {
                   <>
                     <Image
                       src={e}
-                      alt='pfp'
-                      boxSize='100px'
-                      objectFit='cover'
+                      alt="pfp"
+                      boxSize="100px"
+                      objectFit="cover"
                       className={
                         selectedPFP === e ? "pfpOptionSelected" : "pfpOption"
                       } // Outline of selected image is not working
@@ -304,7 +304,7 @@ const profileSettings = () => {
           </ModalBody>
           <ModalFooter>
             <Button
-              variant='ghost'
+              variant="ghost"
               onClick={async () => {
                 await saveProfilePic();
                 onProfilePicClose();
@@ -323,17 +323,17 @@ const profileSettings = () => {
           <ModalCloseButton />
           <ModalBody>
             <Input
-              label='Bio'
-              name='BioChange'
-              variant='outline'
-              textColor='#000000'
-              placeholder='Bio'
+              label="Bio"
+              name="BioChange"
+              variant="outline"
+              textColor="#000000"
+              placeholder="Bio"
               onChange={(e) => setBio(e.target.value)}
             />
           </ModalBody>
           <ModalFooter>
             <Button
-              variant='ghost'
+              variant="ghost"
               onClick={async () => {
                 await saveBio();
                 onBioClose();

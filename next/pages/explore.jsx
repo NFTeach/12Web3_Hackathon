@@ -1,5 +1,4 @@
-// NEED TO MAKE THE COURSES DYNAMIC MAPPING
-
+// MAKE COURSES VERTICALLY SCROLLABLE?
 import { useCallback, useEffect, useState } from "react";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
@@ -66,8 +65,6 @@ const explore = () => {
       // setCourseTest(course.map((course) => course.get("test")));
     }
   }, []);
-
-  console.log(courseObjectId?.[0]);
 
   const onStudentDashboardButtonClick = useCallback(() => {
     router.push("/studentDashboard");

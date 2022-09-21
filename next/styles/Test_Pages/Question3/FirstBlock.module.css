@@ -1,0 +1,143 @@
+.textAreaOutlineTextarea {
+flex: 1;
+}
+.byDiv,
+.nFT1Icon {
+position: relative;
+flex-shrink: 0;
+}
+.byDiv {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 167px;
+height: 76px;
+}
+.nFT1Icon {
+border-radius: 7px;
+width: 161.94px;
+height: 150px;
+object-fit: cover;
+}
+.frameDiv1,
+.frameDiv2 {
+display: flex;
+justify-content: flex-start;
+}
+.frameDiv2 {
+align-self: stretch;
+flex-direction: row;
+align-items: center;
+}
+.frameDiv1 {
+border-radius: 35px;
+background-color: #121212;
+flex-direction: column;
+padding: 17px 49px;
+box-sizing: border-box;
+align-items: flex-start;
+}
+.frameDiv1,
+.progressDefault {
+align-self: stretch;
+}
+.questionNumberTitle {
+align-self: stretch;
+position: relative;
+display: inline-block;
+height: 89px;
+flex-shrink: 0;
+}
+.frameDiv5 {
+align-self: stretch;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+gap: 31px;
+}
+.lineDiv {
+align-self: stretch;
+position: relative;
+border-top: 1px solid #e4e4e4;
+box-sizing: border-box;
+height: 1px;
+flex-shrink: 0;
+}
+.frameDiv7,
+.frameDiv9 {
+display: flex;
+flex-direction: column;
+}
+.frameDiv7 {
+flex: 1;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 73px;
+}
+.frameDiv9 {
+height: 495px;
+align-items: center;
+justify-content: space-between;
+}
+.frameDiv6,
+.frameDiv8 {
+flex-direction: row;
+align-items: flex-start;
+justify-content: center;
+}
+.frameDiv8 {
+display: flex;
+}
+.frameDiv6 {
+gap: 73px;
+}
+.frameDiv10,
+.frameDiv4,
+.frameDiv6 {
+align-self: stretch;
+display: flex;
+}
+.frameDiv4 {
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+gap: 73px;
+}
+.frameDiv10 {
+flex-direction: row;
+align-items: flex-start;
+justify-content: space-between;
+}
+.frameDiv3 {
+align-self: stretch;
+background-color: #121212;
+padding: 0 0 71px;
+gap: 54px;
+font-size: 65px;
+}
+.frameDiv,
+.frameDiv3,
+.testPageDiv {
+display: flex;
+flex-direction: column;
+box-sizing: border-box;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.frameDiv {
+align-self: stretch;
+padding: 0 20px;
+gap: 108px;
+}
+.testPageDiv {
+position: relative;
+background-color: #181919;
+width: 100%;
+height: 1531px;
+padding: 94px 117px;
+text-align: center;
+font-size: 45px;
+color: #e4e4e4;
+font-family: Mulish;
+}
