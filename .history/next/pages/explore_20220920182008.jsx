@@ -37,11 +37,11 @@ const explore = () => {
     const [images, setImages] = useState([]);
     const [courseName, setCourseName] = useState([]);
     const [courseDescription, setCourseDescription] = useState([]);
-    const [courseprerequisite, setCoursePrerequisite] = useState("");
-    const [prerequisitePass, setPrerequisitePass] = useState(false);
+    const [courseSection1, setCourseSection1] = useState([]);
+    const [courseSection2, setCourseSection2] = useState([]);
+    const [courseSection3, setCourseSection3] = useState([]);
+    const [courseTest, setCourseTest] = useState([]);
     const [userSBTs, setUserSBTs] = useState([]);
-    const [userTokenIds, setUserTokenIds] = useState("");
-    const [userCourseObjectIds, setUserCourseObjectIds] = useState([]);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const user = moralis.User.current();
 
@@ -75,11 +75,13 @@ const explore = () => {
         setImages(course.map((course) => course.get("imageFile")));
         setCourseName(course.map((course) => course.get("courseName")));
         setCourseDescription(course.map((course) => course.get("courseDescription")));
-        setCoursePrerequisite(course.map((course) => course.get("prerequisite")));
+        // setCourseSection1(course.map((course) => course.get("courseSection1")));
+        // setCourseSection2(course.map((course) => course.get("courseSection2")));
+        // setCourseSection3(course.map((course) => course.get("courseSection3")));
+        // setCourseTest(course.map((course) => course.get("test")));
         }
     }, []);
 
-    // console.log(courseprerequisite);
     useEffect (async () => {
         const MintSBTs = Moralis.Object.extend("MintSBT");
         const query = new Moralis.Query(MintSBTs);
@@ -87,37 +89,8 @@ const explore = () => {
         query.equalTo("student", account);
         const mintSBT = await query.find();
         setUserSBTs(mintSBT);
-        setUserTokenIds((mintSBT).map((mintSBT) => mintSBT.get("tokenId")));
     }, []);
 
-    const checkPrerequisite = async (index) => {
-        // console.log(index)
-        if (userSBTs.length === 0) {
-            return;
-        } else {
-            const createSBTs = Moralis.Object.extend("CreateSBT");
-            const query = new Moralis.Query(createSBTs);
-            query.equalTo("courseObjectId", courseprerequisite[index]);
-            const createSBT = await query.find();
-            // console.log(createSBT);
-            const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
-            // console.log(courseSBT);
-            const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-            console.log(prerequisiteSBT);
-            if (prerequisiteSBT.length === 0) {
-                if (courseprerequisite === "") {
-                    setPrerequisitePass(true);
-                    console.log("pass");
-                } else {
-                    setPrerequisitePass(false);
-                    console.log("fail");
-                }
-            } else {
-                setPrerequisitePass(true);
-                console.log("pass2");
-            }
-        }
-    }
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -207,11 +180,20 @@ const explore = () => {
                       boxSize='250px'
                       src={images[index]?.img}
                       alt={courseName?.[index]}
-                      onClick={async () => {
-                        await checkPrerequisite(index);
-                        }}
+                      onClick={onOpen}
                     />
-                {/*  </Link> */}
+                    <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
+                            <ModalHeader>Modal Title</ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody>
+                                <p>Course Name: {courseName?.[index]}</p>
+                                <p>Course Description: {courseDescription?.[index]}</p>
+                            </ModalBody>
+                        </ModalContent>
+                    </Modal>
+                  {/* </Link> */}
                   <br />
                   <Text>{courseName?.[index]}</Text>
                 </Box>
@@ -224,6 +206,8 @@ const explore = () => {
       <div className={stylesFooter.frameDiv}>
         <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
       </div>
+      {/* Course Info Modal */}
+        
     </>
   );
 };

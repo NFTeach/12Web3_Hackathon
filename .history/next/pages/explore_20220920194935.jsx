@@ -37,11 +37,9 @@ const explore = () => {
     const [images, setImages] = useState([]);
     const [courseName, setCourseName] = useState([]);
     const [courseDescription, setCourseDescription] = useState([]);
-    const [courseprerequisite, setCoursePrerequisite] = useState("");
+    const [courseprerequisite, setCoursePrerequisite] = useState([]);
     const [prerequisitePass, setPrerequisitePass] = useState(false);
     const [userSBTs, setUserSBTs] = useState([]);
-    const [userTokenIds, setUserTokenIds] = useState("");
-    const [userCourseObjectIds, setUserCourseObjectIds] = useState([]);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const user = moralis.User.current();
 
@@ -87,37 +85,21 @@ const explore = () => {
         query.equalTo("student", account);
         const mintSBT = await query.find();
         setUserSBTs(mintSBT);
-        setUserTokenIds((mintSBT).map((mintSBT) => mintSBT.get("tokenId")));
     }, []);
 
-    const checkPrerequisite = async (index) => {
-        // console.log(index)
-        if (userSBTs.length === 0) {
-            return;
+    // const prerequisiteSBT = userSBTs.filter((userSBT) => userSBT.get("id") === courseprerequisite);
+    console.log(userSBTs.filter((userSBTs) => userSBTs.get(courseprerequisite[2])));
+
+    const checkPrerequisite = (courseprerequisite, index) => {
+        const prerequisiteSBT = userSBTs.filter((userSBT) => userSBT.get("id") === courseprerequisite[index]);
+        console.log(prerequisiteSBT);
+        if (prerequisiteSBT.length > 0) {
+            setPrerequisitePass(true);
         } else {
-            const createSBTs = Moralis.Object.extend("CreateSBT");
-            const query = new Moralis.Query(createSBTs);
-            query.equalTo("courseObjectId", courseprerequisite[index]);
-            const createSBT = await query.find();
-            // console.log(createSBT);
-            const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
-            // console.log(courseSBT);
-            const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-            console.log(prerequisiteSBT);
-            if (prerequisiteSBT.length === 0) {
-                if (courseprerequisite === "") {
-                    setPrerequisitePass(true);
-                    console.log("pass");
-                } else {
-                    setPrerequisitePass(false);
-                    console.log("fail");
-                }
-            } else {
-                setPrerequisitePass(true);
-                console.log("pass2");
-            }
+            return;
         }
     }
+    // checkPrerequisite(courseprerequisite);
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -208,7 +190,12 @@ const explore = () => {
                       src={images[index]?.img}
                       alt={courseName?.[index]}
                       onClick={async () => {
-                        await checkPrerequisite(index);
+                        checkPrerequisite(courseprerequisite, index);
+                        if (prerequisitePass) {
+                            console.log("prerequisite pass");
+                        } else {
+                            console.log("prerequisite fail");
+                        }
                         }}
                     />
                 {/*  </Link> */}

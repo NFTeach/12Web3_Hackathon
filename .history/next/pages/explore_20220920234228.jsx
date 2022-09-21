@@ -90,6 +90,17 @@ const explore = () => {
         setUserTokenIds((mintSBT).map((mintSBT) => mintSBT.get("tokenId")));
     }, []);
 
+    // useEffect (async () => {
+    //     const createSBTs = Moralis.Object.extend("CreateSBT");
+    //     const query = new Moralis.Query(createSBTs);
+    //     query.equalTo("tokenId", userTokenIds);
+    //     const createSBT = await query.find();
+    //     setUserCourseObjectIds(createSBT.map((createSBT) => createSBT.get("courseObjectId")));
+    // }, []);
+
+    // const prerequisiteSBT = userSBTs.filter((userSBT) => userSBT.get("id") === courseprerequisite);
+    // console.log(userTokenIds);
+
     const checkPrerequisite = async (index) => {
         // console.log(index)
         if (userSBTs.length === 0) {
@@ -107,14 +118,11 @@ const explore = () => {
             if (prerequisiteSBT.length === 0) {
                 if (courseprerequisite === "") {
                     setPrerequisitePass(true);
-                    console.log("pass");
                 } else {
                     setPrerequisitePass(false);
-                    console.log("fail");
                 }
             } else {
                 setPrerequisitePass(true);
-                console.log("pass2");
             }
         }
     }
@@ -209,6 +217,11 @@ const explore = () => {
                       alt={courseName?.[index]}
                       onClick={async () => {
                         await checkPrerequisite(index);
+                        if (prerequisitePass) {
+                            console.log("prerequisite pass");
+                        } else {
+                            console.log("prerequisite fail");
+                        }
                         }}
                     />
                 {/*  </Link> */}

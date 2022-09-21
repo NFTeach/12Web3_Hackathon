@@ -37,7 +37,7 @@ const explore = () => {
     const [images, setImages] = useState([]);
     const [courseName, setCourseName] = useState([]);
     const [courseDescription, setCourseDescription] = useState([]);
-    const [courseprerequisite, setCoursePrerequisite] = useState("");
+    const [courseprerequisite, setCoursePrerequisite] = useState([]);
     const [prerequisitePass, setPrerequisitePass] = useState(false);
     const [userSBTs, setUserSBTs] = useState([]);
     const [userTokenIds, setUserTokenIds] = useState("");
@@ -69,6 +69,7 @@ const explore = () => {
         } else {
         const Courses = Moralis.Object.extend("Courses");
         const query = new Moralis.Query(Courses);
+        console.log(query)
         const course = await query.find();
         setCourses(course);
         setCourseObjectId(course.map((course) => course.id));
@@ -90,34 +91,46 @@ const explore = () => {
         setUserTokenIds((mintSBT).map((mintSBT) => mintSBT.get("tokenId")));
     }, []);
 
+    // useEffect (async () => {
+    //     const createSBTs = Moralis.Object.extend("CreateSBT");
+    //     const query = new Moralis.Query(createSBTs);
+    //     query.equalTo("tokenId", userTokenIds);
+    //     const createSBT = await query.find();
+    //     setUserCourseObjectIds(createSBT.map((createSBT) => createSBT.get("courseObjectId")));
+    // }, []);
+
+    // const prerequisiteSBT = userSBTs.filter((userSBT) => userSBT.get("id") === courseprerequisite);
+    console.log(courseprerequisite[2]);
+
     const checkPrerequisite = async (index) => {
-        // console.log(index)
+        
         if (userSBTs.length === 0) {
             return;
         } else {
+            // console.log("problem");
             const createSBTs = Moralis.Object.extend("CreateSBT");
             const query = new Moralis.Query(createSBTs);
-            query.equalTo("courseObjectId", courseprerequisite[index]);
-            const createSBT = await query.find();
-            // console.log(createSBT);
-            const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
-            // console.log(courseSBT);
-            const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-            console.log(prerequisiteSBT);
-            if (prerequisiteSBT.length === 0) {
-                if (courseprerequisite === "") {
-                    setPrerequisitePass(true);
-                    console.log("pass");
-                } else {
-                    setPrerequisitePass(false);
-                    console.log("fail");
-                }
-            } else {
-                setPrerequisitePass(true);
-                console.log("pass2");
-            }
+            query.equalTo("tokenId", userTokenIds);
+            // console.log(query)
+            // const createSBT = await query.find();
+            // const userCourseObjectIds = createSBT.map((createSBT) => createSBT.get("courseObjectId"));
+            // console.log(userCourseObjectIds);
+
+            // if (userCourseObjectIds.includes(courseprerequisite[index])) {
+            //     setPrerequisitePass(true);
+            // } else {
+            //     setPrerequisitePass(false);
+            // }
         }
+        // const prerequisiteSBT = userSBTs.filter((userSBT) => userSBT.get("id") === courseprerequisite[index]);
+        // console.log(prerequisiteSBT);
+        // if (prerequisiteSBT.length > 0) {
+        //     setPrerequisitePass(true);
+        // } else {
+        //     return;
+        // }
     }
+    // checkPrerequisite(courseprerequisite);
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -209,6 +222,11 @@ const explore = () => {
                       alt={courseName?.[index]}
                       onClick={async () => {
                         await checkPrerequisite(index);
+                        if (prerequisitePass) {
+                            console.log("prerequisite pass");
+                        } else {
+                            console.log("prerequisite fail");
+                        }
                         }}
                     />
                 {/*  </Link> */}

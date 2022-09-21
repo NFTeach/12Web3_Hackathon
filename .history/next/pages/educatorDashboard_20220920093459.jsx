@@ -1,13 +1,13 @@
 import { Button } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useMoralis, useWeb3ExecuteFunction, useMoralisWeb3Api, useMoralisWeb3ApiCall } from "react-moralis";
+import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 import moralis from "moralis";
 import { defaultImgs } from "../public/defaultImgs";
 import stylesHeader from "../styles/EducatorDashboard_Page/Header.module.css";
 import stylesFirstBlock from "../styles/EducatorDashboard_Page/FirstBlock.module.css";
 import stylesFooter from "../styles/EducatorDashboard_Page/Footer.module.css";
-import { CHAIN } from "../components/consts/vars";
+
 import { SBT_CONTRACT_ADDRESS } from "../components/consts/vars";
 import { NFTEACH_SBT_CONTRACT_ABI } from "../components/consts/contractABIs";
 
@@ -16,11 +16,7 @@ moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 
 const educatorDashboard = () => {
   const router = useRouter();
-  const { native } = useMoralisWeb3Api();
   const [pfp, setPfp] = useState();
-  const user = moralis.User.current();
-  const address = user?.attributes.accounts[0];
-
   const {
     Moralis,
     isAuthenticated,
@@ -30,52 +26,7 @@ const educatorDashboard = () => {
     enableWeb3,
   } = useMoralis();
 
-  const options = {
-    chain: CHAIN,
-    address: SBT_CONTRACT_ADDRESS,
-    function_name: "getEducatorCurrentPayout",
-    abi: NFTEACH_SBT_CONTRACT_ABI,
-    params: {
-      _educator: address,
-    }
-  }
-
-  const {
-    data,
-    error,
-    fetch,
-    isLoading
-  } = useMoralisWeb3ApiCall(
-    native.runContractFunction,
-    {...options}
-  );
-
-  const {
-    data: educatorData,
-    error: executeContractError,
-    fetch: executeContractFunction,
-    isFetching,
-    isLoading: executeContractLoading
-  } = useWeb3ExecuteFunction();
-
-  const withdrawFunds = async () => {
-    
-
-    executeContractFunction({
-      params: {
-        abi: NFTEACH_SBT_CONTRACT_ABI,
-        contractAddress: SBT_CONTRACT_ADDRESS,
-        functionName: "withdrawCoursesPayoff",
-      },
-      onSuccess: () => {
-        console.log("success");
-      },
-      onError: (error) => {
-        console.log(error);
-      },
-    });
-  };
-
+  const user = moralis.User.current();
   const nbClasses = 0;
   const nbMinted = 0;
   const lifeTimePayout = 0;
@@ -85,6 +36,7 @@ const educatorDashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
 
+  // console.log(user)
 
   useEffect(() => {
     if (!user) return null;
@@ -245,15 +197,8 @@ const educatorDashboard = () => {
             <div className={stylesFirstBlock.frameDiv2}>
               <div className={stylesFirstBlock.frameDiv3}>
                 <div className={stylesFirstBlock.overviewDiv}>Overview</div>
-                <Button 
-                  variant="solid" 
-                  w="133px" 
-                  colorScheme="green"
-                  onClick={async () => {
-                    await withdrawFunds();
-                  }}
-                >
-                  Withdraw Funds
+                <Button variant="solid" w="133px" colorScheme="green">
+                  All Time
                 </Button>
               </div>
               <div className={stylesFirstBlock.frameDiv4}>
@@ -266,21 +211,8 @@ const educatorDashboard = () => {
                     <div className={stylesFirstBlock.div}>209</div>
                   </div>
                   <div className={stylesFirstBlock.frameDiv7}>
-                    <div className={stylesFirstBlock.overviewDiv}>
-                      <Button
-                        variant="solid"
-                        w="133px"
-                        colorScheme="green"
-                        onClick={() => {
-                          fetch({ params: options });
-                        }}
-                      >
-                        Check Balance
-                      </Button>
-                    </div>
-                    <div className={stylesFirstBlock.div}>
-                      {data && <pre>{Moralis.Units.FromWei(data)}</pre>} 
-                    </div>
+                    <div className={stylesFirstBlock.overviewDiv}>Income</div>
+                    <div className={stylesFirstBlock.div}>8.35 ETH</div>
                   </div>
                   <div className={stylesFirstBlock.frameDiv8}>
                     <img

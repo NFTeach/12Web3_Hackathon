@@ -64,7 +64,7 @@ const educatorDashboard = () => {
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,
-        contractAddress: SBT_CONTRACT_ADDRESS,
+        address: SBT_CONTRACT_ADDRESS,
         functionName: "withdrawCoursesPayoff",
       },
       onSuccess: () => {

@@ -50,31 +50,6 @@ const educatorDashboard = () => {
     {...options}
   );
 
-  const {
-    data: educatorData,
-    error: executeContractError,
-    fetch: executeContractFunction,
-    isFetching,
-    isLoading: executeContractLoading
-  } = useWeb3ExecuteFunction();
-
-  const withdrawFunds = async () => {
-    
-
-    executeContractFunction({
-      params: {
-        abi: NFTEACH_SBT_CONTRACT_ABI,
-        contractAddress: SBT_CONTRACT_ADDRESS,
-        functionName: "withdrawCoursesPayoff",
-      },
-      onSuccess: () => {
-        console.log("success");
-      },
-      onError: (error) => {
-        console.log(error);
-      },
-    });
-  };
 
   const nbClasses = 0;
   const nbMinted = 0;
@@ -249,9 +224,7 @@ const educatorDashboard = () => {
                   variant="solid" 
                   w="133px" 
                   colorScheme="green"
-                  onClick={async () => {
-                    await withdrawFunds();
-                  }}
+                  
                 >
                   Withdraw Funds
                 </Button>

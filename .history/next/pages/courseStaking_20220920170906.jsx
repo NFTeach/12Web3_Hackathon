@@ -98,10 +98,6 @@ const courseStaking = () => {
     });
   };
 
-  const onCreateSBTSuccess = useCallback(() => {
-    router.push("/educatorDashboard");
-  }, []);
-
   return (
     <>
       {/* Header */}

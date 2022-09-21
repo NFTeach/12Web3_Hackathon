@@ -1,25 +1,11 @@
-
+// MAKE COURSES VERTICALLY SCROLLABLE?
 import { useCallback, useEffect, useState } from "react";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { defaultImgs } from "../public/defaultImgs";
-import { 
-    HStack, 
-    Box, 
-    Image, 
-    Text,
-    Button,
-    useDisclosure,
-    Modal, 
-    ModalOverlay, 
-    ModalContent, 
-    ModalHeader, 
-    ModalFooter, 
-    ModalBody, 
-    ModalCloseButton 
-} from "@chakra-ui/react";
+import { HStack, Box, Image, Text } from "@chakra-ui/react";
 import stylesHeader from "../styles/Explore_Page/Header.module.css";
 import stylesFirstBlock from "../styles/Explore_Page/FirstBlock.module.css";
 import stylesFooter from "../styles/Explore_Page/Footer.module.css";
@@ -37,12 +23,10 @@ const explore = () => {
     const [images, setImages] = useState([]);
     const [courseName, setCourseName] = useState([]);
     const [courseDescription, setCourseDescription] = useState([]);
-    const [courseprerequisite, setCoursePrerequisite] = useState("");
-    const [prerequisitePass, setPrerequisitePass] = useState(false);
-    const [userSBTs, setUserSBTs] = useState([]);
-    const [userTokenIds, setUserTokenIds] = useState("");
-    const [userCourseObjectIds, setUserCourseObjectIds] = useState([]);
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [courseSection1, setCourseSection1] = useState([]);
+    const [courseSection2, setCourseSection2] = useState([]);
+    const [courseSection3, setCourseSection3] = useState([]);
+    const [courseTest, setCourseTest] = useState([]);
     const user = moralis.User.current();
 
     useEffect(() => {
@@ -74,50 +58,23 @@ const explore = () => {
         setCourseObjectId(course.map((course) => course.id));
         setImages(course.map((course) => course.get("imageFile")));
         setCourseName(course.map((course) => course.get("courseName")));
-        setCourseDescription(course.map((course) => course.get("courseDescription")));
-        setCoursePrerequisite(course.map((course) => course.get("prerequisite")));
+        // setCourseDescription(course.map((course) => course.get("courseDescription")));
+        // setCourseSection1(course.map((course) => course.get("courseSection1")));
+        // setCourseSection2(course.map((course) => course.get("courseSection2")));
+        // setCourseSection3(course.map((course) => course.get("courseSection3")));
+        // setCourseTest(course.map((course) => course.get("test")));
         }
     }, []);
 
-    // console.log(courseprerequisite);
     useEffect (async () => {
         const MintSBTs = Moralis.Object.extend("MintSBT");
         const query = new Moralis.Query(MintSBTs);
         const account = user.attributes.accounts[0];
         query.equalTo("student", account);
         const mintSBT = await query.find();
-        setUserSBTs(mintSBT);
-        setUserTokenIds((mintSBT).map((mintSBT) => mintSBT.get("tokenId")));
+        console.log(mintSBT);
     }, []);
 
-    const checkPrerequisite = async (index) => {
-        // console.log(index)
-        if (userSBTs.length === 0) {
-            return;
-        } else {
-            const createSBTs = Moralis.Object.extend("CreateSBT");
-            const query = new Moralis.Query(createSBTs);
-            query.equalTo("courseObjectId", courseprerequisite[index]);
-            const createSBT = await query.find();
-            // console.log(createSBT);
-            const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
-            // console.log(courseSBT);
-            const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-            console.log(prerequisiteSBT);
-            if (prerequisiteSBT.length === 0) {
-                if (courseprerequisite === "") {
-                    setPrerequisitePass(true);
-                    console.log("pass");
-                } else {
-                    setPrerequisitePass(false);
-                    console.log("fail");
-                }
-            } else {
-                setPrerequisitePass(true);
-                console.log("pass2");
-            }
-        }
-    }
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -194,24 +151,21 @@ const explore = () => {
             <HStack spacing='100px'>
               {courses?.map((e, index) => (
                 <Box key={index} w='250px' h='250px'>
-                  {/* <Link
+                  <Link
                     href={{
                       pathname: "/course",
                       query: {
                         courseObjectId: courseObjectId?.[index],
                       },
                     }}
-                  > */}
+                  >
                     <Image
                       borderRadius='full'
                       boxSize='250px'
                       src={images[index]?.img}
                       alt={courseName?.[index]}
-                      onClick={async () => {
-                        await checkPrerequisite(index);
-                        }}
                     />
-                {/*  </Link> */}
+                  </Link>
                   <br />
                   <Text>{courseName?.[index]}</Text>
                 </Box>

@@ -51,21 +51,18 @@ const educatorDashboard = () => {
   );
 
   const {
-    data: educatorData,
     error: executeContractError,
     fetch: executeContractFunction,
     isFetching,
-    isLoading: executeContractLoading
   } = useWeb3ExecuteFunction();
 
   const withdrawFunds = async () => {
-    
 
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,
-        contractAddress: SBT_CONTRACT_ADDRESS,
-        functionName: "withdrawCoursesPayoff",
+        address: SBT_CONTRACT_ADDRESS,
+        functionName: "withdrawCoursePayoff",
       },
       onSuccess: () => {
         console.log("success");

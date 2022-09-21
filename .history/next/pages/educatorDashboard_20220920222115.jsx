@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useMoralis, useWeb3ExecuteFunction, useMoralisWeb3Api, useMoralisWeb3ApiCall } from "react-moralis";
+import { useMoralis, useWeb3ExecuteFunction, useMoralisWeb3ApiCall } from "react-moralis";
 import moralis from "moralis";
 import { defaultImgs } from "../public/defaultImgs";
 import stylesHeader from "../styles/EducatorDashboard_Page/Header.module.css";
@@ -16,11 +16,8 @@ moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 
 const educatorDashboard = () => {
   const router = useRouter();
-  const { native } = useMoralisWeb3Api();
   const [pfp, setPfp] = useState();
-  const user = moralis.User.current();
-  const address = user?.attributes.accounts[0];
-
+  const [educatorFunds, setEducatorFunds] = useState();
   const {
     Moralis,
     isAuthenticated,
@@ -36,7 +33,7 @@ const educatorDashboard = () => {
     function_name: "getEducatorCurrentPayout",
     abi: NFTEACH_SBT_CONTRACT_ABI,
     params: {
-      _educator: address,
+      _educator: user.attributes.accounts[0],
     }
   }
 
@@ -50,32 +47,7 @@ const educatorDashboard = () => {
     {...options}
   );
 
-  const {
-    data: educatorData,
-    error: executeContractError,
-    fetch: executeContractFunction,
-    isFetching,
-    isLoading: executeContractLoading
-  } = useWeb3ExecuteFunction();
-
-  const withdrawFunds = async () => {
-    
-
-    executeContractFunction({
-      params: {
-        abi: NFTEACH_SBT_CONTRACT_ABI,
-        contractAddress: SBT_CONTRACT_ADDRESS,
-        functionName: "withdrawCoursesPayoff",
-      },
-      onSuccess: () => {
-        console.log("success");
-      },
-      onError: (error) => {
-        console.log(error);
-      },
-    });
-  };
-
+  const user = moralis.User.current();
   const nbClasses = 0;
   const nbMinted = 0;
   const lifeTimePayout = 0;
@@ -85,11 +57,16 @@ const educatorDashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
 
+  // console.log(user)
 
   useEffect(() => {
     if (!user) return null;
     setPfp(user.get("pfp"));
   }, [user]);
+
+  useEffect(async () => {
+    setEducatorFunds(fetch({ params: options}))
+  }, [fetch, options]);
 
   useEffect(() => {
     getIfUserIsEducator();
@@ -249,9 +226,7 @@ const educatorDashboard = () => {
                   variant="solid" 
                   w="133px" 
                   colorScheme="green"
-                  onClick={async () => {
-                    await withdrawFunds();
-                  }}
+                  
                 >
                   Withdraw Funds
                 </Button>
@@ -266,21 +241,8 @@ const educatorDashboard = () => {
                     <div className={stylesFirstBlock.div}>209</div>
                   </div>
                   <div className={stylesFirstBlock.frameDiv7}>
-                    <div className={stylesFirstBlock.overviewDiv}>
-                      <Button
-                        variant="solid"
-                        w="133px"
-                        colorScheme="green"
-                        onClick={() => {
-                          fetch({ params: options });
-                        }}
-                      >
-                        Check Balance
-                      </Button>
-                    </div>
-                    <div className={stylesFirstBlock.div}>
-                      {data && <pre>{Moralis.Units.FromWei(data)}</pre>} 
-                    </div>
+                    <div className={stylesFirstBlock.overviewDiv}>Income</div>
+                    <div className={stylesFirstBlock.div}>8.35 ETH</div>
                   </div>
                   <div className={stylesFirstBlock.frameDiv8}>
                     <img
