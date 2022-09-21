@@ -19,7 +19,7 @@
 }
 .nowAnyoneIs {
   font-weight: 600;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
 }
 .gamingIsFunAndMostOfThe {
   margin: 0;
@@ -29,7 +29,7 @@
   height: 278px;
   display: flex;
   flex-direction: column;
-  padding: 0 154px 0 0;
+  padding: 0 120px 0 0;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
@@ -49,12 +49,12 @@
 .frameDiv {
   position: absolute;
   width: calc(100% - -2px);
-  top: calc(50% - -161px);
-  right: -4px;
-  left: 2px;
+  top: calc(50% - -137.5px);
+  right: 1px;
+  left: -3px;
   background-color: #181919;
   height: 317px;
-  padding: 0 50px 0 100px;
+  padding: 0 50px 0 140px;
   box-sizing: border-box;
   gap: 100px;
 }
@@ -62,7 +62,7 @@
 .titleH4 {
   margin: 0;
   position: relative;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
   display: inline-block;
 }
 .titleH2 {
@@ -93,7 +93,7 @@
 }
 .pNGImage6 {
   position: relative;
-  width: 275px;
+  width: 267px;
   height: 255px;
   flex-shrink: 0;
   object-fit: cover;
@@ -107,14 +107,14 @@
 }
 .frameDiv4 {
   flex: 1;
-  padding: 0 250px 0 100px;
+  padding: 0 260px 0 200px;
   box-sizing: border-box;
-  gap: 100px;
+  gap: 87px;
 }
 .frameDiv3 {
   position: absolute;
   width: calc(100% - -2px);
-  top: 1308px;
+  top: 1210px;
   right: 0;
   left: -2px;
   background-color: #272627;
@@ -126,7 +126,7 @@
   align-self: stretch;
   position: relative;
   display: inline-block;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
 }
 .textH1 {
   font-size: inherit;
@@ -156,9 +156,10 @@
 .frameDiv7 {
   position: absolute;
   width: calc(100% - 251px);
-  top: 127px;
-  right: 98px;
-  left: 153px;
+  top: 35px;
+  right: 100px;
+  left: 151px;
+  height: 274px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -179,7 +180,7 @@
   position: relative;
   font-size: 18px;
   font-weight: 400;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
   display: inline-block;
 }
 .frameDiv10,
@@ -203,77 +204,44 @@
 }
 .frameDiv10 {
   flex: 1;
-  gap: 100px;
+  gap: 150px;
 }
 .frameDiv9 {
   position: absolute;
   width: 100%;
-  top: 406px;
-  right: 0;
-  left: 0;
+  top: 309px;
+  right: -4px;
+  left: 4px;
   background-color: #121212;
   height: 242px;
-  padding: 0 0 0 100px;
+  padding: 0 0 0 200px;
   box-sizing: border-box;
 }
-.weveSegmentedCourses {
-  font-family: Mulish;
-}
-.frameDiv13 {
-  flex: 1;
-  height: 265px;
-  display: flex;
-  flex-direction: column;
-  padding: 0 35px 0 183px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
-.pNGImage121 {
-  position: relative;
-  width: 174px;
-  height: 288px;
-  flex-shrink: 0;
-  object-fit: cover;
-}
-.frameDiv12 {
-  position: absolute;
-  width: 100%;
-  top: 648px;
-  right: 0;
-  left: 0;
-  background-color: #212130;
-  height: 343px;
-  display: flex;
-  flex-direction: row;
-  padding: 23px 160px 0 0;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: flex-start;
+.similarToLevels {
+  font-family: "Mulish", sans-serif;
 }
 .textTxtSpan {
   line-break: anywhere;
 }
-.frameDiv15,
-.textH43 {
+.frameDiv13,
+.textH42 {
   display: flex;
   align-items: center;
 }
-.textH43 {
+.textH42 {
   margin: 0;
   align-self: stretch;
   position: relative;
   font-size: 18px;
   height: 191px;
   flex-shrink: 0;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
 }
-.frameDiv15 {
+.frameDiv13 {
   flex: 1;
-  height: 266px;
+  height: 340px;
   flex-direction: column;
-  padding: 0 35px 0 100px;
+  padding: 0 0 0 140px;
   box-sizing: border-box;
   justify-content: center;
   gap: 25px;
@@ -285,79 +253,31 @@
   flex-shrink: 0;
   object-fit: cover;
 }
-.frameDiv14 {
+.frameDiv12 {
   position: absolute;
   width: 100%;
-  top: 648px;
-  right: 0;
-  left: 0;
+  top: 551px;
+  right: 3px;
+  left: -3px;
   background-color: #212130;
   height: 343px;
-  flex-direction: row;
-  padding: 0 160px 0 0;
-  box-sizing: border-box;
-  justify-content: center;
-  gap: 100px;
-}
-.frameDiv14,
-.frameDiv16,
-.nFTeachH4 {
   display: flex;
+  flex-direction: row;
+  padding: 0 100px 0 0;
+  box-sizing: border-box;
   align-items: center;
-}
-.nFTeachH4 {
-  margin: 0;
-  position: relative;
-  font-size: inherit;
-  font-weight: 700;
-  font-family: Mulish;
-  width: 230px;
-  flex-shrink: 0;
-}
-.frameDiv16 {
-  position: absolute;
-  width: 100%;
-  top: 1609px;
-  right: -2px;
-  left: 2px;
-  background-color: #121212;
-  height: 51px;
-  flex-direction: row;
-  padding: 25px 173px 25px 24px;
-  box-sizing: border-box;
-  justify-content: flex-start;
-  font-size: 13px;
-}
-.logoDiv {
-  flex: 1;
-  position: relative;
-  display: inline-block;
-}
-.frameDiv17 {
-  position: absolute;
-  top: 0;
-  left: -2px;
-  background-color: #121212;
-  width: 1442px;
-  height: 74px;
-  display: flex;
-  flex-direction: row;
-  padding: 26px 11px 26px 36px;
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: center;
-  font-size: 18px;
+  justify-content: center;
+  gap: 70px;
 }
 .tutorialDiv {
   position: relative;
   background-color: #18191a;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 1660px;
+  height: 1511px;
   overflow: hidden;
   text-align: left;
   font-size: 25px;
   color: #e4e4e4;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
 }

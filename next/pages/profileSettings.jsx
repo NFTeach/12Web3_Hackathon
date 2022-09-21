@@ -140,38 +140,44 @@ const profileSettings = () => {
   return (
     <>
       {/* Header */}
-      <div className={stylesHeader.headerProfileSettings}>
+      <div className={stylesHeader.headerExploreDiv}>
         <div className={stylesHeader.frameDiv}>
-          <h2 className={stylesHeader.nFTeachH2}>NFTeach</h2>
-          <div className={stylesHeader.tabsDiv}>
-            <button
-              className={stylesHeader.studentDashboardButton}
-              onClick={onStudentDashboardButtonClick}
-            >
-              Student Dashboard
-            </button>
-            <button
-              className={stylesHeader.studentDashboardButton}
-              onClick={onExploreButtonClick}
-            >
-              Explore
-            </button>
-            <button
-              className={stylesHeader.studentDashboardButton}
-              onClick={onEducatorDashboardButtonClick}
-            >
-              Educator Dashboard
-            </button>
-          </div>
-          <div className={stylesHeader.profilePictureDiv}>
-            <img
-              className={stylesHeader.displayedNFTIcon}
-              alt='profilePFP'
-              src={pfp ? pfp : defaultImgs[0]}
-            />
-            <button className={stylesHeader.nameButton}>
-              {user?.attributes.username.slice(0, 15)}{" "}
-            </button>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.frameDiv1}>
+            <div className={stylesHeader.tabsDiv}>
+              <button
+                className={stylesHeader.studentDashboardButton}
+                onClick={onStudentDashboardButtonClick}
+              >
+                Student Dashboard
+              </button>
+              <button
+                className={stylesHeader.studentDashboardButton}
+                onClick={onExploreButtonClick}
+              >
+                Explore
+              </button>
+              <button
+                className={stylesHeader.studentDashboardButton}
+                onClick={onEducatorDashboardButtonClick}
+              >
+                Educator Dashboard
+              </button>
+            </div>
+            <div className={stylesHeader.profilePictureDiv}>
+              <img
+                className={stylesHeader.displayedNFTIcon}
+                alt='profilePFP'
+                src={pfp ? pfp : defaultImgs[0]}
+              />
+              <button className={stylesHeader.nameButton}>
+                {user?.attributes.username.slice(0, 15)}{" "}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -185,7 +191,7 @@ const profileSettings = () => {
             <div className={stylesFirstBlock.frameDiv2}>
               <img
                 className={stylesFirstBlock.nFTIcon}
-                alt=""
+                alt=''
                 // src='/profileSettings_imgs/Ape.png'
                 src={pfp ? pfp : defaultImgs[0]}
                 onClick={onProfilePicOpen}
@@ -248,17 +254,17 @@ const profileSettings = () => {
           <ModalCloseButton />
           <ModalBody>
             <Input
-              label="Username"
-              name="NameChange"
-              variant="outline"
-              textColor="#000000"
-              placeholder="Username"
+              label='Username'
+              name='NameChange'
+              variant='outline'
+              textColor='#000000'
+              placeholder='Username'
               onChange={(e) => setUsername(e.target.value)}
             />
           </ModalBody>
           <ModalFooter>
             <Button
-              variant="ghost"
+              variant='ghost'
               onClick={async () => {
                 await saveUsername();
                 onUsernameClose();
@@ -287,9 +293,9 @@ const profileSettings = () => {
                   <>
                     <Image
                       src={e}
-                      alt="pfp"
-                      boxSize="100px"
-                      objectFit="cover"
+                      alt='pfp'
+                      boxSize='100px'
+                      objectFit='cover'
                       className={
                         selectedPFP === e ? "pfpOptionSelected" : "pfpOption"
                       } // Outline of selected image is not working
@@ -304,7 +310,7 @@ const profileSettings = () => {
           </ModalBody>
           <ModalFooter>
             <Button
-              variant="ghost"
+              variant='ghost'
               onClick={async () => {
                 await saveProfilePic();
                 onProfilePicClose();
@@ -323,17 +329,17 @@ const profileSettings = () => {
           <ModalCloseButton />
           <ModalBody>
             <Input
-              label="Bio"
-              name="BioChange"
-              variant="outline"
-              textColor="#000000"
-              placeholder="Bio"
+              label='Bio'
+              name='BioChange'
+              variant='outline'
+              textColor='#000000'
+              placeholder='Bio'
               onChange={(e) => setBio(e.target.value)}
             />
           </ModalBody>
           <ModalFooter>
             <Button
-              variant="ghost"
+              variant='ghost'
               onClick={async () => {
                 await saveBio();
                 onBioClose();

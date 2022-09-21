@@ -77,7 +77,6 @@ const courseStaking = () => {
   };
 
   const createSBTandStake = async () => {
-
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,
@@ -85,7 +84,7 @@ const courseStaking = () => {
         functionName: "createSBT",
         params: {
           _price: Moralis.Units.ETH(courseCost),
-          _courseObjectId: courseObjectId, 
+          _courseObjectId: courseObjectId,
         },
       },
       onSuccess: () => {
@@ -93,7 +92,7 @@ const courseStaking = () => {
         onCreateSBTSuccess();
       },
       onError: (error) => {
-        console.log(error)
+        console.log(error);
       },
     });
   };
@@ -106,7 +105,14 @@ const courseStaking = () => {
     <>
       {/* Header */}
       <div className={stylesHeader.frameDiv}>
-        <h1 className={stylesHeader.titleH1}>Build The Future</h1>
+        <div className={stylesHeader.frameDiv1}>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.logoDiv}>Build the Future</div>
+        </div>
       </div>
       {/* First Block */}
       <div className={stylesFirstBlock.stakingPageDiv}>

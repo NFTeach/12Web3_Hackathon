@@ -6,27 +6,44 @@
   flex-shrink: 0;
   object-fit: cover;
 }
-.educationThats {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
+.educationThatsH1,
 .outOfThisWorld {
   margin: 0;
-  color: #e09e3b;
-}
-.chooseACourseBelowToStart,
-.educationThatsOutOfThisW {
-  margin: 0;
-  align-self: stretch;
   position: relative;
   font-size: inherit;
   font-weight: 600;
   font-family: "Mulish", sans-serif;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 839.5px;
+  height: 97px;
+  flex-shrink: 0;
+  font-size: 55px;
+}
+.outOfThisWorld {
+  color: #e09e3b;
+  height: 73px;
+  font-size: 55px;
+}
+.frameDiv3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 50px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 20px;
 }
 .chooseACourseBelowToStart {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
   font-size: 20px;
   font-weight: 400;
+  font-family: "Mulish", sans-serif;
+  display: inline-block;
 }
 .frameDiv1,
 .frameDiv2 {
@@ -47,88 +64,20 @@
   box-sizing: border-box;
   justify-content: flex-start;
 }
-.chem101Icon,
-.chemistry101H2 {
-  position: relative;
-  width: 292.5px;
-  flex-shrink: 0;
-}
-.chem101Icon {
-  border-radius: 25px;
-  height: 321px;
-  object-fit: cover;
-}
-.chemistry101H2 {
-  margin: 0;
-  font-size: inherit;
-  font-weight: 500;
-  font-family: "Mulish", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-}
-.chem101Div,
+
 .frameDiv4 {
-  display: flex;
-  flex-direction: column;
-}
-.frameDiv4 {
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 18px;
-}
-.chem101Div {
-  width: 293.13px;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-}
-.blockchainBasicsH2 {
-  margin: 0;
-  position: relative;
-  font-size: inherit;
-  font-weight: 500;
-  font-family: "Mulish", sans-serif;
-  width: 292px;
-  height: 50px;
-}
-.blockchainBasicsH2,
-.frameDiv7,
-.math101H2 {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.math101H2 {
-  margin: 0;
-  position: relative;
-  font-size: inherit;
-  font-weight: 500;
-  font-family: "Mulish", sans-serif;
-  width: 295px;
-  height: 50px;
-}
-.frameDiv7 {
-  width: 293.13px;
-  flex-direction: column;
-  gap: 18px;
-}
-.frameDiv3 {
   flex: 1;
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  font-size: 18px;
   font-family: "Mulish", sans-serif;
 }
 .frameDiv {
   position: absolute;
   width: calc(100% - 117.5px);
-  top: 96px;
+  top: 23px;
   right: 58.5px;
   left: 59px;
   height: 866px;
@@ -143,10 +92,9 @@
   background-color: #18191a;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 1066px;
+  height: 928px;
   overflow: hidden;
   text-align: center;
-  font-size: 55px;
   color: #e4e4e4;
   font-family: "Mulish", sans-serif;
 }
