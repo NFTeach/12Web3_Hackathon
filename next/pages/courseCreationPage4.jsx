@@ -173,333 +173,338 @@ const courseCreationPage4 = () => {
     <>
       {/* Header */}
       <div className={stylesHeader.frameDiv}>
-        <h1 className={stylesHeader.titleH1}>Build The Future</h1>
+        <div className={stylesHeader.frameDiv1}>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.logoDiv}>Build the Future</div>
+        </div>
       </div>
       {/* First Block */}
-      <div className={stylesFirstBlock.desktop1}>
+      <div className={stylesFirstBlock.courseCreationPage4}>
         <div className={stylesFirstBlock.frameDiv}>
-          <h1 className={stylesFirstBlock.titleH1}>
-            Create a test for the course (4/4)
-          </h1>
+          <h1 className={stylesFirstBlock.titleH1}>Create your course (4/4)</h1>
           <div className={stylesFirstBlock.frameDiv1}>
             <div className={stylesFirstBlock.qUESTION1Div}>
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 1"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 1'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
-              />
-            </div>
-            <div className={stylesFirstBlock.qUESTION1Div}>
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 2"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 3"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 2'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
-              />
-            </div>
-            <div className={stylesFirstBlock.qUESTION1Div}>
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 4"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 5"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 3'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
-              />
-            </div>
-            <div className={stylesFirstBlock.qUESTION1Div}>
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 6"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 7"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 4'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
-              />
-            </div>
-            <div className={stylesFirstBlock.qUESTION1Div}>
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 8"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
-              />
-              <Input
-                className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 9"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 5'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
               />
             </div>
             <div className={stylesFirstBlock.qUESTION1Div}>
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Question 10"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 6'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Answer"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 1"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 2"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
               />
               <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="Fake Answer 3"
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
+              />
+            </div>
+            <div className={stylesFirstBlock.qUESTION1Div}>
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 7'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
+              />
+            </div>
+            <div className={stylesFirstBlock.qUESTION1Div}>
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 8'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
+              />
+            </div>
+            <div className={stylesFirstBlock.qUESTION1Div}>
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 9'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
+              />
+            </div>
+            <div className={stylesFirstBlock.qUESTION1Div}>
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Question 10'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Answer'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 1'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 2'
+              />
+              <Input
+                className={stylesFirstBlock.inputOutline}
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='Fake Answer 3'
               />
             </div>
             <div className={stylesFirstBlock.passingGradeDiv}>
@@ -517,22 +522,22 @@ const courseCreationPage4 = () => {
                 precision={0}
                 step={1}
                 onChange={(valueString) => setPassingGrade(valueString)}
-              >
-                <NumberInputField />
-              </NumberInput>
+                >
+                    <NumberInputField />
+                </NumberInput>
             </div>
-            <Button
-              variant="solid"
-              w="357px"
-              colorScheme="green"
-              isLoading={isUploadInProgress}
-              onClick={async () => {
-                setIsUploadInProgress(true);
-                await saveTest();
-                onContinueButtonClick();
-              }}
+            <Button 
+                variant="solid" 
+                w="357px" 
+                colorScheme="green"
+                isLoading={isUploadInProgress}
+                onClick={async () => {
+                    setIsUploadInProgress(true);
+                    await saveTest();
+                    onContinueButtonClick();
+                }}
             >
-              Review Course and Test
+            Review Course and Test
             </Button>
           </div>
         </div>

@@ -3,7 +3,9 @@ import { useRouter } from "next/router";
 import { Button } from "@chakra-ui/react";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
+import stylesHeader from "../styles/Welcome_Page/Header.module.css";
 import stylesFirstBlock from "../styles/Welcome_Page/FirstBlock.module.css";
+import stylesFooter from "../styles/Welcome_Page/Footer.module.css";
 
 moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
 moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
@@ -13,7 +15,7 @@ const Welcome = () => {
   const { Moralis } = useMoralis();
   const [student, setStudent] = useState();
   const user = moralis.User.current();
-  console.log(user)
+  console.log(user);
 
   useEffect(async () => {
     if (user) {
@@ -28,36 +30,28 @@ const Welcome = () => {
 
   return (
     <>
+      {/* Header */}
+      <div className={stylesHeader.frameDiv}>
+        <div className={stylesHeader.frameDiv1}>
+          <img
+            className={stylesHeader.nFTeach1Icon}
+            alt=''
+            src='/welcome_imgs/NFTeach.png'
+          />
+          <div className={stylesHeader.logoDiv}>Welcome to the Future</div>
+        </div>
+      </div>
       {/* First Block */}
-       <div className={stylesFirstBlock.welcomePageDiv}>
+      <div className={stylesFirstBlock.welcomePageDiv}>
         <div className={stylesFirstBlock.frameDiv}>
           <div className={stylesFirstBlock.frameDiv1}>
             <div className={stylesFirstBlock.frameDiv2}>
-              <h1 className={stylesFirstBlock.titleH1}>
-                We’re Gamifying Education.
-              </h1>
-              <h3 className={stylesFirstBlock.textH3}>
-                Use the new wave of NFTs to kickstart your online learning
-                career.
-              </h3>
-            </div>
-            <Button 
-              variant='solid' 
-              w='334px' 
-              colorScheme='green'
-              onClick={student ? () => router.push("/explore") : () => router.push("/tutorial")}
-            >
-              Get Started
-            </Button>
-          </div>
-          <div className={stylesFirstBlock.frameDiv3}>
-            <div className={stylesFirstBlock.frameDiv4}>
               <img
                 className={stylesFirstBlock.pNGImage9}
                 alt=''
-                src='/welcome_imgs/Edu.png'
+                src='welcome_imgs/Edu.png'
               />
-              <div className={stylesFirstBlock.frameDiv5}>
+              <div className={stylesFirstBlock.frameDiv3}>
                 <b className={stylesFirstBlock.titleB}>
                   <span>{`Learning Becomes `}</span>
                   <span className={stylesFirstBlock.funSpan}>Fun</span>
@@ -76,6 +70,24 @@ const Welcome = () => {
             </div>
           </div>
         </div>
+        <div className={stylesFirstBlock.frameDiv4}>
+          <div className={stylesFirstBlock.frameDiv5}>
+            <h1 className={stylesFirstBlock.titleH1}>
+              We’re Gamifying Education.
+            </h1>
+            <h3 className={stylesFirstBlock.textH3}>
+              Use the new wave of NFTs to kickstart your online learning career.
+            </h3>
+          </div>
+          <Button
+            variant='solid'
+            w='334px'
+            colorScheme='teal'
+            onClick={() => router.push("/tutorial")}
+          >
+            Get Started
+          </Button>
+        </div>
         <div className={stylesFirstBlock.frameDiv6}>
           <div className={stylesFirstBlock.frameDiv7}>
             <b className={stylesFirstBlock.titleB1}>
@@ -91,7 +103,7 @@ const Welcome = () => {
           <img
             className={stylesFirstBlock.pNGImage8}
             alt=''
-            src='/welcome_imgs/Polygon.png'
+            src='welcome_imgs/polygon.png'
           />
         </div>
         <b className={stylesFirstBlock.titleB2}>Our Devs</b>
@@ -100,7 +112,7 @@ const Welcome = () => {
             <img
               className={stylesFirstBlock.picture21Icon}
               alt=''
-              src='/welcome_imgs/olivier.jpg'
+              src='welcome_imgs/olivier.jpg'
             />
             <h2 className={stylesFirstBlock.titleH2}>Olivier D.</h2>
           </div>
@@ -108,7 +120,7 @@ const Welcome = () => {
             <img
               className={stylesFirstBlock.picture21Icon}
               alt=''
-              src='/welcome_imgs/bryce.jpg'
+              src='welcome_imgs/bryce.jpg'
             />
             <h2 className={stylesFirstBlock.titleH2}>Bryce P.</h2>
           </div>
@@ -116,17 +128,15 @@ const Welcome = () => {
             <img
               className={stylesFirstBlock.picture21Icon}
               alt=''
-              src='/welcome_imgs/ayush.png'
+              src='welcome_imgs/ayush.png'
             />
             <h2 className={stylesFirstBlock.titleH2}>Ayush P.</h2>
           </div>
         </div>
-        <div className={stylesFirstBlock.frameDiv12}>
-          <h4 className={stylesFirstBlock.nFTeachH4}>© 2022 NFTeach</h4>
-        </div>
-        <div className={stylesFirstBlock.frameDiv13}>
-          <div className={stylesFirstBlock.logoDiv}>Welcome to the Future</div>
-        </div>
+      </div>
+      {/* Footer */}
+      <div className={stylesFooter.frameDiv}>
+        <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
       </div>
     </>
   );

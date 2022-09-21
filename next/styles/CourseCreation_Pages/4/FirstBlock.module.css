@@ -54,7 +54,7 @@
   text-align: left;
   font-size: 16px;
   color: #fff;
-  font-family: "Mulish", sans-serif;
+  font-family: Roboto;
 }
 .frameDiv {
   position: absolute;
@@ -66,7 +66,7 @@
   justify-content: flex-start;
   gap: 100px;
 }
-.desktop1 {
+.courseCreationPage4 {
   position: relative;
   background-color: #181919;
   width: 100%;
@@ -75,5 +75,5 @@
   text-align: center;
   font-size: 35px;
   color: #e4e4e4;
-  font-family: "Mulish", sans-serif;
+  font-family: Mulish;
 }

@@ -1,27 +1,22 @@
-.nFTeachH2,
-.studentDashboardButton {
+.nFTeach1Icon {
   position: relative;
-  align-items: center;
-  height: 39px;
-}
-.nFTeachH2 {
-  margin: 0;
-  font-size: inherit;
-  font-weight: 400;
-  font-family: "Mulish", sans-serif;
-  display: flex;
-  width: 111px;
+  width: 120px;
+  height: 60px;
   flex-shrink: 0;
+  object-fit: cover;
 }
 .studentDashboardButton {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
+  position: relative;
   font-size: 19px;
   font-family: "Mulish", sans-serif;
   color: #5da395;
   text-align: center;
+  align-items: center;
+  height: 39px;
 }
 .exploreButton,
 .studentDashboardButton,
@@ -48,60 +43,66 @@
   align-items: flex-start;
   gap: 45px;
 }
-.displayedNFTIcon {
+.displayedNFTIcon,
+.nameButton {
   position: relative;
+  flex-shrink: 0;
+}
+.displayedNFTIcon {
   border-radius: 100px;
   width: 71px;
   height: 71px;
-  flex-shrink: 0;
   object-fit: cover;
-}
-.nameButton,
-.profilePictureDiv {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
 }
 .nameButton {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
-  position: relative;
   font-size: 19px;
   font-family: "Mulish", sans-serif;
   color: #e4e4e4;
   text-align: left;
+  display: flex;
+  align-items: center;
   width: 135px;
   height: 39.28px;
 }
+.frameDiv1,
+.profilePictureDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .profilePictureDiv {
   width: 227px;
-  flex-direction: row;
+  flex-shrink: 0;
   justify-content: flex-end;
   gap: 21px;
 }
+.frameDiv1 {
+  flex: 1;
+  padding: 0 0 0 100px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  gap: 157px;
+}
 .frameDiv,
-.headerDiv {
+.headerExploreDiv {
   display: flex;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 .frameDiv {
   align-self: stretch;
   flex-direction: row;
-  align-items: center;
-  gap: 157px;
+  gap: 10px;
 }
-.headerDiv {
+.headerExploreDiv {
   position: relative;
   background-color: #121212;
   width: 100%;
   flex-direction: column;
   padding: 17px 29px;
   box-sizing: border-box;
-  align-items: flex-start;
-  text-align: left;
-  font-size: 25px;
-  color: #e4e4e4;
-  font-family: "Mulish", sans-serif;
 }
