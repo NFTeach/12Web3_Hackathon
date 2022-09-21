@@ -1,31 +1,3 @@
-.textH3,
-.titleH1 {
-  margin: 0;
-  align-self: stretch;
-  position: relative;
-  font-size: inherit;
-  font-weight: 700;
-  font-family: inherit;
-  display: inline-block;
-}
-.textH3 {
-  font-size: 20px;
-  font-weight: 300;
-  color: #919191;
-}
-.frameDiv1,
-.frameDiv2 {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-.frameDiv1 {
-  justify-content: flex-start;
-  gap: 45px;
-}
 .pNGImage9 {
   position: relative;
   width: 380px;
@@ -54,16 +26,16 @@
   position: relative;
   font-size: 20px;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Mulish", sans-serif;
   display: inline-block;
 }
-.frameDiv4,
-.frameDiv5 {
+.frameDiv2,
+.frameDiv3 {
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.frameDiv5 {
+.frameDiv3 {
   flex: 1;
   height: 212px;
   flex-direction: column;
@@ -71,10 +43,10 @@
   justify-content: flex-start;
   gap: 30px;
 }
-.frameDiv4 {
+.frameDiv2 {
   background-color: #212130;
   width: 1440px;
-  height: 429px;
+  height: 472px;
   flex-shrink: 0;
   flex-direction: row;
   padding: 0 0 5px 134px;
@@ -82,27 +54,60 @@
   gap: 127px;
 }
 .frameDiv,
-.frameDiv3 {
+.frameDiv1 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.frameDiv3 {
-  width: 1447px;
+.frameDiv1 {
+  width: 1440px;
   height: 472px;
   flex-shrink: 0;
   justify-content: flex-start;
-  text-align: left;
-  font-size: 28px;
 }
 .frameDiv {
   position: absolute;
-  width: calc(100% - -7px);
-  top: 153px;
-  right: 0;
+  width: calc(100% - -10px);
+  top: 294px;
+  right: -3px;
   left: -7px;
-  height: 653px;
+  height: 467px;
   justify-content: center;
+  text-align: left;
+}
+.textH3,
+.titleH1 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: "Mulish", sans-serif;
+  display: inline-block;
+}
+.textH3 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #919191;
+}
+.frameDiv4,
+.frameDiv5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.frameDiv5 {
+  align-self: stretch;
+  justify-content: center;
+  gap: 16px;
+}
+.frameDiv4 {
+  position: absolute;
+  width: calc(100% - -7px);
+  top: 60px;
+  right: -3px;
+  left: -4px;
+  justify-content: flex-start;
   gap: 45px;
   font-size: 45px;
 }
@@ -122,7 +127,7 @@
   margin: 0;
   font-size: 20px;
   font-weight: 400;
-  font-family: inherit;
+  font-family: "Mulish", sans-serif;
 }
 .frameDiv7 {
   width: 770px;
@@ -149,10 +154,10 @@
   align-items: center;
 }
 .frameDiv6 {
-  width: 100%;
-  top: 788px;
-  right: 0;
-  left: 0;
+  width: calc(100% - -4px);
+  top: 764px;
+  right: 3px;
+  left: -7px;
   background-color: #292929;
   border: 1px solid #e4e4e4;
   box-sizing: border-box;
@@ -162,11 +167,11 @@
   justify-content: flex-start;
   gap: 136px;
   text-align: left;
-  font-size: 28px;
 }
 .titleB2 {
-  top: calc(50% - -378.5px);
+  top: calc(50% - -378px);
   left: calc(50% - 720px);
+  font-size: 25px;
   line-height: 130%;
   justify-content: center;
   width: 1434px;
@@ -185,7 +190,7 @@
   font-size: inherit;
   line-height: 130%;
   font-weight: 700;
-  font-family: inherit;
+  font-family: "Mulish", sans-serif;
   display: inline-block;
 }
 .frameDiv8,
@@ -202,71 +207,22 @@
 .frameDiv8 {
   position: absolute;
   width: calc(100% - 383px);
-  top: 1202px;
-  right: 195px;
-  left: 188px;
+  top: 1196px;
+  right: 192px;
+  left: 191px;
   flex-direction: row;
   align-items: flex-start;
   gap: 5px;
-}
-.nFTeachH4 {
-  margin: 0;
-  position: relative;
-  font-size: inherit;
-  font-weight: 700;
-  font-family: inherit;
-  display: inline-block;
-}
-.frameDiv12,
-.logoDiv {
-  display: flex;
-  align-items: center;
-}
-.frameDiv12 {
-  position: absolute;
-  width: 100%;
-  top: 1473px;
-  right: 0;
-  left: 0;
-  background-color: #121212;
-  height: 54px;
-  flex-direction: row;
-  padding: 25px 173px 25px 0;
-  box-sizing: border-box;
-  justify-content: flex-start;
-  text-align: left;
-  font-size: 13px;
-}
-.logoDiv {
-  position: relative;
-  justify-content: center;
-  width: 1395px;
-  flex-shrink: 0;
-}
-.frameDiv13 {
-  position: absolute;
-  width: calc(100% - -2px);
-  top: 0;
-  right: -2px;
-  left: 0;
-  background-color: #121212;
-  height: 71px;
-  display: flex;
-  flex-direction: row;
-  padding: 26px 11px 26px 36px;
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: 18px;
+  font-size: 25px;
 }
 .welcomePageDiv {
   position: relative;
   background-color: #18191a;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 1529px;
+  height: 1470px;
   text-align: center;
-  font-size: 25px;
+  font-size: 28px;
   color: #e4e4e4;
-  font-family: Mulish;
+  font-family: "Mulish", sans-serif;
 }

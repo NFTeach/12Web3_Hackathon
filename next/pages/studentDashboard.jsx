@@ -180,7 +180,6 @@ const studentDashboard = () => {
           </div>
         </div>
       </div>
-
       {/* First Block */}
       <div className={stylesFirstBlock.desktop1}>
         <div className={stylesFirstBlock.frameDiv}>
