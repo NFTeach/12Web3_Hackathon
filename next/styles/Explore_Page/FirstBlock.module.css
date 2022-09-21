@@ -150,3 +150,14 @@
   color: #e4e4e4;
   font-family: "Mulish", sans-serif;
 }
+
+.popupClassDescription {
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  background-color: grey;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -47%);
+  border-radius: 20px;
+}
