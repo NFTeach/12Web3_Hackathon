@@ -1,5 +1,4 @@
-
-import { useCallback, useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
 import Link from "next/link";
@@ -45,9 +44,11 @@ const explore = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const user = moralis.User.current();
 
+    const [showPopup, setShowPopup] = useState(undefined);
+
     useEffect(() => {
-        if (!user) return null;
-        setPfp(user.get("pfp"));
+      if (!user) return null;
+      setPfp(user.get("pfp"));
     }, [user]);
 
     useEffect(async () => {
@@ -127,6 +128,11 @@ const explore = () => {
         router.push("/profileSettings");
     }, []);
 
+  const onCourseClick = (element) => {
+    setShowPopup(element);
+    console.log(element);
+  };
+
   return (
     <>
       {/* Header */}
@@ -181,8 +187,8 @@ const explore = () => {
           <div className={stylesFirstBlock.frameDiv1}>
             <img
               className={stylesFirstBlock.imageIcon}
-              alt=''
-              src='/explore_imgs/space_man.png'
+              alt=""
+              src="/explore_imgs/space_man.png"
             />
             <div className={stylesFirstBlock.frameDiv2}>
               <div className={stylesFirstBlock.frameDiv3}>
@@ -194,12 +200,12 @@ const explore = () => {
                 </h1>
               </div>
               <h3 className={stylesFirstBlock.chooseACourseBelowToStart}>
-                Choose a course below to start learning and earning
+                Choose a course below to start learning
               </h3>
             </div>
           </div>
           <div className={stylesFirstBlock.frameDiv3}>
-            <HStack spacing='100px'>
+            <HStack spacing="100px">
               {courses?.map((e, index) => (
                 <Box key={index} w='250px' h='250px'>
                   {/* <Link
@@ -232,6 +238,21 @@ const explore = () => {
       <div className={stylesFooter.frameDiv}>
         <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
       </div>
+      {!showPopup ? (
+        <></>
+      ) : (
+        <div className={stylesFirstBlock.popupClassDescription}>
+          <div>{showPopup.attributes.courseName}</div>
+          <img src={showPopup.attributes.imageFile.img} alt="" />
+          <div>Description: {showPopup.attributes.description}</div>
+          <div>This course creator: {showPopup.attributes.educatorAddress}</div>
+          <div>
+            Once completed, you will be able to mint a SBT of this class for{" "}
+            {showPopup.attributes.cost} Matic
+          </div>
+          <button>Register to the Course</button>
+        </div>
+      )}
     </>
   );
 };

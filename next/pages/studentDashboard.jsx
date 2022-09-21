@@ -86,6 +86,7 @@ const studentDashboard = () => {
       params: { _student: user.attributes.accounts[0] },
     };
     nbMinted = await Moralis.executeFunction(options);
+    // console.log(nbMinted);
   }
 
   // Header effects
@@ -198,7 +199,7 @@ const studentDashboard = () => {
                 <b
                   className={stylesFirstBlock.yourCompletedCourses}
                 >{`Your Completed Courses `}</b>
-                <b className={stylesFirstBlock.b}>3</b>
+                <b className={stylesFirstBlock.b}>{nbClassesCompleted}</b>
               </div>
             </div>
             <div className={stylesFirstBlock.completedDiv}>
@@ -220,7 +221,7 @@ const studentDashboard = () => {
                 <b className={stylesFirstBlock.yourCompletedCourses}>
                   Your SBTS
                 </b>
-                <b className={stylesFirstBlock.b}>2</b>
+                <b className={stylesFirstBlock.b}>{nbMinted}</b>
               </div>
             </div>
           </div>
@@ -272,8 +273,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.eTHDiv}>0.01 ETH</div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal}
-                  alt=''
-                  src='../divider--line--horizontal.svg'
+                  alt=""
+                  src="../divider--line--horizontal.svg"
                 />
               </div>
               <div className={stylesFirstBlock.math102Div}>
@@ -283,8 +284,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.eTHDiv1}>0.02 ETH</div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal}
-                  alt=''
-                  src='../divider--line--horizontal.svg'
+                  alt=""
+                  src="../divider--line--horizontal.svg"
                 />
               </div>
               <div className={stylesFirstBlock.math102Div}>
@@ -294,8 +295,8 @@ const studentDashboard = () => {
                 <div className={stylesFirstBlock.eTHDiv1}>0.008 ETH</div>
                 <img
                   className={stylesFirstBlock.dividerLineHorizontal}
-                  alt=''
-                  src='../divider--line--horizontal.svg'
+                  alt=""
+                  src="../divider--line--horizontal.svg"
                 />
               </div>
               <div className={stylesFirstBlock.math102Div}>
@@ -324,24 +325,24 @@ const studentDashboard = () => {
                   </div>
                   <img
                     className={stylesFirstBlock.dividerLineHorizontal}
-                    alt=''
-                    src='../divider--line--horizontal.svg'
+                    alt=""
+                    src="../divider--line--horizontal.svg"
                   />
                 </div>
                 <div className={stylesFirstBlock.name1Div}>
                   <div className={stylesFirstBlock.satoshiNDiv}>Satoshi N.</div>
                   <img
                     className={stylesFirstBlock.dividerLineHorizontal4}
-                    alt=''
-                    src='../divider--line--horizontal.svg'
+                    alt=""
+                    src="../divider--line--horizontal.svg"
                   />
                 </div>
                 <div className={stylesFirstBlock.name2Div}>
                   <div className={stylesFirstBlock.satoshiNDiv}>Charles H.</div>
                   <img
                     className={stylesFirstBlock.dividerLineHorizontal4}
-                    alt=''
-                    src='../divider--line--horizontal.svg'
+                    alt=""
+                    src="../divider--line--horizontal.svg"
                   />
                 </div>
                 <div className={stylesFirstBlock.name3Div}>

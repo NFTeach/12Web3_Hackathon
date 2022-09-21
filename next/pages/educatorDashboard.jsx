@@ -104,8 +104,8 @@ const educatorDashboard = () => {
   useEffect(() => {
     getIfUserIsEducator();
     getNumberCourse();
-    // getLifeTimePayout();
-    // getEducatorNbMinted();
+    getLifeTimePayout();
+    getEducatorNbMinted();
   }, [user]);
 
   async function getIfUserIsEducator() {
@@ -165,7 +165,6 @@ const educatorDashboard = () => {
       params: { _educator: user.attributes.accounts[0] },
     };
     lifeTimePayout = await Moralis.executeFunction(options);
-    console.log(lifeTimePayout);
   }
 
   // Header effects
