@@ -37,11 +37,9 @@ const explore = () => {
     const [images, setImages] = useState([]);
     const [courseName, setCourseName] = useState([]);
     const [courseDescription, setCourseDescription] = useState([]);
-    const [courseprerequisite, setCoursePrerequisite] = useState("");
+    const [courseprerequisite, setCoursePrerequisite] = useState([]);
     const [prerequisitePass, setPrerequisitePass] = useState(false);
     const [userSBTs, setUserSBTs] = useState([]);
-    const [userTokenIds, setUserTokenIds] = useState("");
-    const [userCourseObjectIds, setUserCourseObjectIds] = useState([]);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const user = moralis.User.current();
 
@@ -87,37 +85,21 @@ const explore = () => {
         query.equalTo("student", account);
         const mintSBT = await query.find();
         setUserSBTs(mintSBT);
-        setUserTokenIds((mintSBT).map((mintSBT) => mintSBT.get("tokenId")));
     }, []);
 
+    // const prerequisiteSBT = userSBTs.filter((userSBT) => userSBT.get("id") === courseprerequisite);
+    console.log(userSBTs);
+
     const checkPrerequisite = async (index) => {
-        // console.log(index)
-        if (userSBTs.length === 0) {
-            return;
-        } else {
-            const createSBTs = Moralis.Object.extend("CreateSBT");
-            const query = new Moralis.Query(createSBTs);
-            query.equalTo("courseObjectId", courseprerequisite[index]);
-            const createSBT = await query.find();
-            // console.log(createSBT);
-            const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
-            // console.log(courseSBT);
-            const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-            console.log(prerequisiteSBT);
-            if (prerequisiteSBT.length === 0) {
-                if (courseprerequisite === "") {
-                    setPrerequisitePass(true);
-                    console.log("pass");
-                } else {
-                    setPrerequisitePass(false);
-                    console.log("fail");
-                }
-            } else {
-                setPrerequisitePass(true);
-                console.log("pass2");
-            }
-        }
+        const prerequisiteSBT = userSBTs.filter((userSBT) => userSBT.get("id") === courseprerequisite[index]);
+        console.log(prerequisiteSBT);
+        // if (prerequisiteSBT.length > 0) {
+        //     setPrerequisitePass(true);
+        // } else {
+        //     return;
+        // }
     }
+    // checkPrerequisite(courseprerequisite);
 
     const onStudentDashboardButtonClick = useCallback(() => {
         router.push("/studentDashboard");
@@ -130,48 +112,40 @@ const explore = () => {
   return (
     <>
       {/* Header */}
-      <div className={stylesHeader.headerExploreDiv}>
+      <div className={stylesHeader.headerDiv}>
         <div className={stylesHeader.frameDiv}>
-          <img
-            className={stylesHeader.nFTeach1Icon}
-            alt=''
-            src='/welcome_imgs/NFTeach.png'
-          />
-          <div className={stylesHeader.frameDiv1}>
-            <div className={stylesHeader.tabsDiv}>
-              <button
-                className={stylesHeader.exploreButton}
-                onClick={onStudentDashboardButtonClick}
-              >
-                Student Dashboard
-              </button>
-              <button className={stylesHeader.studentDashboardButton}>
-                Explore
-              </button>
-              <button
-                className={stylesHeader.exploreButton}
-                onClick={
-                  educator
-                    ? () => router.push("/educatorDashboard")
-                    : () => router.push("/educatorRegistration")
-                }
-              >
-                Educator Dashboard
-              </button>
-            </div>
-            <div className={stylesHeader.profilePictureDiv}>
-              <img
-                className={stylesHeader.displayedNFTIcon}
-                alt='profilePFP'
-                src={pfp ? pfp : defaultImgs[0]}
-              />
-              <button
-                className={stylesHeader.nameButton}
-                onClick={onProfileButtonClick}
-              >
-                {user?.attributes.username.slice(0, 15)}
-              </button>
-            </div>
+          <h2 className={stylesHeader.nFTeachH2}>NFTeach</h2>
+          <div className={stylesHeader.tabsDiv}>
+            <button
+              className={stylesHeader.studentDashboardButton}
+              onClick={onStudentDashboardButtonClick}
+            >
+              Student Dashboard
+            </button>
+            <button className={stylesHeader.exploreButton}>Explore</button>
+            <button
+              className={stylesHeader.studentDashboardButton}
+              onClick={
+                educator
+                  ? () => router.push("/educatorDashboard")
+                  : () => router.push("/educatorRegistration")
+              }
+            >
+              Educator Dashboard
+            </button>
+          </div>
+          <div className={stylesHeader.profilePictureDiv}>
+            <img
+              className={stylesHeader.displayedNFTIcon}
+              alt='profilePFP'
+              src={pfp ? pfp : defaultImgs[0]}
+            />
+            <button
+              className={stylesHeader.nameButton}
+              onClick={onProfileButtonClick}
+            >
+              {user?.attributes.username.slice(0, 15)}
+            </button>
           </div>
         </div>
       </div>
@@ -184,15 +158,15 @@ const explore = () => {
               alt=''
               src='/explore_imgs/space_man.png'
             />
-            <div className={stylesFirstBlock.frameDiv2}>
-              <div className={stylesFirstBlock.frameDiv3}>
-                <h1
-                  className={stylesFirstBlock.educationThatsH1}
-                >{`Education That’s `}</h1>
-                <h1 className={stylesFirstBlock.outOfThisWorld}>
-                  Out Of This World
-                </h1>
-              </div>
+            <div className={stylesFirstBlock.chem101Div}>
+              <h1 className={stylesFirstBlock.educationThatsOutOfThisW}>
+                <p className={stylesFirstBlock.educationThats}>
+                  <span>{`Education That’s`}</span>
+                </p>
+                <p className={stylesFirstBlock.outOfThisWorld}>
+                  <span>Out Of This World</span>
+                </p>
+              </h1>
               <h3 className={stylesFirstBlock.chooseACourseBelowToStart}>
                 Choose a course below to start learning and earning
               </h3>
@@ -217,6 +191,11 @@ const explore = () => {
                       alt={courseName?.[index]}
                       onClick={async () => {
                         await checkPrerequisite(index);
+                        if (prerequisitePass) {
+                            console.log("prerequisite pass");
+                        } else {
+                            console.log("prerequisite fail");
+                        }
                         }}
                     />
                 {/*  </Link> */}

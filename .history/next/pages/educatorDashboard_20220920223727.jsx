@@ -17,16 +17,6 @@ moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 const educatorDashboard = () => {
   const router = useRouter();
   const { native } = useMoralisWeb3Api();
-  const [educator, setEducator] = useState();
-  const [courses, setCourses] = useState([]);
-  const [courseObjectId, setCourseObjectId] = useState();
-  const [images, setImages] = useState([]);
-  const [courseName, setCourseName] = useState([]);
-  const [courseDescription, setCourseDescription] = useState([]);
-  const [courseSection1, setCourseSection1] = useState([]);
-  const [courseSection2, setCourseSection2] = useState([]);
-  const [courseSection3, setCourseSection3] = useState([]);
-  const [courseTest, setCourseTest] = useState([]);
   const [pfp, setPfp] = useState();
   const user = moralis.User.current();
   const address = user?.attributes.accounts[0];
@@ -61,21 +51,18 @@ const educatorDashboard = () => {
   );
 
   const {
-    data: educatorData,
     error: executeContractError,
     fetch: executeContractFunction,
     isFetching,
-    isLoading: executeContractLoading
   } = useWeb3ExecuteFunction();
 
   const withdrawFunds = async () => {
-    
 
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,
-        contractAddress: SBT_CONTRACT_ADDRESS,
-        functionName: "withdrawCoursesPayoff",
+        address: SBT_CONTRACT_ADDRESS,
+        functionName: "withdrawCoursePayoff",
       },
       onSuccess: () => {
         console.log("success");
@@ -118,19 +105,6 @@ const educatorDashboard = () => {
     };
     const isEdu = await Moralis.executeFunction(options);
   }
-
-  useEffect(async () => {
-    if (!user) {
-      window.alert("Please connect wallet");
-    } else {
-      const Educators = Moralis.Object.extend("Educators");
-      const query = new Moralis.Query(Educators);
-      const account = user.attributes.accounts[0];
-      query.equalTo("educator", account);
-      const educator = await query.find();
-      setEducator(educator[0]);
-    }
-  }, []);
 
   async function getNumberCourse() {
     const web3 = await Moralis.enableWeb3();
@@ -218,70 +192,53 @@ const educatorDashboard = () => {
   return (
     <>
       {/* Header */}
-      <div className={stylesHeader.headerExploreDiv}>
+      <div className={stylesHeader.header6Div}>
         <div className={stylesHeader.frameDiv}>
-          <img
-            className={stylesHeader.nFTeach1Icon}
-            alt=''
-            src='/welcome_imgs/NFTeach.png'
-          />
           <div className={stylesHeader.frameDiv1}>
-            <div className={stylesHeader.tabsDiv}>
-              <button
-                className={stylesHeader.exploreButton}
-                onClick={onStudentDashboardButtonClick}
-              >
-                Student Dashboard
-              </button>
-              <button
-                className={stylesHeader.exploreButton}
-                onClick={() => router.push("/explore")}
-              >
-                Explore
-              </button>
-              <button
-                className={stylesHeader.studentDashboardButton}
-                onClick={
-                  educator
-                    ? () => router.push("/educatorDashboard")
-                    : () => router.push("/educatorRegistration")
-                }
-              >
-                Educator Dashboard
-              </button>
+            <h2 className={stylesHeader.textH2}>NFTeach</h2>
+            <img
+              className={stylesHeader.discordIcon}
+              alt=""
+              src="/educatorDashboard_imgs/discord.svg"
+            />
+          </div>
+          <div className={stylesHeader.tabsDiv}>
+            <button
+              className={stylesHeader.studentDashboardButton}
+              onClick={onStudentDashboardButtonClick}
+            >
+              Student Dashboard
+            </button>
+            <button
+              className={stylesHeader.exploreButton}
+              onClick={onExploreButtonClick}
+            >
+              Explore
+            </button>
+            <div className={stylesHeader.educatorDashboardDiv}>
+              Educator Dashboard
             </div>
-            <div className={stylesHeader.profilePictureDiv}>
-              <img
-                className={stylesHeader.displayedNFTIcon}
-                alt='profilePFP'
-                src={pfp ? pfp : defaultImgs[0]}
-              />
-              <button
-                className={stylesHeader.nameButton}
-                onClick={onProfileButtonClick}
-              >
-                {user?.attributes.username.slice(0, 15)}
-              </button>
-            </div>
+          </div>
+          <div className={stylesHeader.profilePictureDiv}>
+            <img
+              className={stylesHeader.image1Icon}
+              alt="profilePFP"
+              src={pfp ? pfp : defaultImgs[0]}
+              data-animate-on-scroll-header
+            />
+            <button
+              className={stylesHeader.vitalikBButton}
+              onClick={onProfileButtonClick}
+            >
+              {user?.attributes.username.slice(0, 15)}
+            </button>
           </div>
         </div>
       </div>
       {/* First Block */}
       <div className={stylesFirstBlock.educatorDashboardDiv}>
         <div className={stylesFirstBlock.frameDiv}>
-          <div className={stylesFirstBlock.groupDiv}>
-            <div className={stylesFirstBlock.cardsDefault}>
-              <div className={stylesFirstBlock.sheetDiv} />
-            </div>
-            <div className={stylesFirstBlock.frameDiv1}>
-              <h3 className={stylesFirstBlock.sBTsIssuedH3}>SBTs Issued</h3>
-              <b className={stylesFirstBlock.b}>23</b>
-            </div>
-          </div>
-          <div className={stylesFirstBlock.groupDiv1}>
-            <div className={stylesFirstBlock.cardsDefault1}>
-              <div className={stylesFirstBlock.sheetDiv1} />
-            </div>
+          <div className={stylesFirstBlock.frameDiv1}>
             <div className={stylesFirstBlock.frameDiv2}>
               <div className={stylesFirstBlock.frameDiv3}>
                 <div className={stylesFirstBlock.overviewDiv}>Overview</div>
@@ -333,61 +290,57 @@ const educatorDashboard = () => {
                 </div>
               </div>
             </div>
-            <div className={stylesFirstBlock.frameDiv2}>
-              <h3 className={stylesFirstBlock.sBTsIssuedH3}>
-                Enrolled Students
-              </h3>
-              <b className={stylesFirstBlock.b}>19</b>
-            </div>
-          </div>
-        </div>
-        <div className={stylesFirstBlock.frameDiv4}>
-          <div className={stylesFirstBlock.frameDiv5}>
-            <h2 className={stylesFirstBlock.helpH2}>Help</h2>
-            <div className={stylesFirstBlock.frameDiv6}>
-              <Button
-                className={stylesFirstBlock.buttonSolidTextAndIcon}
-                variant='solid'
-                colorScheme='green'
-              >
-                Add Courses
-              </Button>
-              <Button
-                className={stylesFirstBlock.buttonSolidTextAndIcon}
-                variant='solid'
-                colorScheme='cyan'
-              >
-                Withdraw
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className={stylesFirstBlock.frameDiv7}>
-          <div className={stylesFirstBlock.frameDiv8}>
             <div className={stylesFirstBlock.frameDiv9}>
-              <h3 className={stylesFirstBlock.frameH3}>
+              <div className={stylesFirstBlock.frameDiv10}>
                 <div className={stylesFirstBlock.yourCoursesDiv}>
                   Your Courses
                 </div>
-              </h3>
-            </div>
-            <div className={stylesFirstBlock.frameDiv10}>
-              <div className={stylesFirstBlock.frameDiv11}>
-                <h4 className={stylesFirstBlock.chemistry101H4}>
-                  Chemistry 101
-                </h4>
-                <h4 className={stylesFirstBlock.math101H4}>Math 101</h4>
-                <h4 className={stylesFirstBlock.blockchainBasicsH4}>
-                  Blockchain Basics
-                </h4>
+                <Button
+                  variant="solid"
+                  w="117px"
+                  colorScheme="green"
+                  onClick={onAddCourseButtonClick}
+                >
+                  Add Course
+                </Button>
+                <Button variant="solid" w="133px" colorScheme="green">
+                  View All
+                </Button>
               </div>
+              <div />
+            </div>
+          </div>
+          <div className={stylesFirstBlock.sideInformationDiv}>
+            <div className={stylesFirstBlock.groupDiv}>
+              <div className={stylesFirstBlock.cardsDefault}>
+                <div className={stylesFirstBlock.sheetDiv} />
+              </div>
+              <b className={stylesFirstBlock.sBTsIssued}>SBTs Issued</b>
+              <b className={stylesFirstBlock.b}>{nbMinted}</b>
+            </div>
+            <div className={stylesFirstBlock.groupDiv1}>
+              <div className={stylesFirstBlock.cardsDefault}>
+                <div className={stylesFirstBlock.sheetDiv1} />
+              </div>
+              <b className={stylesFirstBlock.sBTsIssued}>Enrolled Students</b>
+              <b className={stylesFirstBlock.b1}>25</b>
+            </div>
+            <div className={stylesFirstBlock.groupDiv1}>
+              <div className={stylesFirstBlock.cardsDefault1}>
+                <div className={stylesFirstBlock.sheetDiv1} />
+              </div>
+              <b className={stylesFirstBlock.sBTsIssued1}>Classes Created</b>
+              <b className={stylesFirstBlock.b2}>{nbClasses}</b>
             </div>
           </div>
         </div>
       </div>
       {/* Footer */}
-      <div className={stylesFooter.frameDiv}>
-        <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
+      <div className={stylesFooter.footerDiv}>
+        <div className={stylesFooter.frameDiv}>
+          <h3 className={stylesFooter.logoH3}>© 2022 NFTeach</h3>
+          <h3 className={stylesFooter.titleH3}>NFTeach</h3>
+        </div>
       </div>
     </>
   );

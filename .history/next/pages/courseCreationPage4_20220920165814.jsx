@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Input, Button, NumberInput, NumberInputField } from "@chakra-ui/react";
+import { Input, Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import moralis from "moralis";
 import { useMoralis } from "react-moralis";
@@ -173,19 +173,14 @@ const courseCreationPage4 = () => {
     <>
       {/* Header */}
       <div className={stylesHeader.frameDiv}>
-        <div className={stylesHeader.frameDiv1}>
-          <img
-            className={stylesHeader.nFTeach1Icon}
-            alt=''
-            src='/welcome_imgs/NFTeach.png'
-          />
-          <div className={stylesHeader.logoDiv}>Build the Future</div>
-        </div>
+        <h1 className={stylesHeader.titleH1}>Build The Future</h1>
       </div>
       {/* First Block */}
-      <div className={stylesFirstBlock.courseCreationPage4}>
+      <div className={stylesFirstBlock.desktop1}>
         <div className={stylesFirstBlock.frameDiv}>
-          <h1 className={stylesFirstBlock.titleH1}>Create your course (4/4)</h1>
+          <h1 className={stylesFirstBlock.titleH1}>
+            Create a test for the course (4/4)
+          </h1>
           <div className={stylesFirstBlock.frameDiv1}>
             <div className={stylesFirstBlock.qUESTION1Div}>
               <Input
@@ -511,33 +506,15 @@ const courseCreationPage4 = () => {
               <div className={stylesFirstBlock.courseNameDiv}>
                 Passing Grade
               </div>
-              <NumberInput
+              <Input
                 className={stylesFirstBlock.inputOutline}
-                variant="outline"
-                textColor="#e4e4e4"
-                placeholder="What will the passing grade be for your test out of 10?"
-                defaultValue={7}
-                min={1}
-                max={10}
-                precision={0}
-                step={1}
-                onChange={(valueString) => setPassingGrade(valueString)}
-                >
-                    <NumberInputField />
-                </NumberInput>
+                variant='outline'
+                textColor='#e4e4e4'
+                placeholder='What will the passing grade be for your test?'
+              />
             </div>
-            <Button 
-                variant="solid" 
-                w="357px" 
-                colorScheme="green"
-                isLoading={isUploadInProgress}
-                onClick={async () => {
-                    setIsUploadInProgress(true);
-                    await saveTest();
-                    onContinueButtonClick();
-                }}
-            >
-            Review Course and Test
+            <Button variant='solid' w='357px' colorScheme='green'>
+              Review Course
             </Button>
           </div>
         </div>
