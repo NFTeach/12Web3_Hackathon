@@ -126,15 +126,15 @@ const explore = () => {
               alt=''
               src='/explore_imgs/space_man.png'
             />
-            <div className={stylesFirstBlock.chem101Div}>
-              <h1 className={stylesFirstBlock.educationThatsOutOfThisW}>
-                <p className={stylesFirstBlock.educationThats}>
-                  <span>{`Education That’s`}</span>
-                </p>
-                <p className={stylesFirstBlock.outOfThisWorld}>
-                  <span>Out Of This World</span>
-                </p>
-              </h1>
+            <div className={stylesFirstBlock.frameDiv2}>
+              <div className={stylesFirstBlock.frameDiv3}>
+                <h1
+                  className={stylesFirstBlock.educationThatsH1}
+                >{`Education That’s `}</h1>
+                <h1 className={stylesFirstBlock.outOfThisWorld}>
+                  Out Of This World
+                </h1>
+              </div>
               <h3 className={stylesFirstBlock.chooseACourseBelowToStart}>
                 Choose a course below to start learning and earning
               </h3>
