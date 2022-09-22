@@ -261,10 +261,21 @@ const educatorDashboard = () => {
               <div className={stylesFirstBlock.sheetDiv1} />
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
-              LifeTime Income
+              <Button
+                className={stylesFirstBlock.buttonSolidTextAndIcon}
+                variant='solid'
+                colorScheme='green'
+                onClick={() => {
+                  getLifeTimePayout();
+                }}
+              >
+                Update Lifetime Income
+              </Button>
               <div className={stylesFirstBlock.div}>
-                {lifetimePayout && <pre>{Moralis.Units.FromWei(lifetimePayout)} MATIC</pre>}
+                {lifetimePayout && <pre>{Moralis.Units.FromWei(lifetimePayout)}</pre>}
               </div>
+              {/* <h3 className={stylesFirstBlock.sBTsIssuedH3}>Total Income</h3>
+              <b className={stylesFirstBlock.b}>46 MATIC</b> */}
             </div>
           </div>
           <div className={stylesFirstBlock.groupDiv1}>
@@ -324,10 +335,10 @@ const educatorDashboard = () => {
                     fetch({ params: options });
                   }}
                 >
-                  Check Your Balance on Smart Contract
+                  Check Balance
                 </Button>
                 <div className={stylesFirstBlock.div}>
-                  {data && <pre>{Moralis.Units.FromWei(data)} MATIC</pre>}
+                  {data && <pre>{Moralis.Units.FromWei(data)}</pre>}
                 </div>
                 <Button
                   className={stylesFirstBlock.buttonSolidTextAndIcon}
@@ -337,7 +348,7 @@ const educatorDashboard = () => {
                     await withdrawFunds();
                   }}
                 >
-                  Withdraw Your Balance
+                  Withdraw Balance
                 </Button>
               </div>
             </div>

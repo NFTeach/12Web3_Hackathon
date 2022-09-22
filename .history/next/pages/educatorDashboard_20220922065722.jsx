@@ -23,11 +23,18 @@ const educatorDashboard = () => {
   const router = useRouter();
   const { native } = useMoralisWeb3Api();
   const [educator, setEducator] = useState();
-  const [coursesCreated, setCoursesCreated] = useState("0");
+  const [courses, setCourses] = useState([]);
+  const [courseObjectId, setCourseObjectId] = useState();
+  const [images, setImages] = useState([]);
+  const [courseName, setCourseName] = useState([]);
+  const [courseDescription, setCourseDescription] = useState([]);
+  const [courseSection1, setCourseSection1] = useState([]);
+  const [courseSection2, setCourseSection2] = useState([]);
+  const [courseSection3, setCourseSection3] = useState([]);
+  const [courseTest, setCourseTest] = useState([]);
   const [pfp, setPfp] = useState();
   const user = moralis.User.current();
   const address = user?.attributes.accounts[0];
-  const [lifetimePayout, setLifetimePayout] = useState("0");
 
   const {
     Moralis,
@@ -48,16 +55,6 @@ const educatorDashboard = () => {
     },
   };
 
-  const options2 = {
-    chain: CHAIN,
-    address: SBT_CONTRACT_ADDRESS,
-    functionName: "getEducatorLifetimePayout",
-    abi: NFTEACH_SBT_CONTRACT_ABI,
-    params: {
-      _educator: address,
-    },
-  };
-      
   const { data, error, fetch, isLoading } = useMoralisWeb3ApiCall(
     native.runContractFunction,
     { ...options }
@@ -89,7 +86,7 @@ const educatorDashboard = () => {
 
   const nbClasses = 0;
   const nbMinted = 0;
-  
+  const lifeTimePayout = 0;
 
   useEffect(() => {
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3();
@@ -132,19 +129,6 @@ const educatorDashboard = () => {
     }
   }, []);
 
-  useEffect(async () => {
-    if (!user) {
-      window.alert("Please connect wallet");
-    } else {
-      const Courses = Moralis.Object.extend("Courses");
-      const query = new Moralis.Query(Courses);
-      const account = user.attributes.accounts[0];
-      query.equalTo("educatorAddress", account);
-      const courses = await query.find();
-      setCoursesCreated(courses.length);
-    }
-  }, []);
-
   async function getNumberCourse() {
     const web3 = await Moralis.enableWeb3();
     const options = {
@@ -177,8 +161,7 @@ const educatorDashboard = () => {
       abi: NFTEACH_SBT_CONTRACT_ABI,
       params: { _educator: user.attributes.accounts[0] },
     };
-    let lifeTimePayout = await Moralis.executeFunction(options);
-    setLifetimePayout(lifeTimePayout);
+    lifeTimePayout = await Moralis.executeFunction(options);
   }
 
   const onStudentDashboardButtonClick = useCallback(() => {
@@ -253,7 +236,7 @@ const educatorDashboard = () => {
             </div>
             <div className={stylesFirstBlock.frameDiv1}>
               <h3 className={stylesFirstBlock.sBTsIssuedH3}>Courses Created</h3>
-              <b className={stylesFirstBlock.b}>{coursesCreated}</b>
+              <b className={stylesFirstBlock.b}>23</b>
             </div>
           </div>
           <div className={stylesFirstBlock.groupDiv1}>
@@ -261,10 +244,8 @@ const educatorDashboard = () => {
               <div className={stylesFirstBlock.sheetDiv1} />
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
-              LifeTime Income
-              <div className={stylesFirstBlock.div}>
-                {lifetimePayout && <pre>{Moralis.Units.FromWei(lifetimePayout)} MATIC</pre>}
-              </div>
+              <h3 className={stylesFirstBlock.sBTsIssuedH3}>Total Income</h3>
+              <b className={stylesFirstBlock.b}>46 MATIC</b>
             </div>
           </div>
           <div className={stylesFirstBlock.groupDiv1}>
@@ -273,9 +254,9 @@ const educatorDashboard = () => {
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
               <h3 className={stylesFirstBlock.sBTsIssuedH3}>
-                Enrolled Students (Coming Soon)
+                Enrolled Students
               </h3>
-              <b className={stylesFirstBlock.b}></b>
+              <b className={stylesFirstBlock.b}>19</b>
             </div>
           </div>
         </div>
@@ -324,10 +305,10 @@ const educatorDashboard = () => {
                     fetch({ params: options });
                   }}
                 >
-                  Check Your Balance on Smart Contract
+                  Check Balance
                 </Button>
                 <div className={stylesFirstBlock.div}>
-                  {data && <pre>{Moralis.Units.FromWei(data)} MATIC</pre>}
+                  {data && <pre>{Moralis.Units.FromWei(data)}</pre>}
                 </div>
                 <Button
                   className={stylesFirstBlock.buttonSolidTextAndIcon}
@@ -337,7 +318,7 @@ const educatorDashboard = () => {
                     await withdrawFunds();
                   }}
                 >
-                  Withdraw Your Balance
+                  Withdraw Balance
                 </Button>
               </div>
             </div>

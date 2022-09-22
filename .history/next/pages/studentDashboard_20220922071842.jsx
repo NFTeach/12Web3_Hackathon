@@ -58,7 +58,7 @@ const studentDashboard = () => {
       window.alert("Please connect wallet");
     } else {
       let enrolledCourseArr = user.attributes?.enrolledCourses;
-      // console.log(enrolledCourseArr);
+      console.log(enrolledCourseArr);
       if (enrolledCourseArr === undefined) {
         setEnrolledCourseObjectIds("0");
       } else {

@@ -7,6 +7,9 @@ import stylesHeader from "../styles/StudentDashboard_Page/Header.module.css";
 import stylesFirstBlock from "../styles/StudentDashboard_Page/FirstBlock.module.css";
 import stylesFooter from "../styles/StudentDashboard_Page/Footer.module.css";
 
+import { SBT_CONTRACT_ADDRESS } from "../components/consts/vars";
+import { NFTEACH_SBT_CONTRACT_ABI } from "../components/consts/contractABIs";
+
 moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
 moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 
@@ -14,9 +17,15 @@ const studentDashboard = () => {
   const router = useRouter();
   const [pfp, setPfp] = useState();
   const [educator, setEducator] = useState();
-  const [yourSBTs, setYourSBTs] = useState("0");
-  const [yourTokenIds, setYourTokenIds] = useState([]);
-  const [enrolledCourseObjectIds, setEnrolledCourseObjectIds] = useState("0");
+  const [courses, setCourses] = useState([]);
+  const [courseObjectId, setCourseObjectId] = useState();
+  const [images, setImages] = useState([]);
+  const [courseName, setCourseName] = useState([]);
+  const [courseDescription, setCourseDescription] = useState([]);
+  const [courseSection1, setCourseSection1] = useState([]);
+  const [courseSection2, setCourseSection2] = useState([]);
+  const [courseSection3, setCourseSection3] = useState([]);
+  const [courseTest, setCourseTest] = useState([]);
 
   const {
     Moralis,
@@ -28,6 +37,8 @@ const studentDashboard = () => {
   } = useMoralis();
 
   const user = moralis.User.current();
+  const nbClassesCompleted = 0;
+  const nbMinted = 0;
   // console.log(user)
 
   useEffect(() => {
@@ -38,6 +49,8 @@ const studentDashboard = () => {
   useEffect(() => {
     if (!user) return null;
     setPfp(user.get("pfp"));
+    getNumberCourseCompleted();
+    getNumberMinted();
   }, [user]);
 
   useEffect(async () => {
@@ -53,32 +66,37 @@ const studentDashboard = () => {
     }
   }, []);
 
-  useEffect(async () => {
-    if (!user) {
-      window.alert("Please connect wallet");
-    } else {
-      let enrolledCourseArr = user.attributes?.enrolledCourses;
-      // console.log(enrolledCourseArr);
-      if (enrolledCourseArr === undefined) {
-        setEnrolledCourseObjectIds("0");
-      } else {
-        setEnrolledCourseObjectIds(enrolledCourseArr?.length);
-      }
-    }
-  }, []);
-  
-  // console.log(enrolledCourseObjectIds)
+  async function getNumberCourseCompleted() {
+    const web3 = await Moralis.enableWeb3();
+    const options = {
+      contractAddress: SBT_CONTRACT_ADDRESS,
+      functionName: "nbClassesCompleted",
+      abi: NFTEACH_SBT_CONTRACT_ABI,
+      params: { _student: user.attributes.accounts[0] },
+    };
+    nbClassesCompleted = await Moralis.executeFunction(options);
+  }
 
-  useEffect(async () => {
-    const MintSBTS = Moralis.Object.extend("MintSBT");
-    const query = new Moralis.Query(MintSBTS);
-    const account = user.attributes.accounts[0];
-    query.equalTo("student", account);
-    const mintSBTs = await query.find();
-    setYourSBTs(mintSBTs.length);
-    setYourTokenIds(mintSBTs.map((mintSBT) => mintSBT.attributes.tokenId));
-    
-  }, []);
+  async function getNumberMinted() {
+    const web3 = await Moralis.enableWeb3();
+    const options = {
+      contractAddress: SBT_CONTRACT_ADDRESS,
+      functionName: "nbMinted",
+      abi: NFTEACH_SBT_CONTRACT_ABI,
+      params: { _student: user.attributes.accounts[0] },
+    };
+    nbMinted = await Moralis.executeFunction(options);
+    // console.log(nbMinted);
+  }
+
+  // Header effects
+  const onExploreButtonClick = useCallback(() => {
+    router.push("/explore");
+  }, [router]);
+
+  const onEducatorDashboardButtonClick = useCallback(() => {
+    router.push("/educatorDashboard");
+  }, [router]);
 
   const onProfileButtonClick = useCallback(() => {
     router.push("/profileSettings");
@@ -87,6 +105,36 @@ const studentDashboard = () => {
   const onStudentDashboardButtonClick = useCallback(() => {
     router.push("/studentDashboard");
   }, [router]);
+
+  useEffect(() => {
+    const scrollAnimElements = document.querySelectorAll(
+      "[data-animate-on-scroll-header]"
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
+            const targetElement = entry.target;
+            targetElement.classList.add(stylesHeader.animate);
+            observer.unobserve(targetElement);
+          }
+        }
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    for (let i = 0; i < scrollAnimElements.length; i++) {
+      observer.observe(scrollAnimElements[i]);
+    }
+
+    return () => {
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.unobserve(scrollAnimElements[i]);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -151,7 +199,7 @@ const studentDashboard = () => {
                 <b
                   className={stylesFirstBlock.yourCompletedCourses}
                 >{`Completed Courses `}</b>
-                <b className={stylesFirstBlock.b}>{yourSBTs}</b>
+                <b className={stylesFirstBlock.b}>3</b>
               </div>
             </div>
             <div className={stylesFirstBlock.completedDiv}>
@@ -160,9 +208,9 @@ const studentDashboard = () => {
               </div>
               <div className={stylesFirstBlock.frameDiv2}>
                 <b className={stylesFirstBlock.yourCompletedCourses}>
-                  Courses in Progress/Taken
+                  Courses in Progress
                 </b>
-                <b className={stylesFirstBlock.b}>{enrolledCourseObjectIds}</b>
+                <b className={stylesFirstBlock.b}>2</b>
               </div>
             </div>
             <div className={stylesFirstBlock.yourSBTsDiv}>
@@ -173,7 +221,7 @@ const studentDashboard = () => {
                 <b className={stylesFirstBlock.yourCompletedCourses}>
                   Your SBTS
                 </b>
-                <b className={stylesFirstBlock.b}>{yourSBTs}</b>
+                <b className={stylesFirstBlock.b}>2</b>
               </div>
             </div>
           </div>

@@ -57,17 +57,12 @@ const studentDashboard = () => {
     if (!user) {
       window.alert("Please connect wallet");
     } else {
-      let enrolledCourseArr = user.attributes?.enrolledCourses;
-      // console.log(enrolledCourseArr);
-      if (enrolledCourseArr === undefined) {
-        setEnrolledCourseObjectIds("0");
-      } else {
-        setEnrolledCourseObjectIds(enrolledCourseArr?.length);
-      }
+      enrolledCourseArr = user.attributes?.enrolledCourses;
+      setEnrolledCourseObjectIds(enrolledCourseArr.length);
     }
   }, []);
   
-  // console.log(enrolledCourseObjectIds)
+  console.log(enrolledCourseObjectIds)
 
   useEffect(async () => {
     const MintSBTS = Moralis.Object.extend("MintSBT");
@@ -162,7 +157,7 @@ const studentDashboard = () => {
                 <b className={stylesFirstBlock.yourCompletedCourses}>
                   Courses in Progress/Taken
                 </b>
-                <b className={stylesFirstBlock.b}>{enrolledCourseObjectIds}</b>
+                <b className={stylesFirstBlock.b}>2</b>
               </div>
             </div>
             <div className={stylesFirstBlock.yourSBTsDiv}>

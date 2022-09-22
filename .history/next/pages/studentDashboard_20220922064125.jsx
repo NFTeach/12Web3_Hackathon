@@ -16,7 +16,7 @@ const studentDashboard = () => {
   const [educator, setEducator] = useState();
   const [yourSBTs, setYourSBTs] = useState("0");
   const [yourTokenIds, setYourTokenIds] = useState([]);
-  const [enrolledCourseObjectIds, setEnrolledCourseObjectIds] = useState("0");
+  const [enrolledCourseObjectIds, setEnrolledCourseObjectIds] = useState([]);
 
   const {
     Moralis,
@@ -28,7 +28,6 @@ const studentDashboard = () => {
   } = useMoralis();
 
   const user = moralis.User.current();
-  // console.log(user)
 
   useEffect(() => {
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3();
@@ -54,20 +53,14 @@ const studentDashboard = () => {
   }, []);
 
   useEffect(async () => {
-    if (!user) {
-      window.alert("Please connect wallet");
-    } else {
-      let enrolledCourseArr = user.attributes?.enrolledCourses;
-      // console.log(enrolledCourseArr);
-      if (enrolledCourseArr === undefined) {
-        setEnrolledCourseObjectIds("0");
-      } else {
-        setEnrolledCourseObjectIds(enrolledCourseArr?.length);
-      }
-    }
+    const _Users = Moralis.Object.extend("_User");
+    const query = new Moralis.Query(_Users);
+    const account = user?.attributes.accounts[0];
+    query.equalTo("accounts", account);
+    const user = await query.find();
+    setEnrolledCourseObjectIds(user[0].get("enrolledCourses"));
   }, []);
-  
-  // console.log(enrolledCourseObjectIds)
+  console.log(enrolledCourseObjectIds);
 
   useEffect(async () => {
     const MintSBTS = Moralis.Object.extend("MintSBT");
@@ -160,9 +153,9 @@ const studentDashboard = () => {
               </div>
               <div className={stylesFirstBlock.frameDiv2}>
                 <b className={stylesFirstBlock.yourCompletedCourses}>
-                  Courses in Progress/Taken
+                  Courses in Progress
                 </b>
-                <b className={stylesFirstBlock.b}>{enrolledCourseObjectIds}</b>
+                <b className={stylesFirstBlock.b}>2</b>
               </div>
             </div>
             <div className={stylesFirstBlock.yourSBTsDiv}>

@@ -337,7 +337,7 @@ const educatorDashboard = () => {
                     await withdrawFunds();
                   }}
                 >
-                  Withdraw Your Balance
+                  Withdraw Balance
                 </Button>
               </div>
             </div>

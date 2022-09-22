@@ -16,7 +16,7 @@ const studentDashboard = () => {
   const [educator, setEducator] = useState();
   const [yourSBTs, setYourSBTs] = useState("0");
   const [yourTokenIds, setYourTokenIds] = useState([]);
-  const [enrolledCourseObjectIds, setEnrolledCourseObjectIds] = useState("0");
+  const [enrolledCourseObjectIds, setEnrolledCourseObjectIds] = useState([]);
 
   const {
     Moralis,
@@ -53,21 +53,7 @@ const studentDashboard = () => {
     }
   }, []);
 
-  useEffect(async () => {
-    if (!user) {
-      window.alert("Please connect wallet");
-    } else {
-      let enrolledCourseArr = user.attributes?.enrolledCourses;
-      // console.log(enrolledCourseArr);
-      if (enrolledCourseArr === undefined) {
-        setEnrolledCourseObjectIds("0");
-      } else {
-        setEnrolledCourseObjectIds(enrolledCourseArr?.length);
-      }
-    }
-  }, []);
-  
-  // console.log(enrolledCourseObjectIds)
+  console.log(user?.attributes?.enrolledCourses)
 
   useEffect(async () => {
     const MintSBTS = Moralis.Object.extend("MintSBT");
@@ -162,7 +148,7 @@ const studentDashboard = () => {
                 <b className={stylesFirstBlock.yourCompletedCourses}>
                   Courses in Progress/Taken
                 </b>
-                <b className={stylesFirstBlock.b}>{enrolledCourseObjectIds}</b>
+                <b className={stylesFirstBlock.b}>2</b>
               </div>
             </div>
             <div className={stylesFirstBlock.yourSBTsDiv}>

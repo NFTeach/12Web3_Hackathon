@@ -324,7 +324,7 @@ const educatorDashboard = () => {
                     fetch({ params: options });
                   }}
                 >
-                  Check Your Balance on Smart Contract
+                  Check Balance on Smart Contract
                 </Button>
                 <div className={stylesFirstBlock.div}>
                   {data && <pre>{Moralis.Units.FromWei(data)} MATIC</pre>}
@@ -337,7 +337,7 @@ const educatorDashboard = () => {
                     await withdrawFunds();
                   }}
                 >
-                  Withdraw Your Balance
+                  Withdraw Balance
                 </Button>
               </div>
             </div>

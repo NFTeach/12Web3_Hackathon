@@ -30,13 +30,13 @@
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  padding: 0 0 60px;
+  padding: 0 0 50px;
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 20px;
   overflow-y: auto;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 .chooseACourseBelowToStart {
   margin: 0;

@@ -58,16 +58,11 @@ const studentDashboard = () => {
       window.alert("Please connect wallet");
     } else {
       let enrolledCourseArr = user.attributes?.enrolledCourses;
-      // console.log(enrolledCourseArr);
-      if (enrolledCourseArr === undefined) {
-        setEnrolledCourseObjectIds("0");
-      } else {
-        setEnrolledCourseObjectIds(enrolledCourseArr?.length);
-      }
+      setEnrolledCourseObjectIds(enrolledCourseArr.length);
     }
   }, []);
   
-  // console.log(enrolledCourseObjectIds)
+  console.log(enrolledCourseObjectIds)
 
   useEffect(async () => {
     const MintSBTS = Moralis.Object.extend("MintSBT");

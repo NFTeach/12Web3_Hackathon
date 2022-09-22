@@ -27,7 +27,6 @@ const educatorDashboard = () => {
   const [pfp, setPfp] = useState();
   const user = moralis.User.current();
   const address = user?.attributes.accounts[0];
-  const [lifetimePayout, setLifetimePayout] = useState("0");
 
   const {
     Moralis,
@@ -48,16 +47,6 @@ const educatorDashboard = () => {
     },
   };
 
-  const options2 = {
-    chain: CHAIN,
-    address: SBT_CONTRACT_ADDRESS,
-    functionName: "getEducatorLifetimePayout",
-    abi: NFTEACH_SBT_CONTRACT_ABI,
-    params: {
-      _educator: address,
-    },
-  };
-      
   const { data, error, fetch, isLoading } = useMoralisWeb3ApiCall(
     native.runContractFunction,
     { ...options }
@@ -89,7 +78,7 @@ const educatorDashboard = () => {
 
   const nbClasses = 0;
   const nbMinted = 0;
-  
+  const lifeTimePayout = 0;
 
   useEffect(() => {
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3();
@@ -177,8 +166,7 @@ const educatorDashboard = () => {
       abi: NFTEACH_SBT_CONTRACT_ABI,
       params: { _educator: user.attributes.accounts[0] },
     };
-    let lifeTimePayout = await Moralis.executeFunction(options);
-    setLifetimePayout(lifeTimePayout);
+    lifeTimePayout = await Moralis.executeFunction(options);
   }
 
   const onStudentDashboardButtonClick = useCallback(() => {
@@ -261,10 +249,21 @@ const educatorDashboard = () => {
               <div className={stylesFirstBlock.sheetDiv1} />
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
-              LifeTime Income
+              <Button
+                className={stylesFirstBlock.buttonSolidTextAndIcon}
+                variant='solid'
+                colorScheme='green'
+                onClick={() => {
+                  fetch({ params: options });
+                }}
+              >
+                Check Balance
+              </Button>
               <div className={stylesFirstBlock.div}>
-                {lifetimePayout && <pre>{Moralis.Units.FromWei(lifetimePayout)} MATIC</pre>}
+                {data && <pre>{Moralis.Units.FromWei(data)}</pre>}
               </div>
+              {/* <h3 className={stylesFirstBlock.sBTsIssuedH3}>Total Income</h3>
+              <b className={stylesFirstBlock.b}>46 MATIC</b> */}
             </div>
           </div>
           <div className={stylesFirstBlock.groupDiv1}>
@@ -273,9 +272,9 @@ const educatorDashboard = () => {
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
               <h3 className={stylesFirstBlock.sBTsIssuedH3}>
-                Enrolled Students (Coming Soon)
+                Enrolled Students
               </h3>
-              <b className={stylesFirstBlock.b}></b>
+              <b className={stylesFirstBlock.b}>19</b>
             </div>
           </div>
         </div>
@@ -324,10 +323,10 @@ const educatorDashboard = () => {
                     fetch({ params: options });
                   }}
                 >
-                  Check Your Balance on Smart Contract
+                  Check Balance
                 </Button>
                 <div className={stylesFirstBlock.div}>
-                  {data && <pre>{Moralis.Units.FromWei(data)} MATIC</pre>}
+                  {data && <pre>{Moralis.Units.FromWei(data)}</pre>}
                 </div>
                 <Button
                   className={stylesFirstBlock.buttonSolidTextAndIcon}
@@ -337,7 +336,7 @@ const educatorDashboard = () => {
                     await withdrawFunds();
                   }}
                 >
-                  Withdraw Your Balance
+                  Withdraw Balance
                 </Button>
               </div>
             </div>
