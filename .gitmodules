@@ -10,3 +10,6 @@
 [submodule "next/foundry/hello_foundry/lib/forge-std"]
 	path = next/foundry/hello_foundry/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "lib/aave-V3-core"]
+	path = lib/aave-V3-core
+	url = https://github.com/aave/aave-V3-core
