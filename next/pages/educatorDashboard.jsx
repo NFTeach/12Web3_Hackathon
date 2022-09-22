@@ -183,8 +183,8 @@ const educatorDashboard = () => {
         <div className={stylesHeader.frameDiv}>
           <img
             className={stylesHeader.nFTeach1Icon}
-            alt=''
-            src='/welcome_imgs/NFTeach.png'
+            alt=""
+            src="/welcome_imgs/NFTeach.png"
           />
           <div className={stylesHeader.frameDiv1}>
             <div className={stylesHeader.tabsDiv}>
@@ -214,7 +214,7 @@ const educatorDashboard = () => {
             <div className={stylesHeader.profilePictureDiv}>
               <img
                 className={stylesHeader.displayedNFTIcon}
-                alt='profilePFP'
+                alt="profilePFP"
                 src={pfp ? pfp : defaultImgs[0]}
               />
               <button
@@ -236,7 +236,7 @@ const educatorDashboard = () => {
             </div>
             <div className={stylesFirstBlock.frameDiv1}>
               <h3 className={stylesFirstBlock.sBTsIssuedH3}>SBTs Issued</h3>
-              <b className={stylesFirstBlock.b}>23</b>
+              <b className={stylesFirstBlock.b}>{nbMinted}</b>
             </div>
           </div>
           <div className={stylesFirstBlock.groupDiv1}>
@@ -245,7 +245,7 @@ const educatorDashboard = () => {
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
               <h3 className={stylesFirstBlock.sBTsIssuedH3}>Total Income</h3>
-              <b className={stylesFirstBlock.b}>46 MATIC</b>
+              <b className={stylesFirstBlock.b}>{lifeTimePayout}</b>
             </div>
           </div>
           <div className={stylesFirstBlock.groupDiv1}>
@@ -256,7 +256,7 @@ const educatorDashboard = () => {
               <h3 className={stylesFirstBlock.sBTsIssuedH3}>
                 Enrolled Students
               </h3>
-              <b className={stylesFirstBlock.b}>19</b>
+              <b className={stylesFirstBlock.b}>{nbClasses}</b>
             </div>
           </div>
         </div>
@@ -291,16 +291,16 @@ const educatorDashboard = () => {
               <div className={stylesFirstBlock.frameDiv12}>
                 <Button
                   className={stylesFirstBlock.buttonSolidTextAndIcon}
-                  variant='solid'
-                  colorScheme='green'
+                  variant="solid"
+                  colorScheme="green"
                   onClick={onAddCourseButtonClick}
                 >
                   Add Courses
                 </Button>
                 <Button
                   className={stylesFirstBlock.buttonSolidTextAndIcon}
-                  variant='solid'
-                  colorScheme='green'
+                  variant="solid"
+                  colorScheme="green"
                   onClick={() => {
                     fetch({ params: options });
                   }}
@@ -312,8 +312,8 @@ const educatorDashboard = () => {
                 </div>
                 <Button
                   className={stylesFirstBlock.buttonSolidTextAndIcon}
-                  variant='solid'
-                  colorScheme='cyan'
+                  variant="solid"
+                  colorScheme="cyan"
                   onClick={async () => {
                     await withdrawFunds();
                   }}
@@ -322,8 +322,8 @@ const educatorDashboard = () => {
                 </Button>
                 <Button
                   className={stylesFirstBlock.buttonSolidTextAndIcon}
-                  variant='solid'
-                  colorScheme='red'
+                  variant="solid"
+                  colorScheme="red"
                 >
                   Log Out
                 </Button>
