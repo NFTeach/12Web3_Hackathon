@@ -135,7 +135,7 @@ const question10 = (props) => {
     }
   }, [selectedAnswer]);
 
-  // console.log(correctAnswerCount, correctAnswerSelected);
+  console.log(correctAnswerCount, correctAnswerSelected);
   // console.log(passingGrade, grade)
 
   const calculateIfPassed = async () => {

@@ -9,29 +9,27 @@ import {
   RadioGroup,
   Button,
 } from "@chakra-ui/react";
-import stylesHeader from "../../styles/Test_Pages/Question2/Header.module.css";
-import stylesFirstBlock from "../../styles/Test_Pages/Question2/FirstBlock.module.css";
-import stylesFooter from "../../styles/Test_Pages/Question2/Footer.module.css";
+import stylesHeader from "../../styles/Test_Pages/Question1/Header.module.css";
+import stylesFirstBlock from "../../styles/Test_Pages/Question1/FirstBlock.module.css";
+import stylesFooter from "../../styles/Test_Pages/Question1/Footer.module.css";
 
 moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
 moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 
-const question2 = (props) => {
+const question1 = (props) => {
   const { Moralis } = useMoralis();
   const [courseName, setCourseName] = useState();
-  const [question2, setQuestion2] = useState("");
-  const [question2Answer, setQuestion2Answer] = useState("");
-  const [fakeQuestion2Answer1, setFakeQuestion2Answer1] = useState("");
-  const [fakeQuestion2Answer2, setFakeQuestion2Answer2] = useState("");
-  const [fakeQuestion2Answer3, setFakeQuestion2Answer3] = useState("");
+  const [question1, setQuestion1] = useState("");
+  const [question1Answer, setQuestion1Answer] = useState("");
+  const [fakeQuestion1Answer1, setFakeQuestion1Answer1] = useState("");
+  const [fakeQuestion1Answer2, setFakeQuestion1Answer2] = useState("");
+  const [fakeQuestion1Answer3, setFakeQuestion1Answer3] = useState("");
   const [shuffledAnswer1, setShuffledAnswer1] = useState("");
   const [shuffledAnswer2, setShuffledAnswer2] = useState("");
   const [shuffledAnswer3, setShuffledAnswer3] = useState("");
   const [shuffledAnswer4, setShuffledAnswer4] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState("placeholder");
-  const [correctAnswerCount, setCorrectAnswerCount] = useState(
-    props.correctAnswerCount
-  );
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
   const [correctAnswerSelected, setCorrectAnswerSelected] = useState(false);
 
   useEffect(async () => {
@@ -40,19 +38,19 @@ const question2 = (props) => {
     query.equalTo("objectId", props.courseObjectId);
     const course = await query.find();
     setCourseName(course[0].get("courseName"));
-    setQuestion2(course[0].get("test").question2);
-    setQuestion2Answer(course[0].get("test").question2Answer);
-    setFakeQuestion2Answer1(course[0].get("test").fakeQuestion2Answer1);
-    setFakeQuestion2Answer2(course[0].get("test").fakeQuestion2Answer2);
-    setFakeQuestion2Answer3(course[0].get("test").fakeQuestion2Answer3);
+    setQuestion1(course[0].get("test").question1);
+    setQuestion1Answer(course[0].get("test").question1Answer);
+    setFakeQuestion1Answer1(course[0].get("test").fakeQuestion1Answer1);
+    setFakeQuestion1Answer2(course[0].get("test").fakeQuestion1Answer2);
+    setFakeQuestion1Answer3(course[0].get("test").fakeQuestion1Answer3);
   }, []);
 
   useEffect(() => {
     const answerArr = [
-      question2Answer,
-      fakeQuestion2Answer1,
-      fakeQuestion2Answer2,
-      fakeQuestion2Answer3,
+      question1Answer,
+      fakeQuestion1Answer1,
+      fakeQuestion1Answer2,
+      fakeQuestion1Answer3,
     ];
     const shuffledAnswerArr = answerArr.sort(() => Math.random() - 0.5);
     setShuffledAnswer1(shuffledAnswerArr[0]);
@@ -60,27 +58,27 @@ const question2 = (props) => {
     setShuffledAnswer3(shuffledAnswerArr[2]);
     setShuffledAnswer4(shuffledAnswerArr[3]);
   }, [
-    question2Answer,
-    fakeQuestion2Answer1,
-    fakeQuestion2Answer2,
-    fakeQuestion2Answer3,
+    question1Answer,
+    fakeQuestion1Answer1,
+    fakeQuestion1Answer2,
+    fakeQuestion1Answer3,
   ]);
 
   useEffect(() => {
-    if (selectedAnswer === question2Answer) {
+    if (selectedAnswer === question1Answer) {
       setCorrectAnswerSelected(true);
-      setCorrectAnswerCount(parseInt(correctAnswerCount) + 1);
+      setCorrectAnswerCount(correctAnswerCount + 1);
     } else {
       if (correctAnswerSelected === true) {
         setCorrectAnswerSelected(false);
-        setCorrectAnswerCount(parseInt(correctAnswerCount) - 1);
+        setCorrectAnswerCount(correctAnswerCount - 1);
       } else {
-        setCorrectAnswerCount(parseInt(correctAnswerCount));
+        setCorrectAnswerCount(correctAnswerCount);
       }
     }
   }, [selectedAnswer]);
 
-  // console.log(correctAnswerCount, correctAnswerSelected);
+  console.log(correctAnswerCount, correctAnswerSelected);
 
   return (
     <>
@@ -93,7 +91,7 @@ const question2 = (props) => {
         <div className={stylesFirstBlock.frameDiv}>
           <div className={stylesFirstBlock.frameDiv1}>
             <h1 className={stylesFirstBlock.questionNumberTitle}>
-            {courseName} - Test
+              Chemistry 101 Test
             </h1>
           </div>
           <div className={stylesFirstBlock.frameDiv2}>
@@ -101,16 +99,16 @@ const question2 = (props) => {
               <div className={stylesFirstBlock.frameDiv4}>
                 <Progress
                   className={stylesFirstBlock.progressDefault}
-                  value={20}
+                  value={10}
                   colorScheme='green'
                 />
                 <h2 className={stylesFirstBlock.questionNumberTitle1}>
-                  Question 2:
+                  Question 1:
                 </h2>
                 <Textarea
                   className={stylesFirstBlock.progressDefault}
                   variant='outline'
-                  placeholder={question2}
+                  placeholder={question1}
                   isDisabled
                 />
               </div>
@@ -122,7 +120,7 @@ const question2 = (props) => {
                       className={stylesFirstBlock.progressDefault}
                       variant='flushed'
                       size='sm'
-                      placeholder={shuffledAnswer1}
+                      placeholder='Answer 1'
                       isDisabled
                       isReadOnly
                     />
@@ -130,7 +128,7 @@ const question2 = (props) => {
                       className={stylesFirstBlock.progressDefault}
                       variant='flushed'
                       size='sm'
-                      placeholder={shuffledAnswer2}
+                      placeholder='Answer 2'
                       isDisabled
                       isReadOnly
                     />
@@ -138,7 +136,7 @@ const question2 = (props) => {
                       className={stylesFirstBlock.progressDefault}
                       variant='flushed'
                       size='sm'
-                      placeholder={shuffledAnswer3}
+                      placeholder='Answer 3'
                       isDisabled
                       isReadOnly
                     />
@@ -146,21 +144,19 @@ const question2 = (props) => {
                       className={stylesFirstBlock.progressDefault}
                       variant='flushed'
                       size='sm'
-                      placeholder={shuffledAnswer4}
+                      placeholder='Answer 4'
                       isDisabled
                       isReadOnly
                     />
                   </div>
-                  <RadioGroup onChange={setSelectedAnswer} value={selectedAnswer} >
-                    <div className={stylesFirstBlock.frameDiv8}>
-                      <div className={stylesFirstBlock.frameDiv9}>
-                        <Radio colorScheme='green' value={shuffledAnswer1} />
-                        <Radio colorScheme='green' value={shuffledAnswer2} />
-                        <Radio colorScheme='green' value={shuffledAnswer3} />
-                        <Radio colorScheme='green' value={shuffledAnswer4} />
-                      </div>
+                  <div className={stylesFirstBlock.frameDiv8}>
+                    <div className={stylesFirstBlock.frameDiv9}>
+                      <Radio colorScheme='green' />
+                      <Radio colorScheme='green' />
+                      <Radio colorScheme='green' />
+                      <Radio colorScheme='green' />
                     </div>
-                  </RadioGroup>
+                  </div>
                 </div>
               </div>
             </div>
@@ -180,7 +176,7 @@ const question2 = (props) => {
               </Link>
               <Link
                 href={{
-                  pathname: "/test/question3",
+                  pathname: "/test/question2",
                   query: {
                     courseObjectId: props.courseObjectId,
                     correctAnswerCount: correctAnswerCount,
@@ -204,14 +200,13 @@ const question2 = (props) => {
   );
 };
 
-export default question2;
+export default question1;
 
-// Recieve props from next/pages/question1.jsx
+// Recieve props from next/pages/course.jsx
 export const getServerSideProps = (context) => {
   return {
     props: {
       courseObjectId: context.query.courseObjectId,
-      correctAnswerCount: context.query.correctAnswerCount,
     },
   };
 };

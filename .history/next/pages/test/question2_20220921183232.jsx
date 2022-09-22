@@ -101,7 +101,7 @@ const question2 = (props) => {
               <div className={stylesFirstBlock.frameDiv4}>
                 <Progress
                   className={stylesFirstBlock.progressDefault}
-                  value={20}
+                  value={10}
                   colorScheme='green'
                 />
                 <h2 className={stylesFirstBlock.questionNumberTitle1}>
