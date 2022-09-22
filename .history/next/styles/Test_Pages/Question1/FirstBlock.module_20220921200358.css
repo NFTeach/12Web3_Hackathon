@@ -66,33 +66,31 @@
   height: 1px;
   flex-shrink: 0;
 }
+.frameDiv10,
+.frameDiv8 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .frameDiv8 {
   width: 621px;
   height: 459px;
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-between;
 }
-.frameDiv10,
-.frameDiv9 {
-  flex: 1;
-  display: flex;
-  box-sizing: border-box;
-}
 .frameDiv10 {
+  flex: 1;
   height: 438px;
-  flex-direction: column;
   padding: 10px 0 0 250px;
-  align-items: center;
+  box-sizing: border-box;
   justify-content: flex-start;
   gap: 116px;
 }
 .frameDiv9 {
+  flex: 1;
   height: 459px;
+  display: flex;
   flex-direction: row;
-  padding: 0 0 0 84px;
   align-items: flex-start;
   justify-content: center;
   margin-left: -325px;

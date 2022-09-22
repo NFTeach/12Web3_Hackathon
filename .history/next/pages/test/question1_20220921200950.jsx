@@ -9,29 +9,27 @@ import {
   RadioGroup,
   Button,
 } from "@chakra-ui/react";
-import stylesHeader from "../../styles/Test_Pages/Question9/Header.module.css";
-import stylesFirstBlock from "../../styles/Test_Pages/Question9/FirstBlock.module.css";
-import stylesFooter from "../../styles/Test_Pages/Question9/Footer.module.css";
+import stylesHeader from "../../styles/Test_Pages/Question1/Header.module.css";
+import stylesFirstBlock from "../../styles/Test_Pages/Question1/FirstBlock.module.css";
+import stylesFooter from "../../styles/Test_Pages/Question1/Footer.module.css";
 
 moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
 moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 
-const question9 = (props) => {
+const question1 = (props) => {
   const { Moralis } = useMoralis();
   const [courseName, setCourseName] = useState();
-  const [question9, setQuestion9] = useState("");
-  const [question9Answer, setQuestion9Answer] = useState("");
-  const [fakeQuestion9Answer1, setFakeQuestion9Answer1] = useState("");
-  const [fakeQuestion9Answer2, setFakeQuestion9Answer2] = useState("");
-  const [fakeQuestion9Answer3, setFakeQuestion9Answer3] = useState("");
+  const [question1, setQuestion1] = useState("");
+  const [question1Answer, setQuestion1Answer] = useState("");
+  const [fakeQuestion1Answer1, setFakeQuestion1Answer1] = useState("");
+  const [fakeQuestion1Answer2, setFakeQuestion1Answer2] = useState("");
+  const [fakeQuestion1Answer3, setFakeQuestion1Answer3] = useState("");
   const [shuffledAnswer1, setShuffledAnswer1] = useState("");
   const [shuffledAnswer2, setShuffledAnswer2] = useState("");
   const [shuffledAnswer3, setShuffledAnswer3] = useState("");
   const [shuffledAnswer4, setShuffledAnswer4] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState("placeholder");
-  const [correctAnswerCount, setCorrectAnswerCount] = useState(
-    props.correctAnswerCount
-  );
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
   const [correctAnswerSelected, setCorrectAnswerSelected] = useState(false);
 
   useEffect(async () => {
@@ -40,19 +38,19 @@ const question9 = (props) => {
     query.equalTo("objectId", props.courseObjectId);
     const course = await query.find();
     setCourseName(course[0].get("courseName"));
-    setQuestion9(course[0].get("test").question9);
-    setQuestion9Answer(course[0].get("test").question9Answer);
-    setFakeQuestion9Answer1(course[0].get("test").fakeQuestion9Answer1);
-    setFakeQuestion9Answer2(course[0].get("test").fakeQuestion9Answer2);
-    setFakeQuestion9Answer3(course[0].get("test").fakeQuestion9Answer3);
+    setQuestion1(course[0].get("test").question1);
+    setQuestion1Answer(course[0].get("test").question1Answer);
+    setFakeQuestion1Answer1(course[0].get("test").fakeQuestion1Answer1);
+    setFakeQuestion1Answer2(course[0].get("test").fakeQuestion1Answer2);
+    setFakeQuestion1Answer3(course[0].get("test").fakeQuestion1Answer3);
   }, []);
 
   useEffect(() => {
     const answerArr = [
-      question9Answer,
-      fakeQuestion9Answer1,
-      fakeQuestion9Answer2,
-      fakeQuestion9Answer3,
+      question1Answer,
+      fakeQuestion1Answer1,
+      fakeQuestion1Answer2,
+      fakeQuestion1Answer3,
     ];
     const shuffledAnswerArr = answerArr.sort(() => Math.random() - 0.5);
     setShuffledAnswer1(shuffledAnswerArr[0]);
@@ -60,22 +58,22 @@ const question9 = (props) => {
     setShuffledAnswer3(shuffledAnswerArr[2]);
     setShuffledAnswer4(shuffledAnswerArr[3]);
   }, [
-    question9Answer,
-    fakeQuestion9Answer1,
-    fakeQuestion9Answer2,
-    fakeQuestion9Answer3,
+    question1Answer,
+    fakeQuestion1Answer1,
+    fakeQuestion1Answer2,
+    fakeQuestion1Answer3,
   ]);
 
   useEffect(() => {
-    if (selectedAnswer === question9Answer) {
+    if (selectedAnswer === question1Answer) {
       setCorrectAnswerSelected(true);
-      setCorrectAnswerCount(parseInt(correctAnswerCount) + 1);
+      setCorrectAnswerCount(correctAnswerCount + 1);
     } else {
       if (correctAnswerSelected === true) {
         setCorrectAnswerSelected(false);
-        setCorrectAnswerCount(parseInt(correctAnswerCount) - 1);
+        setCorrectAnswerCount(correctAnswerCount - 1);
       } else {
-        setCorrectAnswerCount(parseInt(correctAnswerCount));
+        setCorrectAnswerCount(correctAnswerCount);
       }
     }
   }, [selectedAnswer]);
@@ -100,14 +98,14 @@ const question9 = (props) => {
                 <div className={stylesFirstBlock.frameDiv5}>
                   <Progress
                     className={stylesFirstBlock.progressDefault}
-                    value={90}
+                    value={10}
                     colorScheme="green"
                   />
-                  <h2 className={stylesFirstBlock.questionNumberTitle1}>Question 9:</h2>
+                  <h2 className={stylesFirstBlock.questionNumberTitle1}>Question 1:</h2>
                   <Textarea
                     className={stylesFirstBlock.progressDefault}
                     variant="outline"
-                    placeholder={question9}
+                    placeholder={question1}
                     isDisabled
                   />
                 </div>
@@ -152,10 +150,10 @@ const question9 = (props) => {
                   <RadioGroup onChange={setSelectedAnswer} value={selectedAnswer} >
                     <div className={stylesFirstBlock.frameDiv9}>
                       <div className={stylesFirstBlock.frameDiv10}>
-                        <Radio colorScheme="green" value={shuffledAnswer1} />
-                        <Radio colorScheme="green" value={shuffledAnswer2} />
-                        <Radio colorScheme="green" value={shuffledAnswer3} />
-                        <Radio colorScheme="green" value={shuffledAnswer4} />
+                        <Radio colorScheme="green" />
+                        <Radio colorScheme="green" />
+                        <Radio colorScheme="green" />
+                        <Radio colorScheme="green" />
                       </div>
                     </div>
                   </RadioGroup>
@@ -165,7 +163,7 @@ const question9 = (props) => {
             <div className={stylesFirstBlock.frameDiv11}>
               <Link
                 href={{
-                  pathname: "/test/question8",
+                  pathname: "/course",
                   query: {
                     courseObjectId: props.courseObjectId,
                   },
@@ -177,14 +175,14 @@ const question9 = (props) => {
                   w="162px"
                   colorScheme="green"
                   as="a"
-                  href="/test/question8"
+                  href="/course"
                 >
                   Back
                 </Button>
               </Link>
               <Link
                 href={{
-                  pathname: "/test/question10",
+                  pathname: "/test/question2",
                   query: {
                     courseObjectId: props.courseObjectId,
                     correctAnswerCount: correctAnswerCount,
@@ -197,7 +195,7 @@ const question9 = (props) => {
                   w="162px"
                   colorScheme="green"
                   as="a"
-                  href="/test/question10"
+                  href="/question2"
                 >
                   Next
                 </Button>
@@ -214,14 +212,13 @@ const question9 = (props) => {
   );
 };
 
-export default question9;
+export default question1;
 
-// Recieve props from next/pages/question8.jsx
+// Recieve props from next/pages/course.jsx
 export const getServerSideProps = (context) => {
   return {
     props: {
       courseObjectId: context.query.courseObjectId,
-      correctAnswerCount: context.query.correctAnswerCount,
     },
   };
 };

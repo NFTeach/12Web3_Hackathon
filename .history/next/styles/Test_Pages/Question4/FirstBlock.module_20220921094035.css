@@ -27,91 +27,76 @@
 .progressDefault {
   align-self: stretch;
 }
+.frameDiv4,
+.questionNumberTitle1 {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
 .questionNumberTitle1 {
   margin: 0;
-  align-self: stretch;
   position: relative;
   font-size: inherit;
   font-weight: 400;
   font-family: inherit;
-  display: flex;
-  align-items: center;
   justify-content: center;
   height: 89px;
   flex-shrink: 0;
 }
-.frameDiv5 {
-  align-self: stretch;
-  display: flex;
+.frameDiv4 {
   flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
   gap: 31px;
 }
-.frameDiv4,
 .lineDiv {
   align-self: stretch;
-  box-sizing: border-box;
-}
-.frameDiv4 {
-  display: flex;
-  flex-direction: column;
-  padding: 0 200px;
-  align-items: center;
-  justify-content: flex-start;
-}
-.lineDiv {
   position: relative;
   border-top: 1px solid #e4e4e4;
+  box-sizing: border-box;
   height: 1px;
   flex-shrink: 0;
 }
-.frameDiv8 {
-  width: 621px;
-  height: 459px;
-  flex-shrink: 0;
+.frameDiv7,
+.frameDiv9 {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+}
+.frameDiv7 {
+  width: 1035px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 45px;
+}
+.frameDiv9 {
+  height: 558px;
   align-items: center;
-  justify-content: space-between;
+  gap: 125px;
+}
+.frameDiv8 {
+  height: 558px;
+  justify-content: center;
+}
+.frameDiv5,
+.frameDiv6,
+.frameDiv8 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.frameDiv6 {
+  justify-content: flex-start;
+  gap: 73px;
+}
+.frameDiv5 {
+  align-self: stretch;
+  height: 556px;
+  flex-shrink: 0;
+  justify-content: center;
 }
 .frameDiv10,
-.frameDiv9 {
-  flex: 1;
-  display: flex;
-  box-sizing: border-box;
-}
-.frameDiv10 {
-  height: 438px;
-  flex-direction: column;
-  padding: 10px 0 0 250px;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 116px;
-}
-.frameDiv9 {
-  height: 459px;
-  flex-direction: row;
-  padding: 0 0 0 84px;
-  align-items: flex-start;
-  justify-content: center;
-  margin-left: -325px;
-}
-.frameDiv7 {
-  width: 659px;
-  flex-shrink: 0;
-  display: flex;
-}
-.frameDiv6,
-.frameDiv7 {
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-}
-.frameDiv11,
-.frameDiv3,
-.frameDiv6 {
-  align-self: stretch;
+.frameDiv3 {
+  width: 1166px;
   display: flex;
 }
 .frameDiv3 {
@@ -122,7 +107,7 @@
   justify-content: flex-start;
   gap: 100px;
 }
-.frameDiv11 {
+.frameDiv10 {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;

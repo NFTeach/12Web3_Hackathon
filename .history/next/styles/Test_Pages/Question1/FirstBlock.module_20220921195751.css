@@ -78,21 +78,19 @@
 .frameDiv10,
 .frameDiv9 {
   flex: 1;
+  height: 558px;
   display: flex;
-  box-sizing: border-box;
 }
 .frameDiv10 {
-  height: 438px;
   flex-direction: column;
-  padding: 10px 0 0 250px;
+  padding: 0 0 0 250px;
+  box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
-  gap: 116px;
+  gap: 121px;
 }
 .frameDiv9 {
-  height: 459px;
   flex-direction: row;
-  padding: 0 0 0 84px;
   align-items: flex-start;
   justify-content: center;
   margin-left: -325px;

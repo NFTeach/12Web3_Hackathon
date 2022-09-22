@@ -88,79 +88,176 @@ const question1 = (props) => {
       </div>
       {/* First Block */}
       <div className={stylesFirstBlock.testPageDiv}>
+      <div className={stylesFirstBlock.frameDiv}>
+        <div className={stylesFirstBlock.frameDiv1}>
+          <h1 className={stylesFirstBlock.questionNumberTitle}>Chemistry 101 Test</h1>
+        </div>
+        <div className={stylesFirstBlock.frameDiv2}>
+          <div className={stylesFirstBlock.frameDiv3}>
+            <div className={stylesFirstBlock.frameDiv4}>
+              <div className={stylesFirstBlock.frameDiv5}>
+                <Progress
+                  className={stylesFirstBlock.progressDefault}
+                  value={10}
+                  colorScheme="green"
+                />
+                <h2 className={stylesFirstBlock.questionNumberTitle1}>Question 1:</h2>
+                <Textarea
+                  className={stylesFirstBlock.progressDefault}
+                  variant="outline"
+                  placeholder="Question"
+                  isDisabled
+                />
+              </div>
+            </div>
+            <div className={stylesFirstBlock.lineDiv} />
+            <div className={stylesFirstBlock.frameDiv6}>
+              <div className={stylesFirstBlock.frameDiv7}>
+                <div className={stylesFirstBlock.frameDiv8}>
+                  <Textarea
+                    className={stylesFirstBlock.progressDefault}
+                    variant="flushed"
+                    size="sm"
+                    placeholder="Answer 1"
+                    isDisabled
+                    isReadOnly
+                  />
+                  <Textarea
+                    className={stylesFirstBlock.progressDefault}
+                    variant="flushed"
+                    size="sm"
+                    placeholder="Answer 2"
+                    isDisabled
+                    isReadOnly
+                  />
+                  <Textarea
+                    className={stylesFirstBlock.progressDefault}
+                    variant="flushed"
+                    size="sm"
+                    placeholder="Answer 3"
+                    isDisabled
+                    isReadOnly
+                  />
+                  <Textarea
+                    className={stylesFirstBlock.progressDefault}
+                    variant="flushed"
+                    size="sm"
+                    placeholder="Answer 4"
+                    isDisabled
+                    isReadOnly
+                  />
+                </div>
+                <div className={stylesFirstBlock.frameDiv9}>
+                  <div className={stylesFirstBlock.frameDiv10}>
+                    <Radio colorScheme="green" />
+                    <Radio colorScheme="green" />
+                    <Radio colorScheme="green" />
+                    <Radio colorScheme="green" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={stylesFirstBlock.frameDiv11}>
+            <Button
+              variant="solid"
+              w="162px"
+              colorScheme="green"
+              as="a"
+              href="/course"
+            >
+              Back
+            </Button>
+            <Button
+              variant="solid"
+              w="162px"
+              colorScheme="green"
+              as="a"
+              href="/question2"
+            >
+              Next
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      {/* <div className={stylesFirstBlock.testPageDiv}>
         <div className={stylesFirstBlock.frameDiv}>
           <div className={stylesFirstBlock.frameDiv1}>
-            <h1 className={stylesFirstBlock.questionNumberTitle}>{courseName} - Test</h1>
+            <h1 className={stylesFirstBlock.questionNumberTitle}>
+              {courseName} - Test
+            </h1>
           </div>
           <div className={stylesFirstBlock.frameDiv2}>
             <div className={stylesFirstBlock.frameDiv3}>
               <div className={stylesFirstBlock.frameDiv4}>
-                <div className={stylesFirstBlock.frameDiv5}>
-                  <Progress
-                    className={stylesFirstBlock.progressDefault}
-                    value={10}
-                    colorScheme="green"
-                  />
-                  <h2 className={stylesFirstBlock.questionNumberTitle1}>Question 1:</h2>
-                  <Textarea
-                    className={stylesFirstBlock.progressDefault}
-                    variant="outline"
-                    placeholder={question1}
-                    isDisabled
-                  />
-                </div>
+                <Progress
+                  className={stylesFirstBlock.progressDefault}
+                  value={10}
+                  colorScheme='green'
+                />
+                <h2 className={stylesFirstBlock.questionNumberTitle1}>
+                  Question 1:
+                </h2>
+                <Textarea
+                  className={stylesFirstBlock.progressDefault}
+                  variant='outline'
+                  placeholder={question1}
+                  isDisabled
+                />
               </div>
               <div className={stylesFirstBlock.lineDiv} />
-              <div className={stylesFirstBlock.frameDiv6}>
-                <div className={stylesFirstBlock.frameDiv7}>
-                  <div className={stylesFirstBlock.frameDiv8}>
+              <div className={stylesFirstBlock.frameDiv5}>
+                <div className={stylesFirstBlock.frameDiv6}>
+                  <div className={stylesFirstBlock.frameDiv7}>
                     <Textarea
                       className={stylesFirstBlock.progressDefault}
-                      variant="flushed"
-                      size="sm"
+                      variant='flushed'
+                      size='sm'
                       placeholder={shuffledAnswer1}
                       isDisabled
                       isReadOnly
                     />
                     <Textarea
                       className={stylesFirstBlock.progressDefault}
-                      variant="flushed"
-                      size="sm"
+                      variant='flushed'
+                      size='sm'
                       placeholder={shuffledAnswer2}
                       isDisabled
                       isReadOnly
                     />
                     <Textarea
                       className={stylesFirstBlock.progressDefault}
-                      variant="flushed"
-                      size="sm"
+                      variant='flushed'
+                      size='sm'
                       placeholder={shuffledAnswer3}
                       isDisabled
                       isReadOnly
                     />
                     <Textarea
                       className={stylesFirstBlock.progressDefault}
-                      variant="flushed"
-                      size="sm"
+                      variant='flushed'
+                      size='sm'
                       placeholder={shuffledAnswer4}
                       isDisabled
                       isReadOnly
                     />
                   </div>
                   <RadioGroup onChange={setSelectedAnswer} value={selectedAnswer} >
-                    <div className={stylesFirstBlock.frameDiv9}>
-                      <div className={stylesFirstBlock.frameDiv10}>
-                        <Radio colorScheme="green" value={shuffledAnswer1} />
-                        <Radio colorScheme="green" value={shuffledAnswer2} />
-                        <Radio colorScheme="green" value={shuffledAnswer3} />
-                        <Radio colorScheme="green" value={shuffledAnswer4} />
+                    <div className={stylesFirstBlock.frameDiv8}>
+                      <div className={stylesFirstBlock.frameDiv9}>
+                        <Radio colorScheme='green' value={shuffledAnswer1} />
+                        <Radio colorScheme='green' value={shuffledAnswer2} />
+                        <Radio colorScheme='green' value={shuffledAnswer3} />
+                        <Radio colorScheme='green' value={shuffledAnswer4} />
                       </div>
                     </div>
                   </RadioGroup>
                 </div>
               </div>
             </div>
-            <div className={stylesFirstBlock.frameDiv11}>
+            <div className={stylesFirstBlock.frameDiv10}>
               <Link
                 href={{
                   pathname: "/course",
@@ -170,13 +267,7 @@ const question1 = (props) => {
                 }}
                 passHref
               >
-                <Button
-                  variant="solid"
-                  w="162px"
-                  colorScheme="green"
-                  as="a"
-                  href="/course"
-                >
+                <Button variant='solid' w='162px' colorScheme='green'>
                   Back
                 </Button>
               </Link>
@@ -190,20 +281,14 @@ const question1 = (props) => {
                 }}
                 passHref
               >
-                <Button
-                  variant="solid"
-                  w="162px"
-                  colorScheme="green"
-                  as="a"
-                  href="/question2"
-                >
+                <Button variant='solid' w='162px' colorScheme='green'>
                   Next
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Footer */}
       <div className={stylesFooter.frameDiv}>
         <h4 className={stylesFooter.nFTeachH4}>© 2022 NFTeach</h4>
