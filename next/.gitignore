@@ -37,6 +37,6 @@ yarn-error.log*
 next-env.d.ts
 
 # Foundry
-./foundry/lib
-./foundry/out/*
-./foundry/cache/*
+foundry/hello_foundry/lib
+foundry/hello_foundry/*
+foundry/hello_foundry/cache/*
