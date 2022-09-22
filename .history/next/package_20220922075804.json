@@ -41,7 +41,7 @@
     "magic-sdk": "^8.1.1",
     "moment": "^2.29.1",
     "moralis": "0.0.176",
-    "next": "12.0.7",
+    "next": "^12.3.1",
     "next-redux-wrapper": "^7.0.5",
     "os-browserify": "^0.3.0",
     "parse": "^3.4.3",

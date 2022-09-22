@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import { MoralisProvider } from "react-moralis";
 import { ChakraProvider } from '@chakra-ui/react';
 import { wrapper } from "../redux/store";
+import type { NextRequest } from 'next/server';
 
 const LightApp = ({ component: Component, pageProps}) => {
   
@@ -24,3 +25,11 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default wrapper.withRedux(MyApp);
+
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  if (pathname == "/") {
+    return NextResponse.redirect("/welcome");
+  }
+  return NextResponse.next();
+}
