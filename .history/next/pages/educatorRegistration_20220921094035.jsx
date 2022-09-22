@@ -12,7 +12,7 @@ moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
 moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 Moralis.start({ serverUrl, appId });
 
-const EducatorRegistration = () => {
+const educatorRegistration = () => {
   const router = useRouter();
   const user = moralis.User.current();
 
@@ -79,4 +79,4 @@ const EducatorRegistration = () => {
   );
 };
 
-export default EducatorRegistration;
+export default educatorRegistration;
