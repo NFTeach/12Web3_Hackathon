@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { setInfo } from "../redux/actions/main"
 import styles from '../styles/Home.module.css'
 
-function Redux_example(props) {
+function redux_example(props) {
   const { name, setInfo } = props
   const [newName, setName] = useState("")
 
@@ -34,4 +34,4 @@ const mapDispatchToProps = {
   setInfo
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Redux_example)
+export default connect(mapStateToProps, mapDispatchToProps)(redux_example)
