@@ -22,3 +22,6 @@
 [submodule "next/foundry/hello_foundry/lib/aave-V3-core"]
 	path = next/foundry/hello_foundry/lib/aave-V3-core
 	url = https://github.com/aave/aave-V3-core
+[submodule "next/foundry/hello_foundry/lib/openzeppelin-contracts"]
+	path = next/foundry/hello_foundry/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
