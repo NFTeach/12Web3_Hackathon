@@ -4,20 +4,20 @@ import { useMoralis } from "react-moralis";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { defaultImgs } from "../public/defaultImgs";
-import { 
-    HStack, 
-    Box, 
-    Image, 
-    Text,
-    Button,
-    useDisclosure,
-    Modal, 
-    ModalOverlay, 
-    ModalContent, 
-    ModalHeader, 
-    ModalFooter, 
-    ModalBody, 
-    ModalCloseButton 
+import {
+  HStack,
+  Box,
+  Image,
+  Text,
+  Button,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import stylesHeader from "../styles/Explore_Page/Header.module.css";
 import stylesFirstBlock from "../styles/Explore_Page/FirstBlock.module.css";
@@ -27,106 +27,110 @@ moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
 moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 
 const explore = () => {
-    const router = useRouter();
-    const [pfp, setPfp] = useState();
-    const { Moralis } = useMoralis();
-    const [educator, setEducator] = useState();
-    const [courses, setCourses] = useState([]);
-    const [courseObjectId, setCourseObjectId] = useState();
-    const [images, setImages] = useState([]);
-    const [courseName, setCourseName] = useState([]);
-    const [courseDescription, setCourseDescription] = useState([]);
-    const [courseprerequisite, setCoursePrerequisite] = useState("");
-    const [prerequisitePass, setPrerequisitePass] = useState(false);
-    const [userSBTs, setUserSBTs] = useState([]);
-    const [userTokenIds, setUserTokenIds] = useState("");
-    const [userCourseObjectIds, setUserCourseObjectIds] = useState([]);
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    const user = moralis.User.current();
+  const router = useRouter();
+  const [pfp, setPfp] = useState();
+  const { Moralis } = useMoralis();
+  const [educator, setEducator] = useState();
+  const [courses, setCourses] = useState([]);
+  const [courseObjectId, setCourseObjectId] = useState();
+  const [images, setImages] = useState([]);
+  const [courseName, setCourseName] = useState([]);
+  const [courseDescription, setCourseDescription] = useState([]);
+  const [courseprerequisite, setCoursePrerequisite] = useState("");
+  const [prerequisitePass, setPrerequisitePass] = useState(false);
+  const [userSBTs, setUserSBTs] = useState([]);
+  const [userTokenIds, setUserTokenIds] = useState("");
+  const [userCourseObjectIds, setUserCourseObjectIds] = useState([]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const user = moralis.User.current();
 
-    const [showPopup, setShowPopup] = useState(undefined);
+  const [showPopup, setShowPopup] = useState(undefined);
 
-    useEffect(() => {
-      if (!user) return null;
-      setPfp(user.get("pfp"));
-    }, [user]);
+  useEffect(() => {
+    if (!user) return null;
+    setPfp(user.get("pfp"));
+  }, [user]);
 
-    useEffect(async () => {
-        if (!user) {
-        window.alert("Please connect wallet");
-        } else {
-        const Educators = Moralis.Object.extend("Educators");
-        const query = new Moralis.Query(Educators);
-        const account = user.attributes.accounts[0];
-        query.equalTo("educator", account);
-        const educator = await query.find();
-        setEducator(educator[0]);
-        }
-    }, []);
-
-    useEffect(async () => {
-        if (!user) {
-        window.alert("Please connect wallet");
-        } else {
-        const Courses = Moralis.Object.extend("Courses");
-        const query = new Moralis.Query(Courses);
-        const course = await query.find();
-        setCourses(course);
-        setCourseObjectId(course.map((course) => course.id));
-        setImages(course.map((course) => course.get("imageFile")));
-        setCourseName(course.map((course) => course.get("courseName")));
-        setCourseDescription(course.map((course) => course.get("courseDescription")));
-        setCoursePrerequisite(course.map((course) => course.get("prerequisite")));
-        }
-    }, []);
-
-    // console.log(courseprerequisite);
-    useEffect (async () => {
-        const MintSBTs = Moralis.Object.extend("MintSBT");
-        const query = new Moralis.Query(MintSBTs);
-        const account = user.attributes.accounts[0];
-        query.equalTo("student", account);
-        const mintSBT = await query.find();
-        setUserSBTs(mintSBT);
-        setUserTokenIds((mintSBT).map((mintSBT) => mintSBT.get("tokenId")));
-    }, []);
-
-    const checkPrerequisite = async (index) => {
-        // console.log(index)
-        if (userSBTs.length === 0) {
-            return;
-        } else {
-            const createSBTs = Moralis.Object.extend("CreateSBT");
-            const query = new Moralis.Query(createSBTs);
-            query.equalTo("courseObjectId", courseprerequisite[index]);
-            const createSBT = await query.find();
-            // console.log(createSBT);
-            const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
-            // console.log(courseSBT);
-            const prerequisiteSBT = userSBTs.filter((userSBT) => courseSBT.includes(userSBT.get("tokenId")));
-            console.log(prerequisiteSBT);
-            if (prerequisiteSBT.length === 0) {
-                if (courseprerequisite === "") {
-                    setPrerequisitePass(true);
-                    console.log("pass");
-                } else {
-                    setPrerequisitePass(false);
-                    console.log("fail");
-                }
-            } else {
-                setPrerequisitePass(true);
-                console.log("pass2");
-            }
-        }
+  useEffect(async () => {
+    if (!user) {
+      window.alert("Please connect wallet");
+    } else {
+      const Educators = Moralis.Object.extend("Educators");
+      const query = new Moralis.Query(Educators);
+      const account = user.attributes.accounts[0];
+      query.equalTo("educator", account);
+      const educator = await query.find();
+      setEducator(educator[0]);
     }
+  }, []);
 
-    const onStudentDashboardButtonClick = useCallback(() => {
-        router.push("/studentDashboard");
-    }, [router]);
+  useEffect(async () => {
+    if (!user) {
+      window.alert("Please connect wallet");
+    } else {
+      const Courses = Moralis.Object.extend("Courses");
+      const query = new Moralis.Query(Courses);
+      const course = await query.find();
+      setCourses(course);
+      setCourseObjectId(course.map((course) => course.id));
+      setImages(course.map((course) => course.get("imageFile")));
+      setCourseName(course.map((course) => course.get("courseName")));
+      setCourseDescription(
+        course.map((course) => course.get("courseDescription"))
+      );
+      setCoursePrerequisite(course.map((course) => course.get("prerequisite")));
+    }
+  }, []);
 
-    const onProfileButtonClick = useCallback(() => {
-        router.push("/profileSettings");
-    }, []);
+  // console.log(courseprerequisite);
+  useEffect(async () => {
+    const MintSBTs = Moralis.Object.extend("MintSBT");
+    const query = new Moralis.Query(MintSBTs);
+    const account = user.attributes.accounts[0];
+    query.equalTo("student", account);
+    const mintSBT = await query.find();
+    setUserSBTs(mintSBT);
+    setUserTokenIds(mintSBT.map((mintSBT) => mintSBT.get("tokenId")));
+  }, []);
+
+  const checkPrerequisite = async (index) => {
+    // console.log(index)
+    if (userSBTs.length === 0) {
+      return;
+    } else {
+      const createSBTs = Moralis.Object.extend("CreateSBT");
+      const query = new Moralis.Query(createSBTs);
+      query.equalTo("courseObjectId", courseprerequisite[index]);
+      const createSBT = await query.find();
+      // console.log(createSBT);
+      const courseSBT = createSBT.map((createSBT) => createSBT.get("tokenId"));
+      // console.log(courseSBT);
+      const prerequisiteSBT = userSBTs.filter((userSBT) =>
+        courseSBT.includes(userSBT.get("tokenId"))
+      );
+      console.log(prerequisiteSBT);
+      if (prerequisiteSBT.length === 0) {
+        if (courseprerequisite === "") {
+          setPrerequisitePass(true);
+          console.log("pass");
+        } else {
+          setPrerequisitePass(false);
+          console.log("fail");
+        }
+      } else {
+        setPrerequisitePass(true);
+        console.log("pass2");
+      }
+    }
+  };
+
+  const onStudentDashboardButtonClick = useCallback(() => {
+    router.push("/studentDashboard");
+  }, [router]);
+
+  const onProfileButtonClick = useCallback(() => {
+    router.push("/profileSettings");
+  }, []);
 
   const onCourseClick = (element) => {
     setShowPopup(element);
@@ -187,8 +191,8 @@ const explore = () => {
           <div className={stylesFirstBlock.frameDiv1}>
             <img
               className={stylesFirstBlock.imageIcon}
-              alt=""
-              src="/explore_imgs/space_man.png"
+              alt=''
+              src='/explore_imgs/space_man.png'
             />
             <div className={stylesFirstBlock.frameDiv2}>
               <div className={stylesFirstBlock.frameDiv3}>
@@ -205,17 +209,17 @@ const explore = () => {
             </div>
           </div>
           <div className={stylesFirstBlock.frameDiv3}>
-            <HStack spacing="100px">
+            <HStack spacing='100px'>
               {courses?.map((e, index) => (
                 <Box key={index} w='250px' h='250px'>
-                  {/* <Link
+                  <Link
                     href={{
                       pathname: "/course",
                       query: {
                         courseObjectId: courseObjectId?.[index],
                       },
                     }}
-                  > */}
+                  >
                     <Image
                       borderRadius='full'
                       boxSize='250px'
@@ -223,9 +227,9 @@ const explore = () => {
                       alt={courseName?.[index]}
                       onClick={async () => {
                         await checkPrerequisite(index);
-                        }}
+                      }}
                     />
-                {/*  </Link> */}
+                  </Link>
                   <br />
                   <Text>{courseName?.[index]}</Text>
                 </Box>
@@ -243,7 +247,7 @@ const explore = () => {
       ) : (
         <div className={stylesFirstBlock.popupClassDescription}>
           <div>{showPopup.attributes.courseName}</div>
-          <img src={showPopup.attributes.imageFile.img} alt="" />
+          <img src={showPopup.attributes.imageFile.img} alt='' />
           <div>Description: {showPopup.attributes.description}</div>
           <div>This course creator: {showPopup.attributes.educatorAddress}</div>
           <div>

@@ -1,30 +1,18 @@
-.frameInput {
-  border: 0;
-  background-color: transparent;
+.dropdownDefaultMenu,
+.frameVideo {
   align-self: stretch;
-  height: 70px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
 }
-.frameVideo,
-.rectangleInput {
-  align-self: stretch;
+.frameVideo {
   background-color: #d9d9d9;
 }
-.rectangleInput {
-  background-color: transparent;
+.rectangleTextarea {
   flex: 1;
+  align-self: stretch;
   position: relative;
 }
-.frameDiv2 {
-  width: 400px;
+.frameDiv3 {
+  flex: 1;
   height: 70px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -32,29 +20,43 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frameDiv1 {
+.frameDiv2 {
+  align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 29px;
+}
+.courseDiv,
+.frameDiv,
+.frameDiv1 {
+  display: flex;
+  flex-direction: column;
+}
+.frameDiv1 {
+  align-self: stretch;
+  padding: 0 0 200px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 .courseDiv,
 .frameDiv {
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
 }
 .frameDiv {
   align-self: stretch;
-  align-items: center;
-  gap: 29px;
+  height: 1064px;
+  flex-shrink: 0;
+  align-items: flex-end;
 }
 .courseDiv {
   position: relative;
   background-color: #181919;
   width: 100%;
-  padding: 57px 106px;
+  height: 1310px;
+  padding: 57px 50px;
   box-sizing: border-box;
   align-items: flex-start;
 }

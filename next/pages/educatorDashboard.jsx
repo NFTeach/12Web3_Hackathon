@@ -1,7 +1,12 @@
 import { Button } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useMoralis, useWeb3ExecuteFunction, useMoralisWeb3Api, useMoralisWeb3ApiCall } from "react-moralis";
+import {
+  useMoralis,
+  useWeb3ExecuteFunction,
+  useMoralisWeb3Api,
+  useMoralisWeb3ApiCall,
+} from "react-moralis";
 import moralis from "moralis";
 import { defaultImgs } from "../public/defaultImgs";
 import stylesHeader from "../styles/EducatorDashboard_Page/Header.module.css";
@@ -47,17 +52,12 @@ const educatorDashboard = () => {
     abi: NFTEACH_SBT_CONTRACT_ABI,
     params: {
       _educator: address,
-    }
-  }
+    },
+  };
 
-  const {
-    data,
-    error,
-    fetch,
-    isLoading
-  } = useMoralisWeb3ApiCall(
+  const { data, error, fetch, isLoading } = useMoralisWeb3ApiCall(
     native.runContractFunction,
-    {...options}
+    { ...options }
   );
 
   const {
@@ -65,12 +65,10 @@ const educatorDashboard = () => {
     error: executeContractError,
     fetch: executeContractFunction,
     isFetching,
-    isLoading: executeContractLoading
+    isLoading: executeContractLoading,
   } = useWeb3ExecuteFunction();
 
   const withdrawFunds = async () => {
-    
-
     executeContractFunction({
       params: {
         abi: NFTEACH_SBT_CONTRACT_ABI,
@@ -94,7 +92,6 @@ const educatorDashboard = () => {
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
-
 
   useEffect(() => {
     if (!user) return null;
@@ -247,25 +244,13 @@ const educatorDashboard = () => {
               <div className={stylesFirstBlock.sheetDiv1} />
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
-              <div className={stylesFirstBlock.frameDiv4}>
-                <div className={stylesFirstBlock.incomeInfoDiv}>
-                  <div className={stylesFirstBlock.frameDiv5}>
-                    <div className={stylesFirstBlock.rectangleDiv} />
-                  </div>
-                  <div className={stylesFirstBlock.frameDiv6}>
-                    <div className={stylesFirstBlock.overviewDiv}>Students</div>
-                    <div className={stylesFirstBlock.div}>209</div>
-                  </div>
-                  <div className={stylesFirstBlock.frameDiv8}>
-                    <img
-                      className={stylesFirstBlock.polygonIcon}
-                      alt=""
-                      src="/educatorDashboard_imgs/triangle.svg"
-                    />
-                    <div className={stylesFirstBlock.overviewDiv}>46%</div>
-                  </div>
-                </div>
-              </div>
+              <h3 className={stylesFirstBlock.sBTsIssuedH3}>Total Income</h3>
+              <b className={stylesFirstBlock.b}>46 MATIC</b>
+            </div>
+          </div>
+          <div className={stylesFirstBlock.groupDiv1}>
+            <div className={stylesFirstBlock.cardsDefault1}>
+              <div className={stylesFirstBlock.sheetDiv1} />
             </div>
             <div className={stylesFirstBlock.frameDiv2}>
               <h3 className={stylesFirstBlock.sBTsIssuedH3}>
@@ -277,60 +262,71 @@ const educatorDashboard = () => {
         </div>
         <div className={stylesFirstBlock.frameDiv4}>
           <div className={stylesFirstBlock.frameDiv5}>
-            <h2 className={stylesFirstBlock.helpH2}>Actions</h2>
             <div className={stylesFirstBlock.frameDiv6}>
-              <Button
-                className={stylesFirstBlock.buttonSolidTextAndIcon}
-                variant='solid'
-                colorScheme='green'
-                onClick={onAddCourseButtonClick}
-              >
-                Add Courses
-              </Button>
-              <Button
-              className={stylesFirstBlock.buttonSolidTextAndIcon}
-                variant="solid"
-                colorScheme="green"
-                onClick={() => {
-                  fetch({ params: options });
-                }}
-              >
-                Check Balance
-              </Button>
-              <div className={stylesFirstBlock.div}>
-                {data && <pre>{Moralis.Units.FromWei(data)}</pre>} 
+              <div className={stylesFirstBlock.frameDiv7}>
+                <h3 className={stylesFirstBlock.frameH3}>
+                  <div className={stylesFirstBlock.yourCoursesDiv}>
+                    Your Courses
+                  </div>
+                </h3>
               </div>
-              <Button
-                className={stylesFirstBlock.buttonSolidTextAndIcon}
-                variant='solid'
-                colorScheme='cyan'
-                onClick={async () => {
-                  await withdrawFunds();
-                }}
-              >
-                Withdraw
-              </Button>
+              <div className={stylesFirstBlock.frameDiv8}>
+                <div className={stylesFirstBlock.frameDiv9}>
+                  <h4 className={stylesFirstBlock.chemistry101H4}>
+                    Chemistry 101 (Coming Soon)
+                  </h4>
+                  <h4 className={stylesFirstBlock.math101H4}>
+                    Math 101 (Coming Soon)
+                  </h4>
+                  <h4 className={stylesFirstBlock.blockchainBasicsH4}>
+                    Blockchain Basics (Coming Soon)
+                  </h4>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={stylesFirstBlock.frameDiv7}>
-          <div className={stylesFirstBlock.frameDiv8}>
-            <div className={stylesFirstBlock.frameDiv9}>
-              <h3 className={stylesFirstBlock.frameH3}>
-                <div className={stylesFirstBlock.yourCoursesDiv}>
-                  Your Courses (Coming Soon)
+          <div className={stylesFirstBlock.frameDiv10}>
+            <div className={stylesFirstBlock.frameDiv11}>
+              <h2 className={stylesFirstBlock.helpH2}>Help</h2>
+              <div className={stylesFirstBlock.frameDiv12}>
+                <Button
+                  className={stylesFirstBlock.buttonSolidTextAndIcon}
+                  variant='solid'
+                  colorScheme='green'
+                  onClick={onAddCourseButtonClick}
+                >
+                  Add Courses
+                </Button>
+                <Button
+                  className={stylesFirstBlock.buttonSolidTextAndIcon}
+                  variant='solid'
+                  colorScheme='green'
+                  onClick={() => {
+                    fetch({ params: options });
+                  }}
+                >
+                  Check Balance
+                </Button>
+                <div className={stylesFirstBlock.div}>
+                  {data && <pre>{Moralis.Units.FromWei(data)}</pre>}
                 </div>
-              </h3>
-            </div>
-            <div className={stylesFirstBlock.frameDiv10}>
-              <div className={stylesFirstBlock.frameDiv11}>
-                <h4 className={stylesFirstBlock.chemistry101H4}>
-                  Chemistry 101
-                </h4>
-                <h4 className={stylesFirstBlock.math101H4}>Math 101</h4>
-                <h4 className={stylesFirstBlock.blockchainBasicsH4}>
-                  Blockchain Basics
-                </h4>
+                <Button
+                  className={stylesFirstBlock.buttonSolidTextAndIcon}
+                  variant='solid'
+                  colorScheme='cyan'
+                  onClick={async () => {
+                    await withdrawFunds();
+                  }}
+                >
+                  Withdraw
+                </Button>
+                <Button
+                  className={stylesFirstBlock.buttonSolidTextAndIcon}
+                  variant='solid'
+                  colorScheme='red'
+                >
+                  Log Out
+                </Button>
               </div>
             </div>
           </div>
