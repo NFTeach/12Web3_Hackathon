@@ -1,0 +1,148 @@
+.questionNumberTitle {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  flex-shrink: 0;
+}
+.frameDiv1 {
+  border-radius: 6px;
+  background-color: #38a169;
+  height: 87px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 17px 49px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv1,
+.progressDefault {
+  align-self: stretch;
+}
+.frameDiv4,
+.questionNumberTitle1 {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.questionNumberTitle1 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  justify-content: center;
+  height: 89px;
+  flex-shrink: 0;
+}
+.frameDiv4 {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 31px;
+}
+.lineDiv {
+  align-self: stretch;
+  position: relative;
+  border-top: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  height: 1px;
+  flex-shrink: 0;
+}
+.frameDiv7,
+.frameDiv9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.frameDiv7 {
+  width: 1035px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 45px;
+}
+.frameDiv9 {
+  height: 558px;
+  align-items: center;
+  gap: 125px;
+}
+.frameDiv8 {
+  height: 558px;
+  justify-content: center;
+}
+.frameDiv5,
+.frameDiv6,
+.frameDiv8 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.frameDiv6 {
+  justify-content: flex-start;
+  gap: 73px;
+}
+.frameDiv5 {
+  align-self: stretch;
+  height: 556px;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.frameDiv10,
+.frameDiv3 {
+  width: 1166px;
+  display: flex;
+}
+.frameDiv3 {
+  height: 963px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 100px;
+}
+.frameDiv10 {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.frameDiv2 {
+  align-self: stretch;
+  border-radius: 6px;
+  background-color: #121212;
+  height: 1030px;
+  flex-shrink: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 35px;
+}
+.frameDiv,
+.frameDiv2,
+.testPageDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv {
+  align-self: stretch;
+  gap: 108px;
+}
+.testPageDiv {
+  position: relative;
+  background-color: #181919;
+  width: 100%;
+  height: 1344px;
+  padding: 55px 117px 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 25px;
+  color: #e4e4e4;
+  font-family: Mulish;
+}
