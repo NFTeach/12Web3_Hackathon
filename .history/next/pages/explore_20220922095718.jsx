@@ -23,8 +23,8 @@ import stylesHeader from "../styles/Explore_Page/Header.module.css";
 import stylesFirstBlock from "../styles/Explore_Page/FirstBlock.module.css";
 import stylesFooter from "../styles/Explore_Page/Footer.module.css";
 
-moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
-moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
+// moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
+// moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 
 const Explore = () => {
     const router = useRouter();

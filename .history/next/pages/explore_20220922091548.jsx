@@ -29,7 +29,6 @@ moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 const Explore = () => {
     const router = useRouter();
     const [pfp, setPfp] = useState();
-    // const Moralis = require('moralis/node');
     const { Moralis } = useMoralis();
     const [educator, setEducator] = useState();
     const [courses, setCourses] = useState([]);
@@ -277,15 +276,4 @@ const Explore = () => {
   );
 };
 
-export default Explore;
-
-// export const getServerSideProps = async (context) => {
-//   const Moralis = require('moralis/node');
-//   Moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
-//   Moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
-//   return {
-//     props: {
-//       courseObjectId: context.query.courseObjectId,
-//     },
-//   };
-// };
+export default Explore({ courseObjectId });

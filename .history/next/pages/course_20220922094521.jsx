@@ -25,7 +25,8 @@ const Course = (props) => {
   const [courseSection2, setCourseSection2] = useState();
   const [courseSection3, setCourseSection3] = useState();
   const [selectedSectionName, setSelectedSectionName] = useState();
-  const [selectedSectionDescription, setSelectedSectionDescription] = useState();
+  const [selectedSectionDescription, setSelectedSectionDescription] =
+    useState();
   const [selectedSectionVideo, setSelectedSectionVideo] = useState();
 
   useEffect(async () => {
@@ -128,21 +129,21 @@ const Course = (props) => {
 export default Course;
 
 // Recieve props from next/pages/explore.jsx
-export const getServerSideProps = async (context) => {
-  return {
-    props: {
-      courseObjectId: context.query.courseObjectId,
-    },
-  };
-};
-
 // export const getServerSideProps = async (context) => {
-//   const Moralis = require('moralis/node');
-//   Moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
-//   Moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 //   return {
 //     props: {
 //       courseObjectId: context.query.courseObjectId,
 //     },
 //   };
 // };
+
+export const getServerSideProps = async (context) => {
+  const Moralis = require('moralis/node');
+  Moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
+  Moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
+  return {
+    props: {
+      courseObjectId: context.query.courseObjectId,
+    },
+  };
+};

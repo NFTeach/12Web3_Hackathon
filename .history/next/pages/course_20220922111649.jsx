@@ -125,7 +125,7 @@ const Course = (props) => {
   );
 };
 
-export default Course;
+export default Course ({ courseObjectId });
 
 // Recieve props from next/pages/explore.jsx
 export const getServerSideProps = async (context) => {

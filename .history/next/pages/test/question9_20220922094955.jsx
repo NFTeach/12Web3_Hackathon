@@ -218,6 +218,9 @@ export default Question9;
 
 // Recieve props from next/pages/question8.jsx
 export const getServerSideProps = (context) => {
+  const Moralis = require('moralis/node');
+  Moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
+  Moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
   return {
     props: {
       courseObjectId: context.query.courseObjectId,
@@ -225,15 +228,3 @@ export const getServerSideProps = (context) => {
     },
   };
 };
-
-// export const getServerSideProps = (context) => {
-//   const Moralis = require('moralis/node');
-//   Moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
-//   Moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
-//   return {
-//     props: {
-//       courseObjectId: context.query.courseObjectId,
-//       correctAnswerCount: context.query.correctAnswerCount,
-//     },
-//   };
-// };

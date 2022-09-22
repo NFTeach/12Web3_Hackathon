@@ -9,21 +9,21 @@ import {
   RadioGroup,
   Button,
 } from "@chakra-ui/react";
-import stylesHeader from "../../styles/Test_Pages/Question9/Header.module.css";
-import stylesFirstBlock from "../../styles/Test_Pages/Question9/FirstBlock.module.css";
-import stylesFooter from "../../styles/Test_Pages/Question9/Footer.module.css";
+import stylesHeader from "../../styles/Test_Pages/Question8/Header.module.css";
+import stylesFirstBlock from "../../styles/Test_Pages/Question8/FirstBlock.module.css";
+import stylesFooter from "../../styles/Test_Pages/Question8/Footer.module.css";
 
 moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
 moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
 
-const Question9 = (props) => {
+const Question8 = (props) => {
   const { Moralis } = useMoralis();
   const [courseName, setCourseName] = useState();
-  const [question9, setQuestion9] = useState("");
-  const [question9Answer, setQuestion9Answer] = useState("");
-  const [fakeQuestion9Answer1, setFakeQuestion9Answer1] = useState("");
-  const [fakeQuestion9Answer2, setFakeQuestion9Answer2] = useState("");
-  const [fakeQuestion9Answer3, setFakeQuestion9Answer3] = useState("");
+  const [question8, setQuestion8] = useState("");
+  const [question8Answer, setQuestion8Answer] = useState("");
+  const [fakeQuestion8Answer1, setFakeQuestion8Answer1] = useState("");
+  const [fakeQuestion8Answer2, setFakeQuestion8Answer2] = useState("");
+  const [fakeQuestion8Answer3, setFakeQuestion8Answer3] = useState("");
   const [shuffledAnswer1, setShuffledAnswer1] = useState("");
   const [shuffledAnswer2, setShuffledAnswer2] = useState("");
   const [shuffledAnswer3, setShuffledAnswer3] = useState("");
@@ -40,19 +40,19 @@ const Question9 = (props) => {
     query.equalTo("objectId", props.courseObjectId);
     const course = await query.find();
     setCourseName(course[0].get("courseName"));
-    setQuestion9(course[0].get("test").question9);
-    setQuestion9Answer(course[0].get("test").question9Answer);
-    setFakeQuestion9Answer1(course[0].get("test").fakeQuestion9Answer1);
-    setFakeQuestion9Answer2(course[0].get("test").fakeQuestion9Answer2);
-    setFakeQuestion9Answer3(course[0].get("test").fakeQuestion9Answer3);
+    setQuestion8(course[0].get("test").question8);
+    setQuestion8Answer(course[0].get("test").question8Answer);
+    setFakeQuestion8Answer1(course[0].get("test").fakeQuestion8Answer1);
+    setFakeQuestion8Answer2(course[0].get("test").fakeQuestion8Answer2);
+    setFakeQuestion8Answer3(course[0].get("test").fakeQuestion8Answer3);
   }, []);
 
   useEffect(() => {
     const answerArr = [
-      question9Answer,
-      fakeQuestion9Answer1,
-      fakeQuestion9Answer2,
-      fakeQuestion9Answer3,
+      question8Answer,
+      fakeQuestion8Answer1,
+      fakeQuestion8Answer2,
+      fakeQuestion8Answer3,
     ];
     const shuffledAnswerArr = answerArr.sort(() => Math.random() - 0.5);
     setShuffledAnswer1(shuffledAnswerArr[0]);
@@ -60,14 +60,14 @@ const Question9 = (props) => {
     setShuffledAnswer3(shuffledAnswerArr[2]);
     setShuffledAnswer4(shuffledAnswerArr[3]);
   }, [
-    question9Answer,
-    fakeQuestion9Answer1,
-    fakeQuestion9Answer2,
-    fakeQuestion9Answer3,
+    question8Answer,
+    fakeQuestion8Answer1,
+    fakeQuestion8Answer2,
+    fakeQuestion8Answer3,
   ]);
 
   useEffect(() => {
-    if (selectedAnswer === question9Answer) {
+    if (selectedAnswer === question8Answer) {
       setCorrectAnswerSelected(true);
       setCorrectAnswerCount(parseInt(correctAnswerCount) + 1);
     } else {
@@ -100,14 +100,14 @@ const Question9 = (props) => {
                 <div className={stylesFirstBlock.frameDiv5}>
                   <Progress
                     className={stylesFirstBlock.progressDefault}
-                    value={90}
+                    value={80}
                     colorScheme="green"
                   />
-                  <h2 className={stylesFirstBlock.questionNumberTitle1}>Question 9:</h2>
+                  <h2 className={stylesFirstBlock.questionNumberTitle1}>Question 8:</h2>
                   <Textarea
                     className={stylesFirstBlock.progressDefault}
                     variant="outline"
-                    placeholder={question9}
+                    placeholder={question8}
                     isDisabled
                   />
                 </div>
@@ -165,7 +165,7 @@ const Question9 = (props) => {
             <div className={stylesFirstBlock.frameDiv11}>
               <Link
                 href={{
-                  pathname: "/test/question8",
+                  pathname: "/test/question7",
                   query: {
                     courseObjectId: props.courseObjectId,
                   },
@@ -177,14 +177,14 @@ const Question9 = (props) => {
                   w="162px"
                   colorScheme="green"
                   as="a"
-                  href="/test/question8"
+                  href="/test/question7"
                 >
                   Back
                 </Button>
               </Link>
               <Link
                 href={{
-                  pathname: "/test/question10",
+                  pathname: "/test/question9",
                   query: {
                     courseObjectId: props.courseObjectId,
                     correctAnswerCount: correctAnswerCount,
@@ -197,7 +197,7 @@ const Question9 = (props) => {
                   w="162px"
                   colorScheme="green"
                   as="a"
-                  href="/test/question10"
+                  href="/test/question9"
                 >
                   Next
                 </Button>
@@ -214,9 +214,9 @@ const Question9 = (props) => {
   );
 };
 
-export default Question9;
+export default Question8({ courseObjectId, correctAnswerCount });
 
-// Recieve props from next/pages/question8.jsx
+// Recieve props from next/pages/question7.jsx
 export const getServerSideProps = (context) => {
   return {
     props: {
@@ -225,15 +225,3 @@ export const getServerSideProps = (context) => {
     },
   };
 };
-
-// export const getServerSideProps = (context) => {
-//   const Moralis = require('moralis/node');
-//   Moralis.initialize(process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID);
-//   Moralis.serverURL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL;
-//   return {
-//     props: {
-//       courseObjectId: context.query.courseObjectId,
-//       correctAnswerCount: context.query.correctAnswerCount,
-//     },
-//   };
-// };
