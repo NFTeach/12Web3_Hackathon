@@ -4,20 +4,20 @@ import { useMoralis } from "react-moralis";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { defaultImgs } from "../public/defaultImgs";
-import { 
-    HStack, 
-    Box, 
-    Image, 
-    Text,
-    Button,
-    useDisclosure,
-    Modal, 
-    ModalOverlay, 
-    ModalContent, 
-    ModalHeader, 
-    ModalFooter, 
-    ModalBody, 
-    ModalCloseButton 
+import {
+  HStack,
+  Box,
+  Image,
+  Text,
+  Button,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import stylesHeader from "../styles/Explore_Page/Header.module.css";
 import stylesFirstBlock from "../styles/Explore_Page/FirstBlock.module.css";
@@ -50,18 +50,18 @@ const explore = () => {
       setPfp(user.get("pfp"));
     }, [user]);
 
-    useEffect(async () => {
-        if (!user) {
-        window.alert("Please connect wallet");
-        } else {
-        const Educators = Moralis.Object.extend("Educators");
-        const query = new Moralis.Query(Educators);
-        const account = user.attributes.accounts[0];
-        query.equalTo("educator", account);
-        const educator = await query.find();
-        setEducator(educator[0]);
-        }
-    }, []);
+  useEffect(async () => {
+    if (!user) {
+      window.alert("Please connect wallet");
+    } else {
+      const Educators = Moralis.Object.extend("Educators");
+      const query = new Moralis.Query(Educators);
+      const account = user.attributes.accounts[0];
+      query.equalTo("educator", account);
+      const educator = await query.find();
+      setEducator(educator[0]);
+    }
+  }, []);
 
     useEffect(async () => {
         if (!user) {
@@ -187,8 +187,8 @@ const explore = () => {
           <div className={stylesFirstBlock.frameDiv1}>
             <img
               className={stylesFirstBlock.imageIcon}
-              alt=""
-              src="/explore_imgs/space_man.png"
+              alt=''
+              src='/explore_imgs/space_man.png'
             />
             <div className={stylesFirstBlock.frameDiv2}>
               <div className={stylesFirstBlock.frameDiv3}>
@@ -205,7 +205,7 @@ const explore = () => {
             </div>
           </div>
           <div className={stylesFirstBlock.frameDiv3}>
-            <HStack spacing="100px">
+            <HStack spacing='100px'>
               {courses?.map((e, index) => (
                 <Box key={index} w='250px' h='250px'>
                   <Image

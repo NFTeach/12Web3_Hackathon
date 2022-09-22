@@ -188,7 +188,7 @@ const studentDashboard = () => {
         </div>
       </div>
       {/* First Block */}
-      <div className={stylesFirstBlock.desktop1}>
+      <div className={stylesFirstBlock.studentDashboardDiv}>
         <div className={stylesFirstBlock.frameDiv}>
           <div className={stylesFirstBlock.frameDiv1}>
             <div className={stylesFirstBlock.completedDiv}>
@@ -199,7 +199,7 @@ const studentDashboard = () => {
                 <b
                   className={stylesFirstBlock.yourCompletedCourses}
                 >{`Your Completed Courses `}</b>
-                <b className={stylesFirstBlock.b}>{nbClassesCompleted}</b>
+                <b className={stylesFirstBlock.b}>3</b>
               </div>
             </div>
             <div className={stylesFirstBlock.completedDiv}>
@@ -221,7 +221,7 @@ const studentDashboard = () => {
                 <b className={stylesFirstBlock.yourCompletedCourses}>
                   Your SBTS
                 </b>
-                <b className={stylesFirstBlock.b}>{nbMinted}</b>
+                <b className={stylesFirstBlock.b}>2</b>
               </div>
             </div>
           </div>
@@ -257,96 +257,102 @@ const studentDashboard = () => {
             </div>
           </div>
         </div>
-        <div className={stylesFirstBlock.groupDiv}>
-          <div className={stylesFirstBlock.suggestedDiv}>
-            <div className={stylesFirstBlock.areaDiv}>
-              <div className={stylesFirstBlock.sheetDiv3} />
-            </div>
-            <div className={stylesFirstBlock.frameDiv11}>
-              <b className={stylesFirstBlock.titleB}>
-                Suggested Courses (Coming Soon)
-              </b>
-              <div className={stylesFirstBlock.math102Div}>
-                <div className={stylesFirstBlock.understandingBitcoinDiv}>
-                  Math 102
-                </div>
-                <div className={stylesFirstBlock.eTHDiv}>0.01 ETH</div>
-                <img
-                  className={stylesFirstBlock.dividerLineHorizontal}
-                  alt=""
-                  src="../divider--line--horizontal.svg"
-                />
+        <div className={stylesFirstBlock.frameDiv11}>
+          <div className={stylesFirstBlock.groupDiv}>
+            <div className={stylesFirstBlock.suggestedDiv}>
+              <div className={stylesFirstBlock.areaDiv}>
+                <div className={stylesFirstBlock.sheetDiv3} />
               </div>
-              <div className={stylesFirstBlock.math102Div}>
-                <div className={stylesFirstBlock.understandingBitcoinDiv}>
-                  Understanding Bitcoin
+              <div className={stylesFirstBlock.frameDiv12}>
+                <b className={stylesFirstBlock.titleB}>
+                  Suggested Courses (Coming Soon)
+                </b>
+                <div className={stylesFirstBlock.math102Div}>
+                  <div className={stylesFirstBlock.understandingBitcoinDiv}>
+                    Math 102
+                  </div>
+                  <div className={stylesFirstBlock.eTHDiv}>0.01 ETH</div>
+                  <img
+                    className={stylesFirstBlock.dividerLineHorizontal}
+                    alt=''
+                    src='../divider--line--horizontal.svg'
+                  />
                 </div>
-                <div className={stylesFirstBlock.eTHDiv1}>0.02 ETH</div>
-                <img
-                  className={stylesFirstBlock.dividerLineHorizontal}
-                  alt=""
-                  src="../divider--line--horizontal.svg"
-                />
-              </div>
-              <div className={stylesFirstBlock.math102Div}>
-                <div className={stylesFirstBlock.understandingBitcoinDiv}>
-                  Tokenomics 101
+                <div className={stylesFirstBlock.math102Div}>
+                  <div className={stylesFirstBlock.understandingBitcoinDiv}>
+                    Understanding Bitcoin
+                  </div>
+                  <div className={stylesFirstBlock.eTHDiv1}>0.02 ETH</div>
+                  <img
+                    className={stylesFirstBlock.dividerLineHorizontal}
+                    alt=''
+                    src='../divider--line--horizontal.svg'
+                  />
                 </div>
-                <div className={stylesFirstBlock.eTHDiv1}>0.008 ETH</div>
-                <img
-                  className={stylesFirstBlock.dividerLineHorizontal}
-                  alt=""
-                  src="../divider--line--horizontal.svg"
-                />
-              </div>
-              <div className={stylesFirstBlock.math102Div}>
-                <div
-                  className={stylesFirstBlock.understandingBitcoinDiv}
-                >{`Artificial Intelligence & Algorithms`}</div>
-                <div className={stylesFirstBlock.eTHDiv1}>0.0354 ETH</div>
+                <div className={stylesFirstBlock.math102Div}>
+                  <div className={stylesFirstBlock.understandingBitcoinDiv}>
+                    Tokenomics 101
+                  </div>
+                  <div className={stylesFirstBlock.eTHDiv1}>0.008 ETH</div>
+                  <img
+                    className={stylesFirstBlock.dividerLineHorizontal}
+                    alt=''
+                    src='../divider--line--horizontal.svg'
+                  />
+                </div>
+                <div className={stylesFirstBlock.math102Div}>
+                  <div
+                    className={stylesFirstBlock.understandingBitcoinDiv}
+                  >{`Artificial Intelligence & Algorithms`}</div>
+                  <div className={stylesFirstBlock.eTHDiv1}>0.0354 ETH</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className={stylesFirstBlock.areaDiv1}>
-          <div className={stylesFirstBlock.sheetDiv3} />
-          <div className={stylesFirstBlock.groupDiv1}>
-            <div className={stylesFirstBlock.frameDiv12}>
+          <div className={stylesFirstBlock.areaDiv1}>
+            <div className={stylesFirstBlock.sheetDiv4} />
+            <div className={stylesFirstBlock.groupDiv1}>
               <div className={stylesFirstBlock.frameDiv13}>
-                <b className={stylesFirstBlock.titleB1}>
-                  Leaderboards (Coming Soon)
-                </b>
-                <div className={stylesFirstBlock.thisWeekDiv}>This Week</div>
-              </div>
-              <div className={stylesFirstBlock.frameDiv14}>
-                <div className={stylesFirstBlock.math102Div}>
-                  <div className={stylesFirstBlock.topStudentsDiv}>
-                    Top Students
+                <div className={stylesFirstBlock.frameDiv14}>
+                  <b className={stylesFirstBlock.titleB1}>
+                    Leaderboards (Coming Soon)
+                  </b>
+                  <div className={stylesFirstBlock.thisWeekDiv}>This Week</div>
+                </div>
+                <div className={stylesFirstBlock.frameDiv15}>
+                  <div className={stylesFirstBlock.math102Div}>
+                    <div className={stylesFirstBlock.topStudentsDiv}>
+                      Top Students
+                    </div>
+                    <img
+                      className={stylesFirstBlock.dividerLineHorizontal}
+                      alt=''
+                      src='../divider--line--horizontal3.svg'
+                    />
                   </div>
-                  <img
-                    className={stylesFirstBlock.dividerLineHorizontal}
-                    alt=""
-                    src="../divider--line--horizontal.svg"
-                  />
-                </div>
-                <div className={stylesFirstBlock.name1Div}>
-                  <div className={stylesFirstBlock.satoshiNDiv}>Satoshi N.</div>
-                  <img
-                    className={stylesFirstBlock.dividerLineHorizontal4}
-                    alt=""
-                    src="../divider--line--horizontal.svg"
-                  />
-                </div>
-                <div className={stylesFirstBlock.name2Div}>
-                  <div className={stylesFirstBlock.satoshiNDiv}>Charles H.</div>
-                  <img
-                    className={stylesFirstBlock.dividerLineHorizontal4}
-                    alt=""
-                    src="../divider--line--horizontal.svg"
-                  />
-                </div>
-                <div className={stylesFirstBlock.name3Div}>
-                  <div className={stylesFirstBlock.silvioMDiv}>Silvio M.</div>
+                  <div className={stylesFirstBlock.name1Div}>
+                    <div className={stylesFirstBlock.satoshiNDiv}>
+                      Satoshi N.
+                    </div>
+                    <img
+                      className={stylesFirstBlock.dividerLineHorizontal4}
+                      alt=''
+                      src='../divider--line--horizontal3.svg'
+                    />
+                  </div>
+                  <div className={stylesFirstBlock.name2Div}>
+                    <div className={stylesFirstBlock.satoshiNDiv}>
+                      Charles H.
+                    </div>
+                    <img
+                      className={stylesFirstBlock.dividerLineHorizontal4}
+                      alt=''
+                      src='../divider--line--horizontal3.svg'
+                    />
+                  </div>
+                  <div className={stylesFirstBlock.name3Div}>
+                    <div className={stylesFirstBlock.silvioMDiv}>Silvio M.</div>
+                  </div>
                 </div>
               </div>
             </div>
